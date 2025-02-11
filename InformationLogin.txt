@@ -1,0 +1,32 @@
+
+Valid login
+
+User Story
+AS A customer
+I WANT to enter my credentials
+SO THAT I can log in 
+
+Gherkin syntax
+
+GIVEN that I'm on the webpage
+WHEN I enter my credentials
+THEN I should be logged on to the site
+
+Invalid login
+
+User Story
+AS A customer
+I WANT to enter wrong credentials
+SO THAT I get an error message
+
+GIVEN that I'm on the webpage
+WHEN I enter wrong credentials
+THEN I should get an error message
+AND not get logged in to the site
+
+
+Acceptanskriterier
+  
+    - Sidan ska loggas in när man skriver in sina användaruppgifter
+    - Användaren ska navigeras till första sidan efter inloggning
+    - När man skriver in felaktiga användaruppgifter ska man få felmeddelande. 
