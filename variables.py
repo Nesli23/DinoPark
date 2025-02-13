@@ -8,7 +8,7 @@ browser_test = "chrome"
 url_test = f"file:///{current_directory}/webpages/jurap.html"
 title_test = "Login Test"
 
-usernme_input_id_test = "id=login-username"
+username_input_id_test = "id=login-username"
 password_input_id_test = "id=login-password"
 login_button_test = 'xpath=//*[@id="login-form"]/button'
 
