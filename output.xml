@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2 (Python 3.13.1 on win32)" generated="2025-02-13T10:46:18.389169" rpa="false" schemaversion="5">
+<suite id="s1" name="Login Page" source="c:\Users\nesli\Documents\GitHub\ContinuousTesting\DinoPark\login_page.robot">
+<test id="s1-t1" name="Invalid Login" line="10">
+<kw name="Open Browser To Page" owner="keywords" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-02-13T10:46:18.834555" level="INFO">Opening browser 'chrome' to base url 'file:///C:/Users/nesli/Documents/GitHub/ContinuousTesting/DinoPark/webpages/jurap.html'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-02-13T10:46:18.834178" elapsed="1.851131"/>
+</kw>
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2025-02-13T10:46:20.717982" level="INFO">Page title is 'Jura-Stina-Kalle Park'.</msg>
+<arg>${title}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2025-02-13T10:46:20.687561" elapsed="0.032545"/>
+</kw>
+<arg>${url_test}</arg>
+<arg>${browser_test}</arg>
+<arg>${title_test}</arg>
+<status status="PASS" start="2025-02-13T10:46:18.832559" elapsed="1.888134"/>
+</kw>
+<kw name="Type In Element" owner="keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-13T10:46:20.724852" level="INFO">Clicking element 'xpath=//*[@id='login-nav']/a'.</msg>
+<arg>${login_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-13T10:46:20.723599" elapsed="0.239394"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${username_element}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-02-13T10:46:20.963769" elapsed="0.078576"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-13T10:46:21.043366" level="INFO">Typing text 'incorrectusername' into text field 'id=login-username'.</msg>
+<arg>${username_element}</arg>
+<arg>${text_to_write}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-13T10:46:21.042761" elapsed="0.239660"/>
+</kw>
+<arg>${login_button_test}</arg>
+<arg>${username_input_id_test}</arg>
+<arg>${invalid_username}</arg>
+<status status="PASS" start="2025-02-13T10:46:20.722286" elapsed="0.560536"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-02-13T10:46:21.283634" elapsed="2.481406"/>
+</kw>
+<status status="PASS" start="2025-02-13T10:46:18.831498" elapsed="4.939963"/>
+</test>
+<doc>Testing the login page in order to make sure that the customer can log in with credentials</doc>
+<status status="PASS" start="2025-02-13T10:46:18.398151" elapsed="5.379351"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Login Page" id="s1" pass="1" fail="0" skip="0">Login Page</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
