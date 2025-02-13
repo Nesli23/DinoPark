@@ -8,5 +8,4 @@ Test Teardown    Close Browser
 
 *** Test Cases ***
 Invalid Login
-    Type In Element    ${username_input_id_test}    ${invalid_username}
-
+    Type In Element    ${login_button_test}    ${username_input_id_test}    ${invalid_username}
