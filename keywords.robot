@@ -27,12 +27,12 @@ Click Submit Button
 
 Verify Message Should Be Visible
     [Arguments]    ${verify_message_element}    ${verify_message_text}    ${timeout}
-    Wait Until Element Contains    ${verify_message_element}    ${timeout}
+    Wait Until Element Contains    ${verify_message_element}    ${verify_message_text}    ${timeout}
     Element Text Should Be    ${verify_message_element}    ${verify_message_text}
 
 Message Should Be Visible
     [Arguments]    ${error_message_element}    ${error_message_text}    ${timeout}
-    Wait Until Element Contains   ${error_message_element}    ${timeout}
+    Wait Until Element Contains   ${error_message_element}    ${error_message_text}    ${timeout}
     Element Text Should Be    ${error_message_element}    ${error_message_text}
     
     
