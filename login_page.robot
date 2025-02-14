@@ -8,8 +8,14 @@ Test Teardown    Close Browser
 
 *** Test Cases ***
 Invalid Login
-    Log    ${invalid_username}
-    Log    ${invalid_password}
+    [Documentation]    Scenario: Invalid login, we should receive an error message when we are trying to log in with invalid credentials.
+    ...                GIVEN that I'm on the log in page
+    ...                WHEN I enter invalid credentials
+    ...                THEN I should get an error message
+    ...
+    ...                Acceptance Criteria:
+    ...                - I should not be logged in when I enter invalid credentials.
+    ...                - Error message informing about invalid credentials should appear. 
     Click Login Button    ${login_button_test}    
     Type In Username    ${username_input_id_test}    ${invalid_username}   
     Type In Password    ${password_input_id_test}    ${invalid_password}
