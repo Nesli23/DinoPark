@@ -1,5 +1,7 @@
 *** Settings ***
+Metadata    Author    Nesli
 Library    SeleniumLibrary
+
 
 *** Keywords ***
 Open Browser To Page
