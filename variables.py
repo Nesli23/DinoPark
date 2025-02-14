@@ -1,4 +1,5 @@
 import os # används för att kunna referera till mappen vi är i 
+# Author: Nesli
 
 # Directory
 current_directory = os.getcwd().replace('\\', '/')
