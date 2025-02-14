@@ -7,6 +7,10 @@ current_directory = os.getcwd().replace('\\', '/')
 invalid_username = "incorrectusername"
 invalid_password = "invalidpassword"
 
+# Valid credentials
+valid_username = "NK"
+valid_password = "Password"
+
 #Timeout
 standard_timeout = "10s"
 
@@ -20,12 +24,16 @@ password_input_id_test = "id=login-password"
 login_button_test = "xpath=//*[@id='login-nav']/a"
 submit_button_test = "xpath=//*[@id='login-form']/button"
 
-# Error Message
+#Messages
 verify_message_element_test = "xpath=//*[@id='login-message']"
 verify_message_test = "Verifying credentials..."
 
 error_message_element_test = "xpath=//*[@id='login-message']"
-error_message_test = "Invalid username or password"
+error_message_test = "Invalid username or password."
+
+#success_message_element_test =
+#success_message_test = 
+
 
 
 #"id=login-messsage"
