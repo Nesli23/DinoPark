@@ -1,137 +1,119 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2 (Python 3.13.1 on win32)" generated="2025-02-14T09:40:56.239179" rpa="false" schemaversion="5">
+<robot generator="Robot 7.2 (Python 3.13.1 on win32)" generated="2025-02-14T10:25:56.284510" rpa="false" schemaversion="5">
 <suite id="s1" name="DinoPark" source="C:\Users\nesli\Documents\GitHub\ContinuousTesting\DinoPark">
 <suite id="s1-s1" name="Login Page" source="C:\Users\nesli\Documents\GitHub\ContinuousTesting\DinoPark\login_page.robot">
-<test id="s1-s1-t1" name="Invalid Login" line="10">
+<test id="s1-s1-t1" name="Valid Login" line="22">
 <kw name="Open Browser To Page" owner="keywords" type="SETUP">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-02-14T09:40:56.762835" level="INFO">Opening browser 'chrome' to base url 'file:///C:/Users/nesli/Documents/GitHub/ContinuousTesting/DinoPark/webpages/jurap.html'.</msg>
+<msg time="2025-02-14T10:25:56.785092" level="INFO">Opening browser 'chrome' to base url 'file:///C:/Users/nesli/Documents/GitHub/ContinuousTesting/DinoPark/webpages/jurap.html'.</msg>
 <arg>${url}</arg>
 <arg>${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-02-14T09:40:56.762207" elapsed="3.081252"/>
+<status status="PASS" start="2025-02-14T10:25:56.783445" elapsed="2.978810"/>
 </kw>
 <kw name="Title Should Be" owner="SeleniumLibrary">
-<msg time="2025-02-14T09:40:59.858934" level="INFO">Page title is 'Jura-Stina-Kalle Park'.</msg>
+<msg time="2025-02-14T10:25:59.773471" level="INFO">Page title is 'Jura-Stina-Kalle Park'.</msg>
 <arg>${title}</arg>
 <doc>Verifies that the current page title equals ``title``.</doc>
-<status status="PASS" start="2025-02-14T09:40:59.843809" elapsed="0.015554"/>
+<status status="PASS" start="2025-02-14T10:25:59.762970" elapsed="0.011286"/>
 </kw>
 <arg>${url_test}</arg>
 <arg>${browser_test}</arg>
 <arg>${title_test}</arg>
-<status status="PASS" start="2025-02-14T09:40:56.760925" elapsed="3.098716"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-02-14T09:40:59.860706" level="INFO">incorrectusername</msg>
-<arg>${invalid_username}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-02-14T09:40:59.860150" elapsed="0.000815"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-02-14T09:40:59.869927" level="INFO">invalidpassword</msg>
-<arg>${invalid_password}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-02-14T09:40:59.866225" elapsed="0.004737"/>
+<status status="PASS" start="2025-02-14T10:25:56.778274" elapsed="2.996513"/>
 </kw>
 <kw name="Click Login Button" owner="keywords">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-02-14T09:40:59.888638" level="INFO">Clicking element 'xpath=//*[@id='login-nav']/a'.</msg>
+<msg time="2025-02-14T10:25:59.780746" level="INFO">Clicking element 'xpath=//*[@id='login-nav']/a'.</msg>
 <arg>${login_button}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-14T09:40:59.886609" elapsed="0.287707"/>
+<status status="PASS" start="2025-02-14T10:25:59.776951" elapsed="0.480659"/>
 </kw>
 <arg>${login_button_test}</arg>
-<status status="PASS" start="2025-02-14T09:40:59.882379" elapsed="0.292969"/>
+<status status="PASS" start="2025-02-14T10:25:59.775675" elapsed="0.482425"/>
 </kw>
 <kw name="Type In Username" owner="keywords">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${username_element}</arg>
 <arg>timeout=10s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-02-14T09:41:00.179880" elapsed="0.058933"/>
+<status status="PASS" start="2025-02-14T10:26:00.260532" elapsed="0.107205"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-02-14T09:41:00.239958" level="INFO">Typing text 'incorrectusername' into text field 'id=login-username'.</msg>
+<msg time="2025-02-14T10:26:00.370686" level="INFO">Typing text 'NK' into text field 'id=login-username'.</msg>
 <arg>${username_element}</arg>
 <arg>${username}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-14T09:41:00.239424" elapsed="0.258322"/>
+<status status="PASS" start="2025-02-14T10:26:00.369251" elapsed="0.282339"/>
 </kw>
 <arg>${username_input_id_test}</arg>
-<arg>${invalid_username}</arg>
-<status status="PASS" start="2025-02-14T09:41:00.176491" elapsed="0.322562"/>
+<arg>${valid_username}</arg>
+<status status="PASS" start="2025-02-14T10:26:00.258963" elapsed="0.393086"/>
 </kw>
 <kw name="Type In Password" owner="keywords">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${password_element}</arg>
 <arg>timeout=10s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-02-14T09:41:00.505097" elapsed="0.052090"/>
+<status status="PASS" start="2025-02-14T10:26:00.660863" elapsed="0.145059"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-02-14T09:41:00.557885" level="INFO">Typing text 'invalidpassword' into text field 'id=login-password'.</msg>
+<msg time="2025-02-14T10:26:00.806822" level="INFO">Typing text 'Password' into text field 'id=login-password'.</msg>
 <arg>${password_element}</arg>
 <arg>${password}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-14T09:41:00.557424" elapsed="0.191428"/>
+<status status="PASS" start="2025-02-14T10:26:00.806225" elapsed="0.195333"/>
 </kw>
 <arg>${password_input_id_test}</arg>
-<arg>${invalid_password}</arg>
-<status status="PASS" start="2025-02-14T09:41:00.503708" elapsed="0.245549"/>
+<arg>${valid_password}</arg>
+<status status="PASS" start="2025-02-14T10:26:00.659527" elapsed="0.342386"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-02-14T09:41:00.750551" level="INFO">Clicking button 'xpath=//*[@id='login-form']/button'.</msg>
+<msg time="2025-02-14T10:26:01.003372" level="INFO">Clicking button 'xpath=//*[@id='login-form']/button'.</msg>
 <arg>${submit_button_test}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-14T09:41:00.749774" elapsed="0.172815"/>
+<status status="PASS" start="2025-02-14T10:26:01.002550" elapsed="0.225085"/>
 </kw>
 <kw name="Message Should Be Visible" owner="keywords">
 <kw name="Wait Until Element Contains" owner="SeleniumLibrary">
-<msg time="2025-02-14T09:41:06.126746" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-20.png"&gt;&lt;img src="selenium-screenshot-20.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2025-02-14T09:41:06.127717" level="FAIL">Element 'xpath=//*[@id='login-message']' did not get text '10s' in 5 seconds.</msg>
 <arg>${error_message_element}</arg>
+<arg>${error_message_text}</arg>
 <arg>${timeout}</arg>
 <doc>Waits until the element ``locator`` contains ``text``.</doc>
-<status status="FAIL" start="2025-02-14T09:41:00.924041" elapsed="5.215504">Element 'xpath=//*[@id='login-message']' did not get text '10s' in 5 seconds.</status>
+<status status="PASS" start="2025-02-14T10:26:01.233038" elapsed="0.061206"/>
 </kw>
 <kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-02-14T10:26:01.296380" level="INFO">Verifying element 'xpath=//*[@id='login-message']' contains exact text 'Verifying credentials...'.</msg>
 <arg>${error_message_element}</arg>
 <arg>${error_message_text}</arg>
 <doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<status status="NOT RUN" start="2025-02-14T09:41:06.140104" elapsed="0.000392"/>
+<status status="PASS" start="2025-02-14T10:26:01.294623" elapsed="0.041271"/>
 </kw>
 <arg>${verify_message_element_test}</arg>
 <arg>${verify_message_test}</arg>
 <arg>${standard_timeout}</arg>
-<status status="FAIL" start="2025-02-14T09:41:00.923193" elapsed="5.217656">Element 'xpath=//*[@id='login-message']' did not get text '10s' in 5 seconds.</status>
-</kw>
-<kw name="Message Should Be Visible" owner="keywords">
-<arg>${error_message_element_test}</arg>
-<arg>${error_message_test}</arg>
-<arg>${standard_timeout}</arg>
-<status status="NOT RUN" start="2025-02-14T09:41:06.141739" elapsed="0.000524"/>
+<status status="PASS" start="2025-02-14T10:26:01.230846" elapsed="0.105300"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-02-14T09:41:06.143157" elapsed="2.509388"/>
+<status status="PASS" start="2025-02-14T10:26:01.337313" elapsed="2.573784"/>
 </kw>
-<status status="FAIL" start="2025-02-14T09:40:56.759705" elapsed="11.893599">Element 'xpath=//*[@id='login-message']' did not get text '10s' in 5 seconds.</status>
+<status status="PASS" start="2025-02-14T10:25:56.776373" elapsed="7.135583"/>
 </test>
 <doc>Testing the login page in order to make sure that the customer can log in with credentials</doc>
-<status status="FAIL" start="2025-02-14T09:40:56.277341" elapsed="12.379323"/>
+<status status="PASS" start="2025-02-14T10:25:56.339179" elapsed="7.576863"/>
 </suite>
-<status status="FAIL" start="2025-02-14T09:40:56.243678" elapsed="12.419056"/>
+<status status="PASS" start="2025-02-14T10:25:56.289802" elapsed="7.630367"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="DinoPark" id="s1" pass="0" fail="1" skip="0">DinoPark</stat>
-<stat name="Login Page" id="s1-s1" pass="0" fail="1" skip="0">DinoPark.Login Page</stat>
+<stat name="DinoPark" id="s1" pass="1" fail="0" skip="0">DinoPark</stat>
+<stat name="Login Page" id="s1-s1" pass="1" fail="0" skip="0">DinoPark.Login Page</stat>
 </suite>
 </statistics>
 <errors>

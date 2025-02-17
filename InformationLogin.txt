@@ -20,9 +20,9 @@ I WANT to enter wrong credentials
 SO THAT I get an error message
 
 GIVEN that I'm on the webpage
-WHEN I enter wrong credentials
+WHEN I enter invalid credentials
 THEN I should get an error message
-AND not get logged in to the site
+
 
 
 Acceptanskriterier
