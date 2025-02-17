@@ -1,0 +1,47 @@
+Arbetssätt
+1.User stories
+    Exempel: Feature: Portable music collection
+    As a music lover,
+    I want to carry all my favorite All-Star remixes in my pocket,
+    So that I can listen to them anywhere without carrying CDs
+
+    AS A
+    I WANT
+    SO THAT
+
+2.Ett antal exempel på vad vår produkt bör göra
+    Exempel:
+    GIVEN I have 1000 All-Star Remixes on my device
+    WHEN I search fr All Star Acoustic Nelly Hope
+    THEN I should be able to find
+    AND play it within 3 seconds
+
+    GIVEN
+    WHEN
+    THEN
+    AND
+
+3.Acceptanskriterier
+    Exempel:
+    - Enheten måste kunna lagra minst 1000 medelstora MP3 filer
+    - Användaren måste kunna söka och hitta vilken låt som helst inom 3 sekunder
+    - Batteriet måste hålla för minst 10 timmar av uppspelning
+
+    Dessa kriterier går att förstå och är användbara för affärssidan, utvecklare, testare etc
+
+4.Specifikation
+Scenario: Ensuring at least 1,000 songs fit
+on the device
+Given I have a 5GB iPod
+When I sync my music library
+Then the device should store at least
+1,000 songs
+
+5.Exekverbar specifikation
+
+Testare skriver automatiserade tester som
+verifierar att produkten möter
+förväntningar, exempelvis för 10 timmars
+batteritid vid uppspelning av MP3-filer
+
+6.Produkt
