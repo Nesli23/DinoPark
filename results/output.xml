@@ -1,119 +1,300 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2 (Python 3.13.1 on win32)" generated="2025-02-14T10:25:56.284510" rpa="false" schemaversion="5">
-<suite id="s1" name="DinoPark" source="C:\Users\nesli\Documents\GitHub\ContinuousTesting\DinoPark">
-<suite id="s1-s1" name="Login Page" source="C:\Users\nesli\Documents\GitHub\ContinuousTesting\DinoPark\login_page.robot">
-<test id="s1-s1-t1" name="Valid Login" line="22">
-<kw name="Open Browser To Page" owner="keywords" type="SETUP">
+<robot generator="Robot 7.2 (Python 3.13.1 on darwin)" generated="2025-02-20T00:25:55.440580" rpa="false" schemaversion="5">
+<suite id="s1" name="DinoPark" source="/Users/tubakara/DinoPark">
+<suite id="s1-s1" name="Buy Vip Ticket" source="/Users/tubakara/DinoPark/buy_vip_ticket.robot">
+<test id="s1-s1-t1" name="Successful VIP Ticket Purchase" line="11">
+<kw name="Open Browser To Ticket Page" owner="keywords_ticket" type="SETUP">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-02-14T10:25:56.785092" level="INFO">Opening browser 'chrome' to base url 'file:///C:/Users/nesli/Documents/GitHub/ContinuousTesting/DinoPark/webpages/jurap.html'.</msg>
+<msg time="2025-02-20T00:25:55.533666" level="INFO">Opening browser 'chrome' to base url 'file:////Users/tubakara/DinoPark/webpages/jurap.html'.</msg>
 <arg>${url}</arg>
 <arg>${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-02-14T10:25:56.783445" elapsed="2.978810"/>
+<status status="PASS" start="2025-02-20T00:25:55.533456" elapsed="2.790356"/>
 </kw>
-<kw name="Title Should Be" owner="SeleniumLibrary">
-<msg time="2025-02-14T10:25:59.773471" level="INFO">Page title is 'Jura-Stina-Kalle Park'.</msg>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-02-20T00:25:58.324246" elapsed="0.324873"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
 <arg>${title}</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<status status="PASS" start="2025-02-14T10:25:59.762970" elapsed="0.011286"/>
+<arg>${standard_timeout}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-02-20T00:25:58.649267" elapsed="0.017559"/>
 </kw>
 <arg>${url_test}</arg>
 <arg>${browser_test}</arg>
 <arg>${title_test}</arg>
-<status status="PASS" start="2025-02-14T10:25:56.778274" elapsed="2.996513"/>
+<status status="PASS" start="2025-02-20T00:25:55.532830" elapsed="3.134135"/>
 </kw>
-<kw name="Click Login Button" owner="keywords">
+<kw name="Login As Kim" owner="keywords_ticket">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-02-14T10:25:59.780746" level="INFO">Clicking element 'xpath=//*[@id='login-nav']/a'.</msg>
-<arg>${login_button}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-14T10:25:59.776951" elapsed="0.480659"/>
-</kw>
+<msg time="2025-02-20T00:25:58.667784" level="INFO">Clicking element 'xpath=//*[@id='login-nav']/a'.</msg>
 <arg>${login_button_test}</arg>
-<status status="PASS" start="2025-02-14T10:25:59.775675" elapsed="0.482425"/>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-20T00:25:58.667488" elapsed="0.048005"/>
 </kw>
-<kw name="Type In Username" owner="keywords">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${username_element}</arg>
-<arg>timeout=10s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-02-14T10:26:00.260532" elapsed="0.107205"/>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-02-20T00:26:00.716449" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-02-20T00:25:58.715657" elapsed="2.001616"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-02-14T10:26:00.370686" level="INFO">Typing text 'NK' into text field 'id=login-username'.</msg>
-<arg>${username_element}</arg>
-<arg>${username}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-14T10:26:00.369251" elapsed="0.282339"/>
-</kw>
+<msg time="2025-02-20T00:26:00.719008" level="INFO">Typing text 'Tuba' into text field 'id=login-username'.</msg>
 <arg>${username_input_id_test}</arg>
-<arg>${valid_username}</arg>
-<status status="PASS" start="2025-02-14T10:26:00.258963" elapsed="0.393086"/>
+<arg>${valid_username_ticket}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-20T00:26:00.717961" elapsed="0.116729"/>
 </kw>
-<kw name="Type In Password" owner="keywords">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${password_element}</arg>
-<arg>timeout=10s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-02-14T10:26:00.660863" elapsed="0.145059"/>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-02-20T00:26:02.835218" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-02-20T00:26:00.834835" elapsed="2.000776"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-02-14T10:26:00.806822" level="INFO">Typing text 'Password' into text field 'id=login-password'.</msg>
-<arg>${password_element}</arg>
-<arg>${password}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-14T10:26:00.806225" elapsed="0.195333"/>
-</kw>
+<msg time="2025-02-20T00:26:02.836652" level="INFO">Typing text '12345678' into text field 'id=login-password'.</msg>
 <arg>${password_input_id_test}</arg>
-<arg>${valid_password}</arg>
-<status status="PASS" start="2025-02-14T10:26:00.659527" elapsed="0.342386"/>
+<arg>${valid_password_ticket}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-20T00:26:02.835973" elapsed="0.046470"/>
 </kw>
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-02-14T10:26:01.003372" level="INFO">Clicking button 'xpath=//*[@id='login-form']/button'.</msg>
-<arg>${submit_button_test}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-14T10:26:01.002550" elapsed="0.225085"/>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-02-20T00:26:04.884796" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-02-20T00:26:02.882628" elapsed="2.002514"/>
 </kw>
-<kw name="Message Should Be Visible" owner="keywords">
-<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
-<arg>${error_message_element}</arg>
-<arg>${error_message_text}</arg>
-<arg>${timeout}</arg>
-<doc>Waits until the element ``locator`` contains ``text``.</doc>
-<status status="PASS" start="2025-02-14T10:26:01.233038" elapsed="0.061206"/>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-20T00:26:04.885990" level="INFO">Clicking element 'xpath=//*[@id='login-form']/button'.</msg>
+<arg>${submit__button_test}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-20T00:26:04.885447" elapsed="0.040018"/>
 </kw>
-<kw name="Element Text Should Be" owner="SeleniumLibrary">
-<msg time="2025-02-14T10:26:01.296380" level="INFO">Verifying element 'xpath=//*[@id='login-message']' contains exact text 'Verifying credentials...'.</msg>
-<arg>${error_message_element}</arg>
-<arg>${error_message_text}</arg>
-<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<status status="PASS" start="2025-02-14T10:26:01.294623" elapsed="0.041271"/>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-02-20T00:26:06.927343" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-02-20T00:26:04.925636" elapsed="2.002657"/>
 </kw>
+<kw name="Element Should Not Contain" owner="SeleniumLibrary">
+<msg time="2025-02-20T00:26:06.949782" level="INFO">Element 'xpath=//*[@id='login-message']' does not contain text 'Verifying credentials...'.</msg>
 <arg>${verify_message_element_test}</arg>
 <arg>${verify_message_test}</arg>
+<doc>Verifies that element ``locator`` does not contain text ``expected``.</doc>
+<status status="PASS" start="2025-02-20T00:26:06.929434" elapsed="0.020507"/>
+</kw>
+<status status="PASS" start="2025-02-20T00:25:58.667228" elapsed="8.282835"/>
+</kw>
+<kw name="Navigate To Buy Tickets Page" owner="keywords_ticket">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-02-20T00:26:08.951810" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-02-20T00:26:06.950624" elapsed="2.001535"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${tickets_nav}</arg>
 <arg>${standard_timeout}</arg>
-<status status="PASS" start="2025-02-14T10:26:01.230846" elapsed="0.105300"/>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-02-20T00:26:08.952458" elapsed="0.017392"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-20T00:26:08.970332" level="INFO">Clicking element 'xpath=//*[@id='tickets-nav']/a'.</msg>
+<arg>${tickets_nav}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-20T00:26:08.970027" elapsed="0.033810"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ticket_type}</arg>
+<arg>${standard_timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-02-20T00:26:09.004011" elapsed="0.011856"/>
+</kw>
+<status status="PASS" start="2025-02-20T00:26:06.950318" elapsed="2.065674"/>
+</kw>
+<kw name="Select VIP Ticket" owner="keywords_ticket">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ticket_type}</arg>
+<arg>${standard_timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-02-20T00:26:09.016442" elapsed="0.007103"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2025-02-20T00:26:09.023962" level="INFO">Selecting options from selection list 'id=ticket-type' by value Adult.</msg>
+<arg>${ticket_type}</arg>
+<arg>${type}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2025-02-20T00:26:09.023713" elapsed="0.023875"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2025-02-20T00:26:09.047923" level="INFO">Selecting options from selection list 'id=ticket-category' by value VIP.</msg>
+<arg>${ticket_category}</arg>
+<arg>${VIP}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2025-02-20T00:26:09.047720" elapsed="0.043170"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-20T00:26:09.091248" level="INFO">Typing text '2' into text field 'id=ticket-quantity'.</msg>
+<arg>${ticket_quantity}</arg>
+<arg>${quantity}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-20T00:26:09.091034" elapsed="0.032804"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-02-20T00:26:11.124670" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-02-20T00:26:09.123979" elapsed="2.001206"/>
+</kw>
+<arg>2</arg>
+<arg>${Adult}</arg>
+<status status="PASS" start="2025-02-20T00:26:09.016163" elapsed="2.109419"/>
+</kw>
+<kw name="Proceed To Checkout And Confirm" owner="keywords_ticket">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-20T00:26:11.128377" level="INFO">Clicking element 'xpath=//*[@id='ticket-form']/button'.</msg>
+<arg>${proceed_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-20T00:26:11.127692" elapsed="0.059964"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-20T00:26:11.188279" level="INFO">Clicking element 'id=confirm-ticket'.</msg>
+<msg time="2025-02-20T00:26:11.370525" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-129.png"&gt;&lt;img src="selenium-screenshot-129.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-02-20T00:26:11.370749" level="FAIL">UnexpectedAlertPresentException: Alert Text: You must be logged in to purchase tickets.
+Message: unexpected alert open: {Alert text : You must be logged in to purchase tickets.}
+  (Session info: chrome=133.0.6943.99)
+Stacktrace:
+0   chromedriver                        0x000000010278ab58 cxxbridge1$str$ptr + 2724820
+1   chromedriver                        0x00000001027831b8 cxxbridge1$str$ptr + 2693684
+2   chromedriver                        0x00000001022e9afc cxxbridge1$string$len + 93348
+3   chromedriver                        0x0000000102372408 cxxbridge1$string$len + 652720
+4   chromedriver                        0x0000000102324ba0 cxxbridge1$string$len + 335176
+5   chromedriver                        0x0000000102753610 cxxbridge1$str$ptr + 2498188
+6   chromedriver                        0x0000000102756924 cxxbridge1$str$ptr + 2511264
+7   chromedriver                        0x0000000102738cb0 cxxbridge1$str$ptr + 2389292
+8   chromedriver                        0x00000001027571cc cxxbridge1$str$ptr + 2513480
+9   chromedriver                        0x0000000102729c98 cxxbridge1$str$ptr + 2327828
+10  chromedriver                        0x0000000102773880 cxxbridge1$str$ptr + 2629884
+11  chromedriver                        0x0000000102773a08 cxxbridge1$str$ptr + 2630276
+12  chromedriver                        0x0000000102782e2c cxxbridge1$str$ptr + 2692776
+13  libsystem_pthread.dylib             0x0000000185202f94 _pthread_start + 136
+14  libsystem_pthread.dylib             0x00000001851fdd34 thread_start + 8
+</msg>
+<arg>${confirm_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="FAIL" start="2025-02-20T00:26:11.187859" elapsed="0.187178">UnexpectedAlertPresentException: Alert Text: You must be logged in to purchase tickets.
+Message: unexpected alert open: {Alert text : You must be logged in to purchase tickets.}
+  (Session info: chrome=133.0.6943.99)
+Stacktrace:
+0   chromedriver                        0x000000010278ab58 cxxbridge1$str$ptr + 2724820
+1   chromedriver                        0x00000001027831b8 cxxbridge1$str$ptr + 2693684
+2   chromedriver                        0x00000001022e9afc cxxbridge1$string$len + 93348
+3   chromedriver                        0x0000000102372408 cxxbridge1$string$len + 652720
+4   chromedriver                        0x0000000102324ba0 cxxbridge1$string$len + 335176
+5   chromedriver                        0x0000000102753610 cxxbridge1$str$ptr + 2498188
+6   chromedriver                        0x0000000102756924 cxxbridge1$str$ptr + 2511264
+7   chromedriver                        0x0000000102738cb0 cxxbridge1$str$ptr + 2389292
+8   chromedriver                        0x00000001027571cc cxxbridge1$str$ptr + 2513480
+9   chromedriver                        0x0000000102729c98 cxxbridge1$str$ptr + 2327828
+10  chromedriver                        0x0000000102773880 cxxbridge1$str$ptr + 2629884
+11  chromedriver                        0x0000000102773a08 cxxbridge1$str$ptr + 2630276
+12  chromedriver                        0x0000000102782e2c cxxbridge1$str$ptr + 2692776
+13  libsystem_pthread.dylib             0x0000000185202f94 _pthread_start + 136
+14  libsystem_pthread.dylib             0x00000001851fdd34 thread_start + 8
+</status>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${confirmation_message_element}</arg>
+<arg>${standard_timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2025-02-20T00:26:11.375225" elapsed="0.000079"/>
+</kw>
+<status status="FAIL" start="2025-02-20T00:26:11.126562" elapsed="0.248862">UnexpectedAlertPresentException: Alert Text: You must be logged in to purchase tickets.
+Message: unexpected alert open: {Alert text : You must be logged in to purchase tickets.}
+  (Session info: chrome=133.0.6943.99)
+Stacktrace:
+0   chromedriver                        0x000000010278ab58 cxxbridge1$str$ptr + 2724820
+1   chromedriver                        0x00000001027831b8 cxxbridge1$str$ptr + 2693684
+2   chromedriver                        0x00000001022e9afc cxxbridge1$string$len + 93348
+3   chromedriver                        0x0000000102372408 cxxbridge1$string$len + 652720
+4   chromedriver                        0x0000000102324ba0 cxxbridge1$string$len + 335176
+5   chromedriver                        0x0000000102753610 cxxbridge1$str$ptr + 2498188
+6   chromedriver                        0x0000000102756924 cxxbridge1$str$ptr + 2511264
+7   chromedriver                        0x0000000102738cb0 cxxbridge1$str$ptr + 2389292
+8   chromedriver                        0x00000001027571cc cxxbridge1$str$ptr + 2513480
+9   chromedriver                        0x0000000102729c98 cxxbridge1$str$ptr + 2327828
+10  chromedriver                        0x0000000102773880 cxxbridge1$str$ptr + 2629884
+11  chromedriver                        0x0000000102773a08 cxxbridge1$str$ptr + 2630276
+12  chromedriver                        0x0000000102782e2c cxxbridge1$str$ptr + 2692776
+13  libsystem_pthread.dylib             0x0000000185202f94 _pthread_start + 136
+14  libsystem_pthread.dylib             0x00000001851fdd34 thread_start + 8
+</status>
+</kw>
+<kw name="Message Should Be Visible">
+<arg>${confirmation_message_element}</arg>
+<arg>${confirmation_message_adult}</arg>
+<arg>${standard_timeout}</arg>
+<status status="NOT RUN" start="2025-02-20T00:26:11.375629" elapsed="0.000948"/>
+</kw>
+<kw name="Navigate To Buy Tickets Page" owner="keywords_ticket">
+<status status="NOT RUN" start="2025-02-20T00:26:11.378216" elapsed="0.000101"/>
+</kw>
+<kw name="Select VIP Ticket" owner="keywords_ticket">
+<arg>2</arg>
+<arg>${Child}</arg>
+<status status="NOT RUN" start="2025-02-20T00:26:11.378414" elapsed="0.000060"/>
+</kw>
+<kw name="Proceed To Checkout And Confirm" owner="keywords_ticket">
+<status status="NOT RUN" start="2025-02-20T00:26:11.378595" elapsed="0.000055"/>
+</kw>
+<kw name="Message Should Be Visible">
+<arg>${confirmation_message_element}</arg>
+<arg>${confirmation_message_child}</arg>
+<arg>${standard_timeout}</arg>
+<status status="NOT RUN" start="2025-02-20T00:26:11.378755" elapsed="0.000865"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-02-14T10:26:01.337313" elapsed="2.573784"/>
+<status status="PASS" start="2025-02-20T00:26:11.380569" elapsed="0.082174"/>
 </kw>
-<status status="PASS" start="2025-02-14T10:25:56.776373" elapsed="7.135583"/>
+<doc>Scenario: Successful Purchase for Adults and Children Separately.</doc>
+<status status="FAIL" start="2025-02-20T00:25:55.532368" elapsed="15.930524">UnexpectedAlertPresentException: Alert Text: You must be logged in to purchase tickets.
+Message: unexpected alert open: {Alert text : You must be logged in to purchase tickets.}
+  (Session info: chrome=133.0.6943.99)
+Stacktrace:
+0   chromedriver                        0x000000010278ab58 cxxbridge1$str$ptr + 2724820
+1   chromedriver                        0x00000001027831b8 cxxbridge1$str$ptr + 2693684
+2   chromedriver                        0x00000001022e9afc cxxbridge1$string$len + 93348
+3   chromedriver                        0x0000000102372408 cxxbridge1$string$len + 652720
+4   chromedriver                        0x0000000102324ba0 cxxbridge1$string$len + 335176
+5   chromedriver                        0x0000000102753610 cxxbridge1$str$ptr + 2498188
+6   chromedriver                        0x0000000102756924 cxxbridge1$str$ptr + 2511264
+7   chromedriver                        0x0000000102738cb0 cxxbridge1$str$ptr + 2389292
+8   chromedriver                        0x00000001027571cc cxxbridge1$str$ptr + 2513480
+9   chromedriver                        0x0000000102729c98 cxxbridge1$str$ptr + 2327828
+10  chromedriver                        0x0000000102773880 cxxbridge1$str$ptr + 2629884
+11  chromedriver                        0x0000000102773a08 cxxbridge1$str$ptr + 2630276
+12  chromedriver                        0x0000000102782e2c cxxbridge1$str$ptr + 2692776
+13  libsystem_pthread.dylib             0x0000000185202f94 _pthread_start + 136
+14  libsystem_pthread.dylib             0x00000001851fdd34 thread_start + 8
+</status>
 </test>
-<doc>Testing the login page in order to make sure that the customer can log in with credentials</doc>
-<status status="PASS" start="2025-02-14T10:25:56.339179" elapsed="7.576863"/>
+<doc>Testing successful VIP ticket purchase for adults and children.</doc>
+<meta name="Author">Tuba</meta>
+<status status="FAIL" start="2025-02-20T00:25:55.452880" elapsed="16.010615"/>
 </suite>
-<status status="PASS" start="2025-02-14T10:25:56.289802" elapsed="7.630367"/>
+<status status="FAIL" start="2025-02-20T00:25:55.443174" elapsed="16.021018"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="DinoPark" id="s1" pass="1" fail="0" skip="0">DinoPark</stat>
-<stat name="Login Page" id="s1-s1" pass="1" fail="0" skip="0">DinoPark.Login Page</stat>
+<stat name="DinoPark" id="s1" pass="0" fail="1" skip="0">DinoPark</stat>
+<stat name="Buy Vip Ticket" id="s1-s1" pass="0" fail="1" skip="0">DinoPark.Buy Vip Ticket</stat>
 </suite>
 </statistics>
 <errors>

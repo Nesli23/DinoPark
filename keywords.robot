@@ -1,5 +1,5 @@
 *** Settings ***
-Metadata    Author    Nesli
+
 Library    SeleniumLibrary
 
 
