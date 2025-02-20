@@ -41,8 +41,8 @@ Valid Login
     Type In Password    ${password_input_id_test}    ${valid_password}
     Click Button    ${submit_button_test}    #xpath=//*[@id="login-form"]/button    # Submit knappen efter att användaruppgifter har fyllts i 
     Message Should Be Visible    ${verify_message_element_test}    ${verify_message_test}    ${standard_timeout}
-    
-    
+
+
     
 
     
