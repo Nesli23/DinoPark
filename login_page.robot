@@ -5,6 +5,7 @@ Library    SeleniumLibrary
 Resource    keywords.robot
 Variables    variables.py
 Test Setup    Open Browser To Page    ${url_test}    ${browser_test}    ${title_test}
+
 Test Teardown    Close Browser
 
 *** Test Cases ***
@@ -17,6 +18,7 @@ Invalid Login
     ...                Acceptance Criteria:
     ...                - I should not be logged in when I enter invalid credentials.
     ...                - Error message informing about invalid credentials should appear. 
+    
     Click Login Button    ${login_button_test}    
     Type In Username    ${username_input_id_test}    ${invalid_username}   
     Type In Password    ${password_input_id_test}    ${invalid_password}
