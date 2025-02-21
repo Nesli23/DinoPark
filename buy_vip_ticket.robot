@@ -2,7 +2,7 @@
 Metadata    Author    Tuba
 Documentation    Testing successful VIP ticket purchase for adults and children.
 Library    SeleniumLibrary
-Resource    keywords_ticket.robot
+Resource    keywords_ticket_tuba.robot
 Variables    variables_tuba.py
 Test Setup    Open Browser To Ticket Page    ${url_test}    ${browser_test}    ${title_test}
 Test Teardown    Close Browser
