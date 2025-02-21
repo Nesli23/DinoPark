@@ -47,6 +47,20 @@ Message Should Be Visible
     Wait Until Element Contains   ${error_message_element}    ${error_message_text}    ${timeout}
     Element Text Should Be    ${error_message_element}    ${error_message_text}
 
+Click Buy Tickets Button
+    [Arguments]    ${buy_tickets_button}
+    Click Element    ${buy_tickets_button}
+
+Select Ticket Type
+    [Arguments]    ${ticket_type}    ${ticket_type_dropdown}
+    Select From List By Value    ${ticket_type_dropdown}    ${ticket_type}   
+
+Select Ticket Category
+    [Arguments]
+    Select From List By Value
+
+    
+
 #Login  #Lösningn för automatiserad inloggning 
  #   [Arguments]    ${username}    ${password}
   #  Open Browser To Page    ${url_test}    ${browser_test}    ${title_test}  # Öppna webbläsaren och sidan
@@ -57,23 +71,23 @@ Message Should Be Visible
     #Element Text Should Be    ${verify_message_element_test}    ${verify_message_test}
     #Log    "Successfully logged in."
 
-Safari Ticket Button
-    [Arguments]    ${safari_ticket_button_test}
-    Click Element    ${safari_ticket_button_test}    
+# Safari Ticket Button
+  #  [Arguments]    ${safari_ticket_button_test}
+   # Click Element    ${safari_ticket_button_test}    
 
- Select Safari Tour Date
-    [Arguments]    ${date_element}    ${date}
-    Wait Until Element Is Visible    ${date_element}    timeout=10s
-    Input Text    ${date_element}    ${date}
+ #Select Safari Tour Date
+  #  [Arguments]    ${date_element}    ${date}
+   # Wait Until Element Is Visible    ${date_element}    timeout=10s
+    #Input Text    ${date_element}    ${date}
 
-Select Safari Tour Type
-    [Arguments]    ${type_element}    ${type}
-    Wait Until Element Is Visible    ${type_element}    timeout=10s
-    Select From List By Value    ${type_element}    ${type}    
+#Select Safari Tour Type
+    # [Arguments]    ${type_element}    ${type}
+    #Wait Until Element Is Visible    ${type_element}    timeout=10s
+   # Select From List By Value    ${type_element}    ${type}    
 
-Add To Cart Button
-    [Arguments]    ${add_to_cart_button_test}
-    Click Element    ${add_to_cart_button_test}    
+#Add To Cart Button
+ #   [Arguments]    ${add_to_cart_button_test}
+  #  Click Element    ${add_to_cart_button_test}    
 
 #Wait Until Element Is Not Clickable
  #   [Arguments]    ${login_button_test}
