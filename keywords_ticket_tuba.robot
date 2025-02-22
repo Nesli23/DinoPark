@@ -7,6 +7,11 @@ Open Browser To Ticket Page
     Open Browser    ${url}    ${browser}
     Maximize Browser Window
     Wait Until Page Contains    ${title}    ${standard_timeout}
+Open Browser To Registration Page
+    [Arguments]    ${url}    ${browser}    ${title}
+    Open Browser    ${url}    ${browser}
+    Maximize Browser Window
+    Wait Until Page Contains    ${title}    ${standard_timeout}
 Given Kim is on the registration page
     Click Element   ${register_button}
 When Kim registers with valid credentials
@@ -20,7 +25,13 @@ And Kim logs in with the registered credentials
     Input Text    ${username_input_id_test}    ${valid_username_ticket}
     Wait Until Element Is Visible   ${password_input_id_test}   10s
     Input Text    ${password_input_id_test}    ${valid_password_ticket}
- 
+Then Kim should be successfully logged in
+    Wait Until Element Is Visible   ${submit__button_test}  10s
+    Click Element    ${submit__button_test}
+    Wait Until Element Is Visible   ${verify_message_element_test}  10s
+    Element should Contain     ${verify_message_element_test}   ${verify_message_test} 
+    Sleep   4s
+   
 And Kim is logged in
     Wait Until Element Is Visible   ${submit__button_test}  10s
     Click Element    ${submit__button_test}
