@@ -63,14 +63,15 @@ Then The safari booking should be confirmed
     ${alert_text}  Handle Alert
     Should Be Equal  ${alert_text}  ${safari_booking_confirm_text}
 
-  # Stina-Palles Part
+
+# Stina-Palles Part
 Given Stina-Pelle is on the registration page and registrate with valid credentials
     Click Element   ${register_button}
     Input Text  ${username_input_registration}  ${valid_username_stina}
     Input Text  ${password_input_registration}  ${valid_password_stina}
     Click Element   ${register_submit_button}
     
-When Stina-Palle is logged into the website
+And Stina-Palle is logged into the website
     Wait Until Element Is Visible    ${login_button_test}    10s
     Click Element    ${login_button_test}
     Wait Until Element Is Visible    ${username_input_id_test}    10s
@@ -81,11 +82,11 @@ When Stina-Palle is logged into the website
     Click Element    ${submit__button_test}
     Sleep   5s
 
-When Stina-Palle navigates to "Buy Tickets"
+And Stina-Palle navigates to "Buy Tickets"
     Wait Until Element Is Visible    ${tickets_nav}    10s
     Click Element    ${tickets_nav}
 
-And selects "Regular Ticket" for 1 Adult
+When selects "Regular Ticket" for 1 Adult
     Wait Until Element Is Visible    ${ticket_type}    10s
     Select From List By Value    ${ticket_type}    Adult
     Select From List By Value    ${ticket_category}    Regular
@@ -97,3 +98,4 @@ And adds the ticket to the cart and proceeds to checkout
 Then Stina-Palle should receive a confirmation message
     ${alert_text}  Handle Alert
     Should Be Equal  ${alert_text}  ${safari_booking_confirm_text}
+
