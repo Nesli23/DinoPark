@@ -32,6 +32,37 @@ verify_message_test = "Verifying credentials..."
 error_message_element_test = "xpath=//*[@id='login-message']"
 error_message_test = "Invalid username or password."
 
+
+register_button= "xpath=//*[@id='register-nav']"
+
+username_input_registration="xpath=//*[@id='reg-username']"
+password_input_registration="xpath=//*[@id='reg-password']"
+
+register_submit_button="xpath=//*[@id='register-form']/button"
+
+# Buy ticket
+buy_tickets_button = "xpath=//*[@id='tickets-nav']/a"
+ticket_type_dropdown ="id=ticket-type"
+adult_ticket_value = "Adult"
+ticket_category_dropdown = "id=ticket-category"
+regular_ticket_value = "Regular"
+ticket_quantity_input = "id=ticket-quantity"
+ticket_quantity_value = "1"
+add_to_ticket_cart_button = "xpath=//*[@id='ticket-form']/button"
+
+# Book Safari tour
+book_safari_button = "xpath=//*[@id='safari-nav']/a"
+safari_date_input = "id=safari-date"
+select_safari_type = "id=safari-type"
+select_safari_value_herbivore = "Herbivore Tour"
+add_to_cart_button = "xpath=//*[@id='safari-form']/button"
+select_safari_value_trex = "T-Rex Rumble"
+date = "002025-02-27"   
+
+
+
+
+
 #success_message_element_test =
 #success_message_test = 
 
