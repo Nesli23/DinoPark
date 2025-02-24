@@ -10,8 +10,8 @@ Scenario: Stina-Palle Purchases a Regular Adult Ticket
     [Documentation]    Testing Stina-Palle's successful purchase of a Regular Ticket for an adult.
     
     Given Stina-Pelle is on the registration page and registrate with valid credentials
-    When Stina-Palle is logged into the website
-    When Stina-Palle navigates to "Buy Tickets"
-    And selects "Regular Ticket" for 1 Adult
+    And Stina-Palle is logged into the website
+    And Stina-Palle navigates to "Buy Tickets"
+    When selects "Regular Ticket" for 1 Adult
     And adds the ticket to the cart and proceeds to checkout
     Then Stina-Palle should receive a confirmation message
