@@ -9,8 +9,5 @@ Test Teardown    Close Browser
 
 *** Test Cases ***
 Scenario: Kim registers and logs in successfully
-    Given Kim is on the registration page
-    When Kim registers with valid credentials
-    Then Kim should be redirected to the login page
-    And Kim logs in with the registered credentials
-    Then Kim should be successfully logged in
+    Given Kim is registered as user
+    When Kim is logged in

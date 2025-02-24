@@ -12,36 +12,27 @@ Open Browser To Registration Page
     Open Browser    ${url}    ${browser}
     Maximize Browser Window
     Wait Until Page Contains    ${title}    ${standard_timeout}
-Given Kim is on the registration page
+Given Kim is registered as user
     Click Element   ${register_button}
-When Kim registers with valid credentials
+
     Input Text  ${username_input_registration}  ${valid_username_ticket}
     Input Text  ${password_input_registration}  ${valid_password_ticket}
     Click Element   ${register_submit_button}
-Then Kim should be redirected to the login page
+When Kim is logged in
     Click Element    ${login_button_test}
     Wait Until Element Is Visible    ${username_input_id_test}   10s
-And Kim logs in with the registered credentials
     Input Text    ${username_input_id_test}    ${valid_username_ticket}
     Wait Until Element Is Visible   ${password_input_id_test}   10s
     Input Text    ${password_input_id_test}    ${valid_password_ticket}
-Then Kim should be successfully logged in
     Wait Until Element Is Visible   ${submit__button_test}  10s
     Click Element    ${submit__button_test}
     Wait Until Element Is Visible   ${verify_message_element_test}  10s
     Element should Contain     ${verify_message_element_test}   ${verify_message_test} 
     Sleep   4s
-   
-And Kim is logged in
-    Wait Until Element Is Visible   ${submit__button_test}  10s
-    Click Element    ${submit__button_test}
-    Wait Until Element Is Visible   ${verify_message_element_test}  10s
-    Element should Contain     ${verify_message_element_test}   ${verify_message_test} 
-    Sleep   4s
-And Kim is on the ticket purchase page
+Then Kim is on the ticket purchase page
     Wait Until Element Is Visible    ${tickets_nav}    10s
     Click Element    ${tickets_nav}
-When Kim selects 2 VIP tickets for adults
+And Kim selects 2 VIP tickets for adults
     [Arguments]    ${quantity}    ${type}
     Wait Until Element Is Visible    ${ticket_type}    10s
     Select From List By Value    ${ticket_type}    ${type}
@@ -69,5 +60,40 @@ And Proceeds to checkout and confirm
     Wait Until Element Is Visible    ${safari_proceed_checkout_button}    10s
     Click Element   ${safari_proceed_checkout_button}
 Then The safari booking should be confirmed
+    ${alert_text}  Handle Alert
+    Should Be Equal  ${alert_text}  ${safari_booking_confirm_text}
+
+  # Stina-Palles Part
+Given Stina-Pelle is on the registration page and registrate with valid credentials
+    Click Element   ${register_button}
+    Input Text  ${username_input_registration}  ${valid_username_stina}
+    Input Text  ${password_input_registration}  ${valid_password_stina}
+    Click Element   ${register_submit_button}
+    
+When Stina-Palle is logged into the website
+    Wait Until Element Is Visible    ${login_button_test}    10s
+    Click Element    ${login_button_test}
+    Wait Until Element Is Visible    ${username_input_id_test}    10s
+    Input Text  ${username_input_id_test}   ${valid_username_stina}
+    Wait Until Element Is Visible   ${password_input_id_test}   10s
+    Input Text    ${password_input_id_test}     ${valid_password_stina}
+    Wait Until Element Is Visible   ${submit__button_test}  10s
+    Click Element    ${submit__button_test}
+    Sleep   5s
+
+When Stina-Palle navigates to "Buy Tickets"
+    Wait Until Element Is Visible    ${tickets_nav}    10s
+    Click Element    ${tickets_nav}
+
+And selects "Regular Ticket" for 1 Adult
+    Wait Until Element Is Visible    ${ticket_type}    10s
+    Select From List By Value    ${ticket_type}    Adult
+    Select From List By Value    ${ticket_category}    Regular
+    Input Text    ${ticket_quantity}    1
+
+And adds the ticket to the cart and proceeds to checkout
+    Click Button    ${add_to_cart_button}
+
+Then Stina-Palle should receive a confirmation message
     ${alert_text}  Handle Alert
     Should Be Equal  ${alert_text}  ${safari_booking_confirm_text}

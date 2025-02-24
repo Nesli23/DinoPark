@@ -9,13 +9,10 @@ Test Teardown    Close Browser
 *** Test Cases ***
 Scenario: Kim books a weekend safari tour for whole family
 
-    Given Kim is on the registration page
-    When Kim registers with valid credentials
-    Then Kim should be redirected to the login page
-    And Kim logs in with the registered credentials
-    And Kim is logged in
-    And Kim is on the ticket purchase page
-    When Kim selects 2 VIP tickets for adults   2    ${Adult}
+    Given Kim is registered as user
+    When Kim is logged in
+    Then Kim is on the ticket purchase page
+    And Kim selects 2 VIP tickets for adults   2    ${Adult}
     And proceeds to checkout and confirms the purchase
     Then Kim should receive a confirmation message
     When The user selects a weekend safari tour

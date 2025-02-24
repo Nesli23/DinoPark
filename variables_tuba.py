@@ -46,19 +46,24 @@ register_submit_button="xpath=//*[@id='register-form']/button"
 valid_username_ticket = "Kim"
 valid_password_ticket = "123456789"
 
+# Stina-Palles Part**
+valid_username_stina = "Stina-Palle"
+valid_password_stina = "stinaSecurePass"
+
 # Ticket Purchase Locators
 tickets_nav = "xpath=//*[@id='tickets-nav']/a"
 ticket_type = "id=ticket-type"
 ticket_category = "id=ticket-category"
 ticket_quantity = "id=ticket-quantity"
 proceed_button = "xpath=//*[@id='ticket-form']/button"
-add_to_cart = "xpath=//*[@id='ticket-form']/button"  
+add_to_cart_button = "xpath=//*[@id='ticket-form']/button"  
 
 # Payment Confirmation Locators
 confirm_button = "id=confirm-ticket"
 confirmation_message_element = "xpath=//p[contains(text(),'Your purchase is confirmed')]"
 
 alert_text_Confirmation_VIP = "Item added to cart!"
+alert_text_Confirmation_Regular = "Regular Ticket purchase confirmed!"
 
 
 # Browser and Page Configuration
