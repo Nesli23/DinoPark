@@ -52,12 +52,46 @@ Click Buy Tickets Button
     Click Element    ${buy_tickets_button}
 
 Select Ticket Type
-    [Arguments]    ${ticket_type}    ${ticket_type_dropdown}
+    [Arguments]    ${ticket_type_dropdown}    ${ticket_type}    
+    Wait Until Element Is Visible    ${ticket_type_dropdown}    timeout=10s
     Select From List By Value    ${ticket_type_dropdown}    ${ticket_type}   
 
 Select Ticket Category
-    [Arguments]
-    Select From List By Value
+    [Arguments]    ${ticket_category_dropdown}    ${regular_ticket_value}    
+    Select From List By Value    ${ticket_category_dropdown}    ${regular_ticket_value}    
+
+Select Quantity Of Tickets
+    [Arguments]     ${ticket_quantity_input}    ${ticket_quantity_value}    
+    Input Text    ${ticket_quantity_input}    ${ticket_quantity_value}   
+
+Add Ticket To Cart Button
+    [Arguments]    ${add_to_ticket_cart_button}
+    Click Element    ${add_to_ticket_cart_button}
+
+Click Book Safari Ticket Button 
+    [Arguments]    ${book_safari_button}
+    Click Element    ${book_safari_button} 
+
+Select Safari Tour Date
+    [Arguments]    ${safari_date_input}    ${date}    
+    Input Text    ${safari_date_input}    ${date}
+
+Select Safari Tour Type
+    [Arguments]    ${select_safari_type}    ${safari_value}
+    Select From List By Value    ${select_safari_type}    ${safari_value}  
+
+Add To Cart Button
+    [Arguments]    ${add_to_cart_button}  
+    Click Element    ${add_to_cart_button}
+
+
+
+
+
+
+# Safari Ticket Button
+  #  [Arguments]    ${safari_ticket_button_test}
+   # Click Element    ${safari_ticket_button_test}    
 
     
 
@@ -71,9 +105,6 @@ Select Ticket Category
     #Element Text Should Be    ${verify_message_element_test}    ${verify_message_test}
     #Log    "Successfully logged in."
 
-# Safari Ticket Button
-  #  [Arguments]    ${safari_ticket_button_test}
-   # Click Element    ${safari_ticket_button_test}    
 
  #Select Safari Tour Date
   #  [Arguments]    ${date_element}    ${date}
