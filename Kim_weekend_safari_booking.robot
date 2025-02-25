@@ -1,5 +1,5 @@
 *** Settings ***
-Metadata    Author    Tuba
+Metadata    Author    Tuba      Grupp9(Nesli, Tuba, Quratulain)
 Documentation    Testing ticket purchase restriction for users who are not logged in.
 Library    SeleniumLibrary
 Resource    keywords_ticket_tuba.robot
@@ -8,7 +8,8 @@ Test Setup    Open Browser To Ticket Page    ${url_test}    ${browser_test}    $
 Test Teardown    Close Browser
 *** Test Cases ***
 Scenario: Kim books a weekend safari tour for whole family
-
+    [Documentation] 
+    [Tags]      Tuba
     Given Kim is registered as user
     When Kim is logged in
     Then Kim is on the ticket purchase page

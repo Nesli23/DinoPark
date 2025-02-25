@@ -1,5 +1,5 @@
 *** Settings ***
-Metadata    Author    Tuba
+Metadata    Author    Tuba      Grupp9(Nesli, Tuba, Quratulain)
 Documentation    Testing successful VIP ticket purchase for adults and children.
 Library    SeleniumLibrary
 Resource    keywords_ticket_tuba.robot
@@ -10,7 +10,7 @@ Test Teardown    Close Browser
 *** Test Cases ***
 Scenario: Successful VIP Ticket Purchase
    [Documentation]    Scenario: Successful Purchase for Adults and Children Separately.
-
+   [Tags]      Tuba
     Given Kim is registered as user
     When Kim is logged in
     Then Kim is on the ticket purchase page

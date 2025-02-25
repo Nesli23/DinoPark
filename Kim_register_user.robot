@@ -1,5 +1,5 @@
 *** Settings ***
-Metadata    Author    Tuba
+Metadata    Author    Tuba      Grupp9(Nesli, Tuba, Quratulain)
 Documentation    Testing user registration and login functionality.
 Library    SeleniumLibrary
 Resource    keywords_ticket_tuba.robot
@@ -9,5 +9,7 @@ Test Teardown    Close Browser
 
 *** Test Cases ***
 Scenario: Kim registers and logs in successfully
+    [Documentation]
+    [Tags]      Tuba
     Given Kim is registered as user
     When Kim is logged in
