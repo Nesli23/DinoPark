@@ -1,8 +1,8 @@
 *** Settings ***
 Documentation    Grupp 9(Nesli,Tuba, Quratulain)
 Library    SeleniumLibrary
-Resource    keywords.robot
 Variables    variables.py
+Resource    keywords.robot
 Test Setup    Open Browser To Page    ${url_test}    ${browser_test}    ${title_test}
 
 Test Teardown    Close Browser
@@ -11,8 +11,6 @@ Test Teardown    Close Browser
 Invalid Login
     [Tags]    Nesli
     [Documentation]    Scenario: Invalid login, we should receive an error message when we are trying to log in with invalid credentials.
-    
-Acceptance Criteria:
 
     GIVEN that I'm on the login page
     WHEN I enter invalid username 
@@ -39,6 +37,7 @@ Valid Login
     #...                Acceptance Criteria:
     #...                - I should be logged in successfully when I enter valid credentials.
     #...                - Error message should not appear.
+    #                    - I should be redirected to the homepage
 
     
     
