@@ -1,8 +1,10 @@
 *** Settings ***
 Library    SeleniumLibrary
+Variables    variables.py
 
 
 *** Keywords ***
+
 
 Open Browser To Page
     [Arguments]    ${url}    ${browser}    ${title}
