@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2 (Python 3.13.1 on win32)" generated="2025-02-11T10:50:36.074001" rpa="false" schemaversion="5">
+<suite id="s1" name="DinoPark" source="C:\Users\nesli\Documents\GitHub\ContinuousTesting\DinoPark">
+<suite id="s1-s1" name="Booking" source="C:\Users\nesli\Documents\GitHub\ContinuousTesting\DinoPark\Booking">
+<suite id="s1-s1-s1" name="Booking Tickets" source="C:\Users\nesli\Documents\GitHub\ContinuousTesting\DinoPark\Booking\booking_tickets.robot">
+<test id="s1-s1-s1-t1" name="Booking tickets" line="8">
+<kw name="Open Browser To Login Page">
+<msg time="2025-02-11T10:50:37.181066" level="FAIL">No keyword with name 'Open Browser To Login Page' found. Did you try using keyword 'SeleniumLibrary.Open Browser' and forgot to use enough whitespace between keyword and arguments?</msg>
+<status status="FAIL" start="2025-02-11T10:50:37.177077" elapsed="0.004740">No keyword with name 'Open Browser To Login Page' found. Did you try using keyword 'SeleniumLibrary.Open Browser' and forgot to use enough whitespace between keyword and arguments?</status>
+</kw>
+<kw name="Type In Username">
+<status status="NOT RUN" start="2025-02-11T10:50:37.185608" elapsed="0.001754"/>
+</kw>
+<kw name="Type In Password">
+<status status="NOT RUN" start="2025-02-11T10:50:37.190105" elapsed="0.004094"/>
+</kw>
+<kw name="Click On Buy Tickets Now Button">
+<status status="NOT RUN" start="2025-02-11T10:50:37.197514" elapsed="0.002163"/>
+</kw>
+<kw name="Choose Ticket Type">
+<status status="NOT RUN" start="2025-02-11T10:50:37.202112" elapsed="0.001547"/>
+</kw>
+<kw name="Choose Ticket Category">
+<status status="NOT RUN" start="2025-02-11T10:50:37.205718" elapsed="0.004250"/>
+</kw>
+<kw name="Choose Quantity">
+<status status="NOT RUN" start="2025-02-11T10:50:37.213404" elapsed="0.002164"/>
+</kw>
+<kw name="Click On Add To Cart Button">
+<status status="NOT RUN" start="2025-02-11T10:50:37.218818" elapsed="0.007300"/>
+</kw>
+<kw name="Message That The Tickets Are Added To The Cart">
+<status status="NOT RUN" start="2025-02-11T10:50:37.229326" elapsed="0.002495"/>
+</kw>
+<status status="FAIL" start="2025-02-11T10:50:37.171074" elapsed="0.063504">No keyword with name 'Open Browser To Login Page' found. Did you try using keyword 'SeleniumLibrary.Open Browser' and forgot to use enough whitespace between keyword and arguments?</status>
+</test>
+<doc>Testing to book tickets on the webpage</doc>
+<status status="FAIL" start="2025-02-11T10:50:36.158890" elapsed="1.077961"/>
+</suite>
+<status status="FAIL" start="2025-02-11T10:50:36.154733" elapsed="1.087040"/>
+</suite>
+<status status="FAIL" start="2025-02-11T10:50:36.106553" elapsed="1.138190"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="DinoPark" id="s1" pass="0" fail="1" skip="0">DinoPark</stat>
+<stat name="Booking" id="s1-s1" pass="0" fail="1" skip="0">DinoPark.Booking</stat>
+<stat name="Booking Tickets" id="s1-s1-s1" pass="0" fail="1" skip="0">DinoPark.Booking.Booking Tickets</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-02-11T10:50:37.166274" level="WARN">Imported resource file 'C:\Users\nesli\Documents\GitHub\ContinuousTesting\DinoPark\Booking\keyword.robot' is empty.</msg>
+</errors>
+</robot>
