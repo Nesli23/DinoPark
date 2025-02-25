@@ -1,4 +1,5 @@
 *** Settings ***
+Metadata    Author    Tuba      Grupp9(Nesli, Tuba, Quratulain)
 Library    SeleniumLibrary
 Resource   keywords_ticket_tuba.robot
 Variables  variables_tuba.py
@@ -8,7 +9,7 @@ Test Teardown    Close Browser
 *** Test Cases ***
 Scenario: Stina-Palle Purchases a Regular Adult Ticket
     [Documentation]    Testing Stina-Palle's successful purchase of a Regular Ticket for an adult.
-    
+    [Tags]      Tuba
     Given Stina-Pelle is on the registration page and registrate with valid credentials
     And Stina-Palle is logged into the website
     And Stina-Palle navigates to "Buy Tickets"
