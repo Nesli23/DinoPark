@@ -23,7 +23,11 @@ title_test = "Jura-Stina-Kalle Park"
 username_input_id_test = "id=login-username"
 password_input_id_test = "id=login-password"
 login_button_test = "xpath=//*[@id='login-nav']/a"
-submit_button_test = "xpath=//*[@id='login-form']/button"
+submit_button_test = "xpath=//*[@id='login-form']/button" #logga in sidan
+
+#//*[@id="register-form"]/button = registerar sidan 
+
+#//*[@id="login-form"]/button
 
 #Messages
 verify_message_element_test = "xpath=//*[@id='login-message']"
@@ -33,7 +37,7 @@ error_message_element_test = "xpath=//*[@id='login-message']"
 error_message_test = "Invalid username or password."
 
 
-register_button= "xpath=//*[@id='register-nav']"
+register_button = "xpath=//*[@id='register-nav']"
 
 username_input_registration="xpath=//*[@id='reg-username']"
 password_input_registration="xpath=//*[@id='reg-password']"
@@ -59,8 +63,10 @@ add_to_cart_button = "xpath=//*[@id='safari-form']/button"
 select_safari_value_trex = "T-Rex Rumble"
 date = "002025-02-27"   
 
+successfull_register_message = "id=register-message"
+#"xpath=//*[@id='login-message']"
 
-
+successfull_register_text = "Registration successful! Redirecting to login..."
 
 
 #success_message_element_test =
