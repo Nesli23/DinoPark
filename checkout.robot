@@ -1,7 +1,26 @@
-[Documentation]
-    ...    Scenario: Display the selected booked tickets and the total price amount before checkout.
+*** Settings ***
+Library        SeleniumLibrary
+Library        String
+Library        Collections
+Documentation    Testing Jurasstina-Kalle Park page 
+Resource       keywords_Quratulain.robot 
+Variables      variables_q.py
+Test Setup      Prepare Browser     ${URL}   ${Browser}  ${title}  ${username}  ${password} 
 
-    ...    Gherkin syntax :
+
+*** Variables ***
+${URL}    file://${EXECDIR}/website/jurap.html
+
+*** Test Cases ***
+
+
+
+
+Proceed To Checkout
+    [Documentation]
+...       Scenario: Display the selected booked tickets and the total price amount before checkout.
+
+...      Gherkin syntax :
     ...                  Given that the user booked his tickets and safari tour online according to his requirements.
     ...                  When the user booked all tickets and proceeded to pay,
     ...                  Then the information about all his bookings  and total amount of price should be displayed before checkout.
