@@ -1,59 +1,124 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2 (Python 3.13.1 on win32)" generated="2025-02-11T10:50:36.074001" rpa="false" schemaversion="5">
+<robot generator="Robot 7.2 (Python 3.13.1 on win32)" generated="2025-02-25T14:32:47.600781" rpa="false" schemaversion="5">
 <suite id="s1" name="DinoPark" source="C:\Users\nesli\Documents\GitHub\ContinuousTesting\DinoPark">
-<suite id="s1-s1" name="Booking" source="C:\Users\nesli\Documents\GitHub\ContinuousTesting\DinoPark\Booking">
-<suite id="s1-s1-s1" name="Booking Tickets" source="C:\Users\nesli\Documents\GitHub\ContinuousTesting\DinoPark\Booking\booking_tickets.robot">
-<test id="s1-s1-s1-t1" name="Booking tickets" line="8">
-<kw name="Open Browser To Login Page">
-<msg time="2025-02-11T10:50:37.181066" level="FAIL">No keyword with name 'Open Browser To Login Page' found. Did you try using keyword 'SeleniumLibrary.Open Browser' and forgot to use enough whitespace between keyword and arguments?</msg>
-<status status="FAIL" start="2025-02-11T10:50:37.177077" elapsed="0.004740">No keyword with name 'Open Browser To Login Page' found. Did you try using keyword 'SeleniumLibrary.Open Browser' and forgot to use enough whitespace between keyword and arguments?</status>
+<suite id="s1-s1" name="Login Page" source="C:\Users\nesli\Documents\GitHub\ContinuousTesting\DinoPark\login_page.robot">
+<test id="s1-s1-t1" name="Acceptance Criteria:" line="15">
+<kw name="Open Browser To Page" owner="keywords" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-02-25T14:32:48.103232" level="INFO">Opening browser 'chrome' to base url 'file:///C:/Users/nesli/Documents/GitHub/ContinuousTesting/DinoPark/webpages/jurap.html'.</msg>
+<msg time="2025-02-25T14:32:48.590224" level="WARN">The chromedriver version (132.0.6834.110) detected in PATH at C:\Users\nesli\WebDriver\chromedriver-win64\chromedriver.exe might not be compatible with the detected chrome version (133.0.6943.127); currently, chromedriver 133.0.6943.126 is recommended for chrome 133.*, so it is advised to delete the driver in PATH and retry</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-02-25T14:32:48.102709" elapsed="2.304021"/>
 </kw>
-<kw name="Type In Username">
-<status status="NOT RUN" start="2025-02-11T10:50:37.185608" elapsed="0.001754"/>
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2025-02-25T14:32:50.438684" level="INFO">Page title is 'Jura-Stina-Kalle Park'.</msg>
+<arg>${title}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2025-02-25T14:32:50.411084" elapsed="0.029682"/>
 </kw>
-<kw name="Type In Password">
-<status status="NOT RUN" start="2025-02-11T10:50:37.190105" elapsed="0.004094"/>
+<arg>${url_test}</arg>
+<arg>${browser_test}</arg>
+<arg>${title_test}</arg>
+<status status="PASS" start="2025-02-25T14:32:48.101590" elapsed="2.340842"/>
 </kw>
-<kw name="Click On Buy Tickets Now Button">
-<status status="NOT RUN" start="2025-02-11T10:50:37.197514" elapsed="0.002163"/>
+<kw name="GIVEN that I'm on the login page" owner="keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-25T14:32:50.452106" level="INFO">Clicking element 'xpath=//*[@id='login-nav']/a'.</msg>
+<arg>${login_button_test}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-25T14:32:50.450276" elapsed="0.338581"/>
 </kw>
-<kw name="Choose Ticket Type">
-<status status="NOT RUN" start="2025-02-11T10:50:37.202112" elapsed="0.001547"/>
+<status status="PASS" start="2025-02-25T14:32:50.449214" elapsed="0.340125"/>
 </kw>
-<kw name="Choose Ticket Category">
-<status status="NOT RUN" start="2025-02-11T10:50:37.205718" elapsed="0.004250"/>
+<kw name="WHEN I enter invalid username" owner="keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${username_input_id_test}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-02-25T14:32:50.792584" elapsed="0.040628"/>
 </kw>
-<kw name="Choose Quantity">
-<status status="NOT RUN" start="2025-02-11T10:50:37.213404" elapsed="0.002164"/>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-25T14:32:50.834328" level="INFO">Typing text 'incorrectusername' into text field 'id=login-username'.</msg>
+<arg>${username_input_id_test}</arg>
+<arg>${invalid_username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-25T14:32:50.833669" elapsed="0.201992"/>
 </kw>
-<kw name="Click On Add To Cart Button">
-<status status="NOT RUN" start="2025-02-11T10:50:37.218818" elapsed="0.007300"/>
+<status status="PASS" start="2025-02-25T14:32:50.790332" elapsed="0.245605"/>
 </kw>
-<kw name="Message That The Tickets Are Added To The Cart">
-<status status="NOT RUN" start="2025-02-11T10:50:37.229326" elapsed="0.002495"/>
+<kw name="AND invalid password" owner="keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${password_input_id_test}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-02-25T14:32:51.036980" elapsed="0.030953"/>
 </kw>
-<status status="FAIL" start="2025-02-11T10:50:37.171074" elapsed="0.063504">No keyword with name 'Open Browser To Login Page' found. Did you try using keyword 'SeleniumLibrary.Open Browser' and forgot to use enough whitespace between keyword and arguments?</status>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-25T14:32:51.068687" level="INFO">Typing text 'invalidpassword' into text field 'id=login-password'.</msg>
+<arg>${password_input_id_test}</arg>
+<arg>${invalid_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-25T14:32:51.068200" elapsed="0.137592"/>
+</kw>
+<status status="PASS" start="2025-02-25T14:32:51.036405" elapsed="0.169716"/>
+</kw>
+<kw name="THEN press the submit button" owner="keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${submit_button_test}</arg>
+<arg>timeout=4s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-02-25T14:32:51.208449" elapsed="0.028340"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-25T14:32:51.237689" level="INFO">Clicking element 'xpath=//*[@id='login-form']/button'.</msg>
+<arg>${submit_button_test}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-25T14:32:51.237115" elapsed="0.100608"/>
+</kw>
+<status status="PASS" start="2025-02-25T14:32:51.207046" elapsed="0.130964"/>
+</kw>
+<kw name="THEN Message Should Be Visible" owner="keywords">
+<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
+<arg>${error_message_element_test}</arg>
+<arg>${error_message_test}</arg>
+<arg>${standard_timeout}</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" start="2025-02-25T14:32:51.339256" elapsed="2.031296"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-02-25T14:32:53.371703" level="INFO">Verifying element 'xpath=//*[@id='login-message']' contains exact text 'Invalid username or password.'.</msg>
+<arg>${error_message_element_test}</arg>
+<arg>${error_message_test}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-02-25T14:32:53.371019" elapsed="0.017402"/>
+</kw>
+<status status="PASS" start="2025-02-25T14:32:51.338614" elapsed="2.050077"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-02-25T14:32:53.389289" elapsed="2.733557"/>
+</kw>
+<status status="PASS" start="2025-02-25T14:32:48.100445" elapsed="8.022748"/>
 </test>
-<doc>Testing to book tickets on the webpage</doc>
-<status status="FAIL" start="2025-02-11T10:50:36.158890" elapsed="1.077961"/>
+<doc>Grupp 9(Nesli,Tuba, Quratulain)</doc>
+<status status="PASS" start="2025-02-25T14:32:47.637931" elapsed="8.487178"/>
 </suite>
-<status status="FAIL" start="2025-02-11T10:50:36.154733" elapsed="1.087040"/>
-</suite>
-<status status="FAIL" start="2025-02-11T10:50:36.106553" elapsed="1.138190"/>
+<status status="PASS" start="2025-02-25T14:32:47.605750" elapsed="8.521672"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="DinoPark" id="s1" pass="0" fail="1" skip="0">DinoPark</stat>
-<stat name="Booking" id="s1-s1" pass="0" fail="1" skip="0">DinoPark.Booking</stat>
-<stat name="Booking Tickets" id="s1-s1-s1" pass="0" fail="1" skip="0">DinoPark.Booking.Booking Tickets</stat>
+<stat name="DinoPark" id="s1" pass="1" fail="0" skip="0">DinoPark</stat>
+<stat name="Login Page" id="s1-s1" pass="1" fail="0" skip="0">DinoPark.Login Page</stat>
 </suite>
 </statistics>
 <errors>
-<msg time="2025-02-11T10:50:37.166274" level="WARN">Imported resource file 'C:\Users\nesli\Documents\GitHub\ContinuousTesting\DinoPark\Booking\keyword.robot' is empty.</msg>
+<msg time="2025-02-25T14:32:48.590224" level="WARN">The chromedriver version (132.0.6834.110) detected in PATH at C:\Users\nesli\WebDriver\chromedriver-win64\chromedriver.exe might not be compatible with the detected chrome version (133.0.6943.127); currently, chromedriver 133.0.6943.126 is recommended for chrome 133.*, so it is advised to delete the driver in PATH and retry</msg>
 </errors>
 </robot>
