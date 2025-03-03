@@ -1,11 +1,12 @@
 *** Settings ***
 Documentation    Grupp 9(Nesli,Tuba, Quratulain)
 Library    SeleniumLibrary
-Variables    variables.py
+Variables    C:/Users/nesli/Documents/GitHub/ContinuousTesting/DinoPark/variables.py
 Resource    keywords.robot
 Test Setup    Open Browser To Page    ${url_test}    ${browser_test}    ${title_test}
 
 Test Teardown    Close Browser
+
 
 *** Test Cases ***
 Invalid Login
@@ -27,11 +28,11 @@ Invalid Login
 *** Test Cases ***
 Valid Login
     [Documentation]    Scenario: Valid login, I should be logged in succesfully and be redirected to the home page when I enter my valid credentials.
-    GIVEN I enter valid username
+    GIVEN that I'm on the login page
+    WHEN I enter valid username
     AND valid password
     THEN press the submit button
     THEN successful message should be visible
-  
 
 
 
