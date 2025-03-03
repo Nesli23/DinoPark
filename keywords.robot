@@ -1,7 +1,6 @@
 *** Settings ***
 Library    SeleniumLibrary
-Variables    variables.py
-
+Variables    C:/Users/nesli/Documents/GitHub/ContinuousTesting/DinoPark/variables.py
 
 
 *** Keywords ***
