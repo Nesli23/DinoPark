@@ -75,3 +75,5 @@ successfull_register_text = "Registration successful! Redirecting to login..."
 
 
 #"id=login-messsage"
+
+weekday_safari

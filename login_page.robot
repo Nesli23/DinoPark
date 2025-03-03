@@ -27,19 +27,14 @@ Invalid Login
 *** Test Cases ***
 Valid Login
     [Documentation]    Scenario: Valid login, I should be logged in succesfully and be redirected to the home page when I enter my valid credentials.
-    GIVEN that I'm on the login page
-    WHEN I enter valid username
+    GIVEN I enter valid username
     AND valid password
     THEN press the submit button
     THEN successful message should be visible
   
 
-    #...                Acceptance Criteria:
-    #...                - I should be logged in successfully when I enter valid credentials.
-    #...                - Error message should not appear.
-    #                    - I should be redirected to the homepage
 
-    
+
     
 
     
