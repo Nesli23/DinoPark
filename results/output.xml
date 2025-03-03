@@ -1,111 +1,112 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2 (Python 3.13.1 on win32)" generated="2025-02-25T14:32:47.600781" rpa="false" schemaversion="5">
+<robot generator="Robot 7.2 (Python 3.13.1 on win32)" generated="2025-03-03T11:48:16.766394" rpa="false" schemaversion="5">
 <suite id="s1" name="DinoPark" source="C:\Users\nesli\Documents\GitHub\ContinuousTesting\DinoPark">
 <suite id="s1-s1" name="Login Page" source="C:\Users\nesli\Documents\GitHub\ContinuousTesting\DinoPark\login_page.robot">
-<test id="s1-s1-t1" name="Acceptance Criteria:" line="15">
+<test id="s1-s1-t1" name="Valid Login" line="29">
 <kw name="Open Browser To Page" owner="keywords" type="SETUP">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-02-25T14:32:48.103232" level="INFO">Opening browser 'chrome' to base url 'file:///C:/Users/nesli/Documents/GitHub/ContinuousTesting/DinoPark/webpages/jurap.html'.</msg>
-<msg time="2025-02-25T14:32:48.590224" level="WARN">The chromedriver version (132.0.6834.110) detected in PATH at C:\Users\nesli\WebDriver\chromedriver-win64\chromedriver.exe might not be compatible with the detected chrome version (133.0.6943.127); currently, chromedriver 133.0.6943.126 is recommended for chrome 133.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2025-03-03T11:48:17.316501" level="INFO">Opening browser 'chrome' to base url 'file:///C:/Users/nesli/Documents/GitHub/ContinuousTesting/DinoPark/webpages/jurap.html'.</msg>
+<msg time="2025-03-03T11:48:26.677873" level="WARN">The chromedriver version (132.0.6834.110) detected in PATH at C:\Users\nesli\WebDriver\chromedriver-win64\chromedriver.exe might not be compatible with the detected chrome version (133.0.6943.127); currently, chromedriver 133.0.6943.141 is recommended for chrome 133.*, so it is advised to delete the driver in PATH and retry</msg>
 <arg>${url}</arg>
 <arg>${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-02-25T14:32:48.102709" elapsed="2.304021"/>
+<status status="PASS" start="2025-03-03T11:48:17.316085" elapsed="11.328361"/>
 </kw>
 <kw name="Title Should Be" owner="SeleniumLibrary">
-<msg time="2025-02-25T14:32:50.438684" level="INFO">Page title is 'Jura-Stina-Kalle Park'.</msg>
+<msg time="2025-03-03T11:48:28.665165" level="INFO">Page title is 'Jura-Stina-Kalle Park'.</msg>
 <arg>${title}</arg>
 <doc>Verifies that the current page title equals ``title``.</doc>
-<status status="PASS" start="2025-02-25T14:32:50.411084" elapsed="0.029682"/>
+<status status="PASS" start="2025-03-03T11:48:28.645282" elapsed="0.020654"/>
 </kw>
 <arg>${url_test}</arg>
 <arg>${browser_test}</arg>
 <arg>${title_test}</arg>
-<status status="PASS" start="2025-02-25T14:32:48.101590" elapsed="2.340842"/>
+<status status="PASS" start="2025-03-03T11:48:17.314655" elapsed="11.351867"/>
 </kw>
 <kw name="GIVEN that I'm on the login page" owner="keywords">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-02-25T14:32:50.452106" level="INFO">Clicking element 'xpath=//*[@id='login-nav']/a'.</msg>
+<msg time="2025-03-03T11:48:28.669977" level="INFO">Clicking element 'xpath=//*[@id='login-nav']/a'.</msg>
 <arg>${login_button_test}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-25T14:32:50.450276" elapsed="0.338581"/>
+<status status="PASS" start="2025-03-03T11:48:28.669027" elapsed="0.183154"/>
 </kw>
-<status status="PASS" start="2025-02-25T14:32:50.449214" elapsed="0.340125"/>
+<status status="PASS" start="2025-03-03T11:48:28.668114" elapsed="0.187745"/>
 </kw>
-<kw name="WHEN I enter invalid username" owner="keywords">
+<kw name="WHEN I enter valid username" owner="keywords">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${username_input_id_test}</arg>
 <arg>timeout=10s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-02-25T14:32:50.792584" elapsed="0.040628"/>
+<status status="PASS" start="2025-03-03T11:48:28.860039" elapsed="0.287771"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-02-25T14:32:50.834328" level="INFO">Typing text 'incorrectusername' into text field 'id=login-username'.</msg>
+<msg time="2025-03-03T11:48:29.148770" level="INFO">Typing text 'NK' into text field 'id=login-username'.</msg>
 <arg>${username_input_id_test}</arg>
-<arg>${invalid_username}</arg>
+<arg>${valid_username}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-25T14:32:50.833669" elapsed="0.201992"/>
+<status status="PASS" start="2025-03-03T11:48:29.148197" elapsed="0.114058"/>
 </kw>
-<status status="PASS" start="2025-02-25T14:32:50.790332" elapsed="0.245605"/>
+<status status="PASS" start="2025-03-03T11:48:28.858544" elapsed="0.403963"/>
 </kw>
-<kw name="AND invalid password" owner="keywords">
+<kw name="AND valid password" owner="keywords">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${password_input_id_test}</arg>
 <arg>timeout=10s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-02-25T14:32:51.036980" elapsed="0.030953"/>
+<status status="PASS" start="2025-03-03T11:48:29.263897" elapsed="0.025559"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-02-25T14:32:51.068687" level="INFO">Typing text 'invalidpassword' into text field 'id=login-password'.</msg>
+<msg time="2025-03-03T11:48:29.290603" level="INFO">Typing text 'Password' into text field 'id=login-password'.</msg>
 <arg>${password_input_id_test}</arg>
-<arg>${invalid_password}</arg>
+<arg>${valid_password}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-25T14:32:51.068200" elapsed="0.137592"/>
+<status status="PASS" start="2025-03-03T11:48:29.289979" elapsed="0.183869"/>
 </kw>
-<status status="PASS" start="2025-02-25T14:32:51.036405" elapsed="0.169716"/>
+<status status="PASS" start="2025-03-03T11:48:29.263102" elapsed="0.211070"/>
 </kw>
 <kw name="THEN press the submit button" owner="keywords">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${submit_button_test}</arg>
 <arg>timeout=4s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-02-25T14:32:51.208449" elapsed="0.028340"/>
+<status status="PASS" start="2025-03-03T11:48:29.475881" elapsed="0.021379"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-02-25T14:32:51.237689" level="INFO">Clicking element 'xpath=//*[@id='login-form']/button'.</msg>
+<msg time="2025-03-03T11:48:29.497939" level="INFO">Clicking element 'xpath=//*[@id='login-form']/button'.</msg>
 <arg>${submit_button_test}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-25T14:32:51.237115" elapsed="0.100608"/>
+<status status="PASS" start="2025-03-03T11:48:29.497537" elapsed="0.137560"/>
 </kw>
-<status status="PASS" start="2025-02-25T14:32:51.207046" elapsed="0.130964"/>
+<status status="PASS" start="2025-03-03T11:48:29.474911" elapsed="0.160369"/>
 </kw>
-<kw name="THEN Message Should Be Visible" owner="keywords">
+<kw name="THEN successful message should be visible" owner="keywords">
 <kw name="Wait Until Element Contains" owner="SeleniumLibrary">
-<arg>${error_message_element_test}</arg>
-<arg>${error_message_test}</arg>
+<arg>${verify_message_element_test}</arg>
+<arg>${verify_message_test}</arg>
 <arg>${standard_timeout}</arg>
 <doc>Waits until the element ``locator`` contains ``text``.</doc>
-<status status="PASS" start="2025-02-25T14:32:51.339256" elapsed="2.031296"/>
+<status status="PASS" start="2025-03-03T11:48:29.636182" elapsed="0.188608"/>
 </kw>
 <kw name="Element Text Should Be" owner="SeleniumLibrary">
-<msg time="2025-02-25T14:32:53.371703" level="INFO">Verifying element 'xpath=//*[@id='login-message']' contains exact text 'Invalid username or password.'.</msg>
-<arg>${error_message_element_test}</arg>
-<arg>${error_message_test}</arg>
+<msg time="2025-03-03T11:48:29.825484" level="INFO">Verifying element 'xpath=//*[@id='login-message']' contains exact text 'Verifying credentials...'.</msg>
+<arg>${verify_message_element_test}</arg>
+<arg>${verify_message_test}</arg>
 <doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<status status="PASS" start="2025-02-25T14:32:53.371019" elapsed="0.017402"/>
+<status status="PASS" start="2025-03-03T11:48:29.825046" elapsed="0.020298"/>
 </kw>
-<status status="PASS" start="2025-02-25T14:32:51.338614" elapsed="2.050077"/>
+<status status="PASS" start="2025-03-03T11:48:29.635680" elapsed="0.209970"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-02-25T14:32:53.389289" elapsed="2.733557"/>
+<status status="PASS" start="2025-03-03T11:48:29.846345" elapsed="3.442882"/>
 </kw>
-<status status="PASS" start="2025-02-25T14:32:48.100445" elapsed="8.022748"/>
+<doc>Scenario: Valid login, I should be logged in succesfully and be redirected to the home page when I enter my valid credentials.</doc>
+<status status="PASS" start="2025-03-03T11:48:17.313078" elapsed="15.977204"/>
 </test>
 <doc>Grupp 9(Nesli,Tuba, Quratulain)</doc>
-<status status="PASS" start="2025-02-25T14:32:47.637931" elapsed="8.487178"/>
+<status status="PASS" start="2025-03-03T11:48:16.828367" elapsed="16.465341"/>
 </suite>
-<status status="PASS" start="2025-02-25T14:32:47.605750" elapsed="8.521672"/>
+<status status="PASS" start="2025-03-03T11:48:16.794058" elapsed="16.503212"/>
 </suite>
 <statistics>
 <total>
@@ -119,6 +120,6 @@
 </suite>
 </statistics>
 <errors>
-<msg time="2025-02-25T14:32:48.590224" level="WARN">The chromedriver version (132.0.6834.110) detected in PATH at C:\Users\nesli\WebDriver\chromedriver-win64\chromedriver.exe might not be compatible with the detected chrome version (133.0.6943.127); currently, chromedriver 133.0.6943.126 is recommended for chrome 133.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2025-03-03T11:48:26.677873" level="WARN">The chromedriver version (132.0.6834.110) detected in PATH at C:\Users\nesli\WebDriver\chromedriver-win64\chromedriver.exe might not be compatible with the detected chrome version (133.0.6943.127); currently, chromedriver 133.0.6943.141 is recommended for chrome 133.*, so it is advised to delete the driver in PATH and retry</msg>
 </errors>
 </robot>
