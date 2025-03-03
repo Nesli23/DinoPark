@@ -67,13 +67,3 @@ successfull_register_message = "id=register-message"
 #"xpath=//*[@id='login-message']"
 
 successfull_register_text = "Registration successful! Redirecting to login..."
-
-
-#success_message_element_test =
-#success_message_test = 
-
-
-
-#"id=login-messsage"
-
-weekday_safari
