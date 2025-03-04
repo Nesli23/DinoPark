@@ -61,7 +61,7 @@ select_safari_type = "id=safari-type"
 select_safari_value_herbivore = "Herbivore Tour"
 add_to_cart_button = "xpath=//*[@id='safari-form']/button"
 select_safari_value_trex = "T-Rex Rumble"
-date = "002025-02-27"   
+date = "002025-03-04"   
 
 successfull_register_message = "id=register-message"
 #"xpath=//*[@id='login-message']"
