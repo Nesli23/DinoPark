@@ -9,13 +9,11 @@ Test Setup      Prepare Browser     ${URL}   ${Browser}  ${title}  ${username}  
 
 
 *** Variables ***
-${URL}    file://${EXECDIR}/website/jurap.html
+#${URL}    file://${EXECDIR}/website/jurap.html
+${URL}   file:///C:/Users/QuratulainQureshi/Lab1-RobotFramework/website/jurap.html
+${Browser}  Chrome
 
 *** Test Cases ***
-
-
-
-
 Proceed To Checkout
     [Documentation]
 ...       Scenario: Display the selected booked tickets and the total price amount before checkout.
