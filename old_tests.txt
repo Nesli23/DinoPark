@@ -1,0 +1,128 @@
+
+ THEN press the submit button
+    Wait Until Element Is Visible    ${submit_button_test}    timeout=4s
+    Click Element    ${submit_button_test}
+
+
+       # Click Login Button    ${login_button_test}    
+   # Type In Username    ${username_input_id_test}    ${valid_username}   
+    #Type In Password    ${password_input_id_test}    ${valid_password}
+    #Click Button    ${submit_button_test}    #xpath=//*[@id="login-form"]/button    # Submit knappen efter att användaruppgifter har fyllts i 
+    #Message Should Be Visible    ${verify_message_element_test}    ${verify_message_test}    ${standard_timeout}
+    
+
+      #AND be redirected to the home page. 
+
+      
+#Then should get an successfull registered message
+ #   Wait Until Element Contains    ${successfull_register_message}    ${successfull_register_text}  
+  #  ${actual_text}=    Get Text    ${successfull_register_message}
+   # Log    Found text: ${actual_text}      
+    # Wait Until Element Contains    ${successfull_register_message}    ${successfull_register_text}    timeout=10s  
+
+
+
+
+# Safari Ticket Button
+  #  [Arguments]    ${safari_ticket_button_test}
+   # Click Element    ${safari_ticket_button_test}    
+
+    
+
+#Login  #Lösningn för automatiserad inloggning 
+ #   [Arguments]    ${username}    ${password}
+  #  Open Browser To Page    ${url_test}    ${browser_test}    ${title_test}  # Öppna webbläsaren och sidan
+   # Type In Username    ${username_input_id_test}    ${username}
+    #Type In Password    ${password_input_id_test}    ${password}
+    #Click Submit Button    ${submit_button_test}  # Klicka på inloggningsknappen
+    #Wait Until Element Is Visible    ${verify_message_element_test}    timeout=${standard_timeout}
+    #Element Text Should Be    ${verify_message_element_test}    ${verify_message_test}
+    #Log    "Successfully logged in."
+
+
+ #Select Safari Tour Date
+  #  [Arguments]    ${date_element}    ${date}
+   # Wait Until Element Is Visible    ${date_element}    timeout=10s
+    #Input Text    ${date_element}    ${date}
+
+#Select Safari Tour Type
+    # [Arguments]    ${type_element}    ${type}
+    #Wait Until Element Is Visible    ${type_element}    timeout=10s
+   # Select From List By Value    ${type_element}    ${type}    
+
+#Add To Cart Button
+ #   [Arguments]    ${add_to_cart_button_test}
+  #  Click Element    ${add_to_cart_button_test}    
+
+#Wait Until Element Is Not Clickable
+ #   [Arguments]    ${login_button_test}
+  #  Wait Until Element Is Not Clickable    ${login_button_test}    
+
+
+
+
+    # Select From List By Label väljer alternativ baserat på synlig text
+    # Select From List By Value används om <option> - elementet har en value attibut
+
+    
+
+    #Click Element    ${register_button}
+    #Input Text    ${username_input_registration}    ${valid_username}
+    #Input Text    ${password_input_registration}    ${valid_password}
+    #Click Element    ${register_submit_button}
+    #Sleep    3s
+    #Click Login Button    ${login_button_test}    
+    #Type In Username    ${username_input_id_test}    ${valid_username}   
+    #Type In Password    ${password_input_id_test}    ${valid_password}
+    #Click Button    ${submit_button_test}    #xpath=//*[@id="login-form"]/button    # Submit knappen efter att användaruppgifter har fyllts i 
+    #Message Should Be Visible    ${verify_message_element_test}    ${verify_message_test}    ${standard_timeout}  
+    #Sleep    3s           
+    #Click Element    ${buy_tickets_button}
+    #Wait Until Element Is Visible    ${ticket_type_dropdown}    timeout=10s
+    #Select Ticket Type    ${ticket_type_dropdown}    ${adult_ticket_value}
+    #Select Ticket Category    ${ticket_category_dropdown}    ${regular_ticket_value}
+    #Select Quantity Of Tickets    ${ticket_quantity_input}    ${ticket_quantity_value}
+    #Add Ticket To Cart Button    ${add_to_ticket_cart_button}
+    #Handle Alert    accept
+    #Sleep    5s
+    #Click Element    ${book_safari_button}
+    #Select Safari Tour Date    ${safari_date_input}    ${date}
+    #Wait Until Element Is Visible    ${select_safari_type}    timeout=10s
+    #Select Safari Tour Type    ${select_safari_type}    ${select_safari_value_herbivore}
+    #Sleep    2s
+    #Click Element    ${add_to_cart_button}
+    #Handle Alert    accept
+    #Sleep    3s
+    #Click Element    ${book_safari_button}
+    #Select Safari Tour Date    ${safari_date_input}    ${date}
+    #Wait Until Element Is Visible    ${select_safari_type}    timeout=10s
+    #Select Safari Tour Type    ${select_safari_type}    ${select_safari_value_trex}
+    #Sleep    2s
+    #Click Element    ${add_to_cart_button}
+    #Handle Alert    accept
+
+     
+    #Select Ticket Type    ${ticket_type_dropdown}    ${adult_ticket_value}
+    #Select Ticket Category    ${ticket_category_dropdown}    ${regular_ticket_value}
+    #Select Quantity Of Tickets    ${ticket_quantity_input}    ${ticket_quantity_value}
+    
+    
+    #Click Element    ${register_button}
+    #Input Text    ${username_input_registration}    ${valid_username}
+    #Input Text    ${password_input_registration}    ${valid_password}
+    #Click Element    ${register_submit_button}
+    #Message Should Be Visible    ${successfull_register_message}    ${successfull_register_text}    ${standard_timeout}
+    #Click Login Button    ${login_button_test}    
+    #Type In Username    ${username_input_id_test}    ${valid_username}   
+    #Type In Password    ${password_input_id_test}    ${valid_password}
+    #Click Button    ${submit_button_test}    #xpath=//*[@id="login-form"]/button    # Submit knappen efter att användaruppgifter har fyllts i 
+    #Message Should Be Visible    ${verify_message_element_test}    ${verify_message_test}    ${standard_timeout}
+
+
+                
+    #Click Element    ${buy_tickets_button}
+    #Wait Until Element Is Visible    ${ticket_type_dropdown}    timeout=10s
+    #Select Ticket Type    ${ticket_type_dropdown}    ${adult_ticket_value}
+    #Select Ticket Category    ${ticket_category_dropdown}    ${regular_ticket_value}
+    #Select Quantity Of Tickets    ${ticket_quantity_input}    ${ticket_quantity_value}
+    #Add Ticket To Cart Button    ${add_to_ticket_cart_button}
