@@ -3,8 +3,8 @@ Library        SeleniumLibrary
 Library        String
 Library        Collections
 Documentation    Testing Jurasstina-Kalle Park page 
-Resource       keywords_Quratulain.robot 
-Variables      variables_q.py
+Resource       ${EXECDIR}/resources/keywords_files/keywords_Quratulain.robot 
+Variables      ${EXECDIR}/variables.py
 Test Setup      Prepare Browser     ${URL}   ${Browser}  ${title}  ${username}  ${password} 
 
 
