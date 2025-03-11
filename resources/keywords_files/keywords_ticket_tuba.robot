@@ -1,5 +1,6 @@
 *** Settings ***
 Library    SeleniumLibrary
+Variables    ${EXECDIR}/variables.py
  
 *** Keywords ***
 Open Browser To Ticket Page
