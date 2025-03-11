@@ -8,8 +8,8 @@ Test Setup    Open Browser To Ticket Page    ${url_test}    ${browser_test}    $
 Test Teardown    Close Browser
 
 *** Test Cases ***
-Scenario: Kim registers and logs in successfully
+Lyckad registrering och inloggning
     [Documentation]
     [Tags]      Tuba
-    Given Kim is registered as user
-    When Kim is logged in
+    Registrera användaren Kim
+    Logga in användaren Kim
