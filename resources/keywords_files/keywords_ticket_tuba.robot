@@ -37,8 +37,8 @@ And Kim selects 2 VIP tickets for adults
     [Arguments]    ${quantity}    ${type}
     Wait Until Element Is Visible    ${ticket_type_dropdown}    10s
     Select From List By Value    ${ticket_type_dropdown}    ${type}
-    Select From List By Value    ${ticket_category}    ${VIP}
-    Input Text    ${ticket_quantity}    ${quantity}
+    Select From List By Value    ${ticket_category_dropdown}    ${VIP}
+    Input Text    ${ticket_quantity_input}    ${quantity}
 And proceeds to checkout and confirms the purchase
     Wait Until Element Is Visible   ${proceed_button}   10s
     Click Element    ${proceed_button}
@@ -90,8 +90,8 @@ And Stina-Palle navigates to "Buy Tickets"
 When selects "Regular Ticket" for 1 Adult
     Wait Until Element Is Visible    ${ticket_type_dropdown}    10s
     Select From List By Value    ${ticket_type_dropdown}    Adult
-    Select From List By Value    ${ticket_category}    Regular
-    Input Text    ${ticket_quantity}    1
+    Select From List By Value    ${ticket_category_dropdown}    Regular
+    Input Text    ${ticket_quantity_input}    1
 
 And adds the ticket to the cart and proceeds to checkout
     Click Button    ${add_to_cart_button}
