@@ -11,24 +11,23 @@ Test Setup      Prepare Browser     ${URL}   ${Browser}  ${title}  ${username}  
 *** Variables ***
 ${URL}    file://${EXECDIR}/website/jurap.html
 
+
+
+
 *** Test Cases ***
-
-
-
-
 Proceed To Checkout
-    [Documentation]
-...       Scenario: Display the selected booked tickets and the total price amount before checkout.
+    [Documentation]    Tests that the selected booked tickets and total price are displayed before checkout.
+    [Tags]    Quratulain
+    
+    Användaren har bokat sina biljetter och safari-tur online
+    Användaren går till kassan för att betala
+    Visa information om alla bokningar och totalpris före utcheckning
 
-...      Gherkin syntax :
-    ...                  Given that the user booked his tickets and safari tour online according to his requirements.
-    ...                  When the user booked all tickets and proceeded to pay,
-    ...                  Then the information about all his bookings  and total amount of price should be displayed before checkout.
-    ...     Acceptance criteria:
-    ...                 - The User should be able to review his selected tickets at the end.
-    ...                 - The User should be able to review the total price according to his selected booking.
-    ...                 - The total price should calculated accurately.
-    ...                 - After the checkout information, the user should be able to proceed to checkout
+    #...     Acceptance criteria:
+    #...                 - The User should be able to review his selected tickets at the end.
+    #...                - The User should be able to review the total price according to his selected booking.
+    #...                 - The total price should calculated accurately.
+    #...                 - After the checkout information, the user should be able to proceed to checkout
     
     Prepare Browser       ${URL}  ${Browser}  ${title}  ${username}  ${password}
     Sleep  5s
