@@ -10,11 +10,12 @@ Test Teardown    Close Browser
 
 *** Test Cases ***
 Register User
-    [Documentation]    Scenario: User should be able to register with username and password
+    [Documentation]    Testar att användaren kan registrera sig med användarnamn och lösenord.
     [Tags]    Nesli
-    Given I press on the Register button
-    When I fill in the username and password
-    Then press the submit button
+    
+    Klicka på registreringsknappen
+    Ange användarnamn och lösenord
+    Bekräfta registreringen
    
 #Acceptance criteria:
 # I should be able to choose username and password
