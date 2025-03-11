@@ -7,14 +7,12 @@ Test Setup    Open Browser To Ticket Page    ${url_test}    ${browser_test}    $
 Test Teardown    Close Browser
 
 *** Test Cases ***
-Lyckat köp av en vanlig vuxenbiljett
-    [Documentation]    Testar att Stina-Palle framgångsrikt köper en vanlig vuxenbiljett.
+Scenario: Stina-Palle Purchases a Regular Adult Ticket
+    [Documentation]    Testing Stina-Palle's successful purchase of a Regular Ticket for an adult.
     [Tags]      Tuba
-    Registrera användaren Stina-Palle
-    Logga in användaren Stina-Palle
-    Gå till biljettsidan
-    Välj vanlig biljett    1    ${Adult}
-    Lägg till i varukorgen
-    Gå till kassan
-    Bekräfta köpet
-    Verifiera bekräftelsemeddelandet
+    Given Stina-Pelle is on the registration page and registrate with valid credentials
+    And Stina-Palle is logged into the website
+    And Stina-Palle navigates to "Buy Tickets"
+    When selects "Regular Ticket" for 1 Adult
+    And adds the ticket to the cart and proceeds to checkout
+    Then Stina-Palle should receive a confirmation message

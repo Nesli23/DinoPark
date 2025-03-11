@@ -8,7 +8,7 @@ Test Setup    Open Browser To Ticket Page    ${url_test}    ${browser_test}    $
 Test Teardown    Close Browser
 
 *** Test Cases ***
-Lyckad registrering och inloggning
+Scenario: Kim registers and logs in successfully
     [Documentation]
     [Tags]      Tuba
     Registrera användaren Kim
