@@ -1,8 +1,8 @@
 *** Settings ***
 Metadata    Author    Tuba      Grupp9(Nesli, Tuba, Quratulain)
 Library    SeleniumLibrary
-Resource   keywords_ticket_tuba.robot
-Variables  variables_tuba.py
+Resource   ${EXECDIR}/resources/keywords_files/keywords_ticket_tuba.robot
+Variables  ${EXECDIR}/variables.py
 Test Setup    Open Browser To Ticket Page    ${url_test}    ${browser_test}    ${title_test}
 Test Teardown    Close Browser
 
