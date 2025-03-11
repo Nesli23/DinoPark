@@ -6,7 +6,11 @@ pool:
 
 steps:
 
+<<<<<<< HEAD
   - template: templates/install-dependencies.yaml
+=======
+  - template: install-dependencies.yaml
+>>>>>>> b21dfc86e77682fc982f8872f375ba794e085c46
 
   - script: |
       robot --include new-feature --output results/logs/output_feature_test.xml --log results/logs/log_feature_test.html --report results/logs/report_feature_test.html tests/

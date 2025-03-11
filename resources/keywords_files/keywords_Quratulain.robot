@@ -2,7 +2,7 @@
 Library    SeleniumLibrary
 
 ***keywords***
-Prepare Browser
+Given User Open The Browser For Register And Login
     [Arguments]    ${URL}    ${Browser}    ${title}   ${username}  ${password} 
     Open Browser    ${URL}    ${Browser} 
     Maximize Browser Window  
@@ -18,6 +18,16 @@ Prepare Browser
     Input Text  id = login-password  ${password}
 
     Click Button      //*[@id="login-form"]/button
+
+And Kim selects 2 VIP tickets for adults
+    [Arguments]    ${quantity}    ${type}
+    Wait Until Element Is Visible    ${ticket_type}    10s
+    Select From List By Value    ${ticket_type}    ${type}
+    Select From List By Value    ${ticket_category}    ${VIP}
+    Input Text    ${ticket_quantity}    ${quantity}
+And proceeds to checkout and confirms the purchase
+    Wait Until Element Is Visible   ${proceed_button}   10s
+    Click Element    ${proceed_button}
 
 Type In RegUsername 
     [Arguments]   ${username}

@@ -3,37 +3,32 @@ Library        SeleniumLibrary
 Library        String
 Library        Collections
 Documentation    Testing Jurasstina-Kalle Park page 
-Resource       keywords_Quratulain.robot 
-Variables      variables_q.py
-Test Setup      Prepare Browser     ${URL}   ${Browser}  ${title}  ${username}  ${password} 
+Resource    ${EXECDIR}/resources/keywords_files/keywords_ticket_tuba.robot
+Variables    ${EXECDIR}/variables.py
+Test Setup     Prepare Browser      ${username}  ${password} ${url_test}    ${browser_test}    ${title_test}   ${username}  ${password}
+Test Teardown   Close Browser 
 
 
 *** Variables ***
-#${URL}    file://${EXECDIR}/website/jurap.html
-${URL}   file:///C:/Users/QuratulainQureshi/Lab1-RobotFramework/website/jurap.html
+${URL}    file://${EXECDIR}/website/jurap.html
 ${Browser}  Chrome
 
 *** Test Cases ***
 Proceed To Checkout
-    [Documentation]
-...       Scenario: Display the selected booked tickets and the total price amount before checkout.
+    
+Scenario: Successful proceed to checkout after booking tickets
+    [Documentation]    Display the selected booked tickets and the total price amount before checkout.
+    [Tags]    Quratulain
+    Given User Open The Browser For Register And Login
+    Then Kim is on the ticket purchase page
+    And Kim selects 2 VIP tickets for adults   2   ${Adult}
+    And 2 VIP tickets for children  2
+    Then open the cart for rewivew tickets 
+    And proceeds to checkout and confirms the purchase
+    Then Kim should receive a confirmation message
 
-...      Gherkin syntax :
-    ...                  Given that the user booked his tickets and safari tour online according to his requirements.
-    ...                  When the user booked all tickets and proceeded to pay,
-    ...                  Then the information about all his bookings  and total amount of price should be displayed before checkout.
-    ...     Acceptance criteria:
-    ...                 - The User should be able to review his selected tickets at the end.
-    ...                 - The User should be able to review the total price according to his selected booking.
-    ...                 - The total price should calculated accurately.
-    ...                 - After the checkout information, the user should be able to proceed to checkout
-    
-    Prepare Browser       ${URL}  ${Browser}  ${title}  ${username}  ${password}
-    Sleep  5s
-    #Message Should Be Visible    ${verify_message_element_test}   ${verify_message_test}   ${timeout}
-    
-    # Reload Page #
-    #Sleep     2s
+
+
 
     Click Element       //*[@id="tickets-nav"]
 

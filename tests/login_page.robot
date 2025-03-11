@@ -1,8 +1,8 @@
 *** Settings ***
 Documentation    Grupp 9(Nesli,Tuba, Quratulain)
 Library    SeleniumLibrary
-Variables    C:/Users/nesli/Documents/GitHub/ContinuousTesting/DinoPark/variables.py
-Resource    keywords.robot
+Variables    ${EXECDIR}/variables.py
+Resource    ${EXECDIR}/resources/keywords_files/keywords.robot
 Test Setup    Open Browser To Page    ${url_test}    ${browser_test}    ${title_test}
 
 Test Teardown    Close Browser
@@ -23,6 +23,8 @@ Invalid Login
     # Acceptance Criteria:
     #...    I should not be logged in when I enter invalid credentials.
     #...    Error message informing about invalid credentials should appear. 
+    #../resources/keywords_files/keywords.robot
+    #C:/Users/nesli/Documents/GitHub/ContinuousTesting/DinoPark/variables.py
 
 
 *** Test Cases ***
