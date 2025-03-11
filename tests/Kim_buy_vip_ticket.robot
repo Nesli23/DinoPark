@@ -2,8 +2,8 @@
 Metadata    Author    Tuba      Grupp9(Nesli, Tuba, Quratulain)
 Documentation    Testing successful VIP ticket purchase for adults and children.
 Library    SeleniumLibrary
-Resource    keywords_ticket_tuba.robot
-Variables    variables_tuba.py
+Resource    ${EXECDIR}/resources/keywords_files/keywords_ticket_tuba.robot
+Variables    ${EXECDIR}/variables.py
 Test Setup    Open Browser To Ticket Page    ${url_test}    ${browser_test}    ${title_test}
 Test Teardown    Close Browser
 
@@ -17,3 +17,4 @@ Scenario: Successful VIP Ticket Purchase
     And Kim selects 2 VIP tickets for adults   2    ${Adult}
     And proceeds to checkout and confirms the purchase
     Then Kim should receive a confirmation message
+
