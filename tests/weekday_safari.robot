@@ -9,10 +9,10 @@ Test Teardown    #Close Browser
 *** Test Cases ***
 
 Safari Booking Weekday
-    [Documentation]    Scenario: Stina-Palle want to buy tickets for the weekday
+    [Documentation]    Testar att Stina-Palle kan boka en safari-tur på en vardag.
     [Tags]    Nesli
-    GIVEN that Stina-Palle has booked her tickets 
-    WHEN she goes to the Safari tour page
-    THEN she should be able to choose Safari date and type
-    And add to cart
+    Stina-Palle har bokat sina biljetter
+    Öppna Safari-tursidan
+    Välj safaridatum och typ
+    Lägg till i varukorgen
    
