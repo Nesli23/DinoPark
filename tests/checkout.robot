@@ -2,17 +2,11 @@
 Library        SeleniumLibrary
 Library        String
 Library        Collections
-Documentation    Testing Jurasstina-Kalle Park page 
-<<<<<<< HEAD
-Resource    ${EXECDIR}/resources/keywords_files/keywords_ticket_tuba.robot
-Variables    ${EXECDIR}/variables.py
-Test Setup     Prepare Browser      ${username}  ${password} ${url_test}    ${browser_test}    ${title_test}   ${username}  ${password}
-Test Teardown   Close Browser 
-=======
+Documentation   Testing Jurasstina-Kalle Park page 
 Resource       ${EXECDIR}/resources/keywords_files/keywords_Quratulain.robot 
 Variables      ${EXECDIR}/variables.py
-Test Setup      Prepare Browser     ${URL}   ${Browser}  ${title}  ${username}  ${password} 
->>>>>>> 06588eedd6cc8222d5107ac12d2738986bd54ef2
+Test Setup      Open Browser To Ticket Page    ${url_test}    ${browser_test}    ${title_test}
+Test Teardown    Close Browser
 
 
 *** Variables ***
@@ -20,15 +14,14 @@ ${URL}    file://${EXECDIR}/website/jurap.html
 ${Browser}  Chrome
 
 *** Test Cases ***
-Proceed To Checkout
-    
 Scenario: Successful proceed to checkout after booking tickets
     [Documentation]    Display the selected booked tickets and the total price amount before checkout.
     [Tags]    Quratulain
-    Given User Open The Browser For Register And Login
+    Given Kim is registered as user
+    When Kim is logged in
     Then Kim is on the ticket purchase page
-    And Kim selects 2 VIP tickets for adults   2   ${Adult}
-    And 2 VIP tickets for children  2
+    And Kim selects 2 VIP tickets for adults   2    ${Adult}
+    And Kim selects 2 VIP tickets for children  2   ${Child}
     Then open the cart for rewivew tickets 
     And proceeds to checkout and confirms the purchase
     Then Kim should receive a confirmation message
