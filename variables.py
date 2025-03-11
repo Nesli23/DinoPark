@@ -52,7 +52,7 @@ ticket_category_dropdown = "id=ticket-category"
 regular_ticket_value = "Regular"
 ticket_quantity_input = "id=ticket-quantity"
 ticket_quantity_value = "1"
-add_to_ticket_cart_button = "xpath=//*[@id='ticket-form']/button"
+#add_to_ticket_cart_button = "xpath=//*[@id='ticket-form']/button" #row 89
 
 # Book Safari tour
 book_safari_button = "xpath=//*[@id='safari-nav']/a"
@@ -82,11 +82,11 @@ valid_username_stina = "Stina-Palle"
 valid_password_stina = "stinaSecurePass"
 
 # Ticket Purchase Locators
-tickets_nav = "xpath=//*[@id='tickets-nav']/a" # can we change this to row 48
-ticket_type = "id=ticket-type" # can we change this row 49
-ticket_category = "id=ticket-category" #row 51
-ticket_quantity = "id=ticket-quantity" #row 53
-proceed_button = "xpath=//*[@id='ticket-form']/button" #row 55
+#tickets_nav = "xpath=//*[@id='tickets-nav']/a" # can we change this to row 48
+#ticket_type = "id=ticket-type" # can we change this row 49
+#ticket_category = "id=ticket-category" #row 51
+#ticket_quantity = "id=ticket-quantity" #row 53
+proceed_button = "xpath=//*[@id='ticket-form']/button" 
 #add_to_cart_button = "xpath=//*[@id='ticket-form']/button"  
 
 # Payment Confirmation Locators
