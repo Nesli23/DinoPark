@@ -81,7 +81,7 @@ THEN she should be able to choose tickets for the weekday
     Input Text    ${ticket_quantity_input}    ${ticket_quantity_value}   
 
 AND add them to the cart
-    Click Element    ${add_to_ticket_cart_button}
+    Click Element    ${proceed_button}
     Handle Alert    accept
 
 
@@ -103,7 +103,7 @@ GIVEN that Stina-Palle has booked her tickets
     Select From List By Value    ${ticket_type_dropdown}    ${adult_ticket_value}      
     Select From List By Value    ${ticket_category_dropdown}    ${regular_ticket_value}       
     Input Text    ${ticket_quantity_input}    ${ticket_quantity_value}  
-    Click Element    ${add_to_ticket_cart_button}
+    Click Element    ${proceed_button}
     Handle Alert    accept 
 
 

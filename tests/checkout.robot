@@ -3,10 +3,16 @@ Library        SeleniumLibrary
 Library        String
 Library        Collections
 Documentation    Testing Jurasstina-Kalle Park page 
+<<<<<<< HEAD
 Resource    ${EXECDIR}/resources/keywords_files/keywords_ticket_tuba.robot
 Variables    ${EXECDIR}/variables.py
 Test Setup     Prepare Browser      ${username}  ${password} ${url_test}    ${browser_test}    ${title_test}   ${username}  ${password}
 Test Teardown   Close Browser 
+=======
+Resource       ${EXECDIR}/resources/keywords_files/keywords_Quratulain.robot 
+Variables      ${EXECDIR}/variables.py
+Test Setup      Prepare Browser     ${URL}   ${Browser}  ${title}  ${username}  ${password} 
+>>>>>>> 06588eedd6cc8222d5107ac12d2738986bd54ef2
 
 
 *** Variables ***

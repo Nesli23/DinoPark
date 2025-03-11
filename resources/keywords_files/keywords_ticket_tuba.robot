@@ -1,5 +1,6 @@
 *** Settings ***
 Library    SeleniumLibrary
+Variables    ${EXECDIR}/variables.py
  
 *** Keywords ***
 Open Browser To Ticket Page
@@ -30,14 +31,14 @@ When Kim is logged in
     Element should Contain     ${verify_message_element_test}   ${verify_message_test} 
     Sleep   4s
 Then Kim is on the ticket purchase page
-    Wait Until Element Is Visible    ${tickets_nav}    10s
-    Click Element    ${tickets_nav}
+    Wait Until Element Is Visible    ${buy_tickets_button}    10s
+    Click Element    ${buy_tickets_button}
 And Kim selects 2 VIP tickets for adults
     [Arguments]    ${quantity}    ${type}
-    Wait Until Element Is Visible    ${ticket_type}    10s
-    Select From List By Value    ${ticket_type}    ${type}
-    Select From List By Value    ${ticket_category}    ${VIP}
-    Input Text    ${ticket_quantity}    ${quantity}
+    Wait Until Element Is Visible    ${ticket_type_dropdown}    10s
+    Select From List By Value    ${ticket_type_dropdown}    ${type}
+    Select From List By Value    ${ticket_category_dropdown}    ${VIP}
+    Input Text    ${ticket_quantity_input}    ${quantity}
 And proceeds to checkout and confirms the purchase
     Wait Until Element Is Visible   ${proceed_button}   10s
     Click Element    ${proceed_button}
@@ -87,10 +88,10 @@ And Stina-Palle navigates to "Buy Tickets"
     Click Element    ${tickets_nav}
 
 When selects "Regular Ticket" for 1 Adult
-    Wait Until Element Is Visible    ${ticket_type}    10s
-    Select From List By Value    ${ticket_type}    Adult
-    Select From List By Value    ${ticket_category}    Regular
-    Input Text    ${ticket_quantity}    1
+    Wait Until Element Is Visible    ${ticket_type_dropdown}    10s
+    Select From List By Value    ${ticket_type_dropdown}    Adult
+    Select From List By Value    ${ticket_category_dropdown}    Regular
+    Input Text    ${ticket_quantity_input}    1
 
 And adds the ticket to the cart and proceeds to checkout
     Click Button    ${add_to_cart_button}
