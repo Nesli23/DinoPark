@@ -8,12 +8,13 @@ Test Teardown    Close Browser
 
 *** Test Cases ***
 Ticket Purchase Weekday
-    [Documentation]    Scenario: Stina-Palle want to buy tickets for the weekday
+    [Documentation]    Testar att Stina-Palle kan köpa biljetter för en vardag.
     [Tags]    Nesli
-    GIVEN that Stina-Palle is logged in 
-    WHEN she goes to the booking page
-    THEN she should be able to choose tickets for the weekday
-    AND add them to the cart       
+    
+    Stina-Palle är inloggad
+    Öppna bokningssidan
+    Välj biljetter för en vardag
+    Lägg till i varukorgen     
     
  #Acceptance criteria: 
  

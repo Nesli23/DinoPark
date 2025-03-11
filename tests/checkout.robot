@@ -2,32 +2,41 @@
 Library        SeleniumLibrary
 Library        String
 Library        Collections
-Documentation   Testing Jurasstina-Kalle Park page 
-Resource       ${EXECDIR}/resources/keywords_files/keywords_Quratulain.robot 
-Variables      ${EXECDIR}/variables.py
-Test Setup      Open Browser To Ticket Page    ${url_test}    ${browser_test}    ${title_test}
-Test Teardown    Close Browser
+Documentation    Testing Jurasstina-Kalle Park page 
+Resource    ${EXECDIR}/resources/keywords_files/keywords_ticket_tuba.robot
+Variables    ${EXECDIR}/variables.py
+Test Setup     Prepare Browser      ${username}  ${password} ${url_test}    ${browser_test}    ${title_test}   ${username}  ${password}
+Test Teardown   Close Browser 
 
 
 *** Variables ***
 ${URL}    file://${EXECDIR}/website/jurap.html
 ${Browser}  Chrome
 
+
+
+
 *** Test Cases ***
-Scenario: Successful proceed to checkout after booking tickets
-    [Documentation]    Display the selected booked tickets and the total price amount before checkout.
+Proceed To Checkout
+    [Documentation]    Tests that the selected booked tickets and total price are displayed before checkout.
     [Tags]    Quratulain
-    Given Kim is registered as user
-    When Kim is logged in
-    Then Kim is on the ticket purchase page
-    And Kim selects 2 VIP tickets for adults   2    ${Adult}
-    And Kim selects 2 VIP tickets for children  2   ${Child}
-    Then open the cart for rewivew tickets 
-    And proceeds to checkout and confirms the purchase
-    Then Kim should receive a confirmation message
+    
+    Användaren har bokat sina biljetter och safari-tur online
+    Användaren går till kassan för att betala
+    Visa information om alla bokningar och totalpris före utcheckning
 
-
-
+    #...     Acceptance criteria:
+    #...                 - The User should be able to review his selected tickets at the end.
+    #...                - The User should be able to review the total price according to his selected booking.
+    #...                 - The total price should calculated accurately.
+    #...                 - After the checkout information, the user should be able to proceed to checkout
+    
+    Prepare Browser       ${URL}  ${Browser}  ${title}  ${username}  ${password}
+    Sleep  5s
+    #Message Should Be Visible    ${verify_message_element_test}   ${verify_message_test}   ${timeout}
+    
+    # Reload Page #
+    #Sleep     2s
 
     Click Element       //*[@id="tickets-nav"]
 

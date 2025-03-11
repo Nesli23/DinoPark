@@ -14,17 +14,17 @@ ${URL}    file://${EXECDIR}/website/jurap.html
 *** Test Cases ***
 
 Remove Or Cancel Ticket(s)   
-    [Documentation]   Scenario:         The user should be able to cancel or remove the ticket from the cart after booking it.
+    [Documentation]   Tests that the user can cancel or remove a ticket from the cart after booking.
+    [Tags]   Quratulain
+    The user has booked an incorrect ticket and added it to the cart
+    Open the cart and review booked tickets
+    Identify the incorrectly booked ticket
+    Remove the unwanted ticket from the cart
+    Verify that the booking updates after removal
 
-...                  Gherkin syntax:     Given that the user has booked failed ticket(s) and added to the cart.
-...                                      When the user opens and reviews his booked tickets in the cart
-...                                      And he mistakenly booked the wrong ticket(s) according to his requirements,
-...                                      Then the user should be able to remove the unwanted ticket (s) from the cart,
-...                                      And the cart should upgrade his booking after removing his unwanted ticket(s).
-
-...                  Acceptance criteria: The user should to able to log in and book tickets according to his requirements.
-...                                       The user should be able to add his book tickets to the cart.
-...                                       The user should be able to remove and cancel unwanted ticket(s) according to his requirements.
+#...                  Acceptance criteria: The user should to able to log in and book tickets according to his requirements.
+#...                                       The user should be able to add his book tickets to the cart.
+#...                                       The user should be able to remove and cancel unwanted ticket(s) according to his requirements.
     
     Prepare Browser       ${URL}  ${Browser}  ${title}  ${username}  ${password}
     #Reload Page #
