@@ -3,7 +3,7 @@ Library    SeleniumLibrary
 
 ***keywords***
 Given User Open The Browser For Register And Login
-    [Arguments]    ${URL}    ${Browser}    ${title}   ${username}  ${password} 
+    [Arguments]    ${url_test}    ${browser_test}    ${title_test}   ${username}  ${password} 
     Open Browser    ${URL}    ${Browser} 
     Maximize Browser Window  
     #Title Should Be    ${title}
