@@ -98,7 +98,7 @@ alert_text_Confirmation_Regular = "Regular Ticket purchase confirmed!"
 
 
 # Browser and Page Configuration
-#title_test = "Buy Tickets" Can we change the name, where is it used? 
+title_test = "Buy Tickets" #Can we change the name, where is it used? 
 
 # Unauthorized Purchase Error Message (For Negative Test Cases)
 error_message_element = "xpath=//p[contains(text(),'Login required')]"  
@@ -171,3 +171,5 @@ Expected_ALert_Text_2 ='Checkout Summary: 2 VIP Adult Ticket(s) - $200 2 VIP Chi
 Expected_ALert_Text_3 = "You have been logged out."
 Expected_ALert_Text_4 = 'Checkout Summary: 3 VIP Adult Ticket(s) - $300 Total: $300'
 
+Browser = "Chrome"
+title = "Jura-Stina-Kalle Park"
