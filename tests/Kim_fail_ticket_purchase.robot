@@ -11,6 +11,7 @@ Test Teardown    Close Browser
 Scenario: Unauthorized Ticket Purchase Attempt
     [Documentation]    Scenario: Kim Try to Buy Ticket Without Login (Negative)
     [Tags]      Tuba
+<<<<<<< HEAD
     Kim är på biljettsidan men inte inloggad
     Öppna biljettsidan
     Välj VIP-biljetter    2    ${Adult}
@@ -18,5 +19,14 @@ Scenario: Unauthorized Ticket Purchase Attempt
     Bekräfta köpet
     Verifiera felmeddelande för inloggningskrav
    
+=======
+    Given Kim is on the ticket purchase page
+    And Kim selects 2 VIP tickets for adults   2    ${Adult}
+    And proceeds to checkout and confirms the purchase
+    Then Kim should receive an error message indicating login is required
+    
+
+
+>>>>>>> origin/feature
 
     

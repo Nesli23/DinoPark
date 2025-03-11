@@ -1,66 +1,39 @@
-*** Settings ***
+*** Settings *** 
+
+Metadata    Author    Quratulain    
 Library        SeleniumLibrary
 Library        String
 Library        Collections
-Documentation    Testing Jurasstina-Kalle Park page 
-<<<<<<< HEAD
-Resource    ${EXECDIR}/resources/keywords_files/keywords_ticket_tuba.robot
-Variables    ${EXECDIR}/variables.py
-Test Setup     Prepare Browser      ${username}  ${password} ${url_test}    ${browser_test}    ${title_test}   ${username}  ${password}
-Test Teardown   Close Browser 
-=======
-Resource       ${EXECDIR}/resources/keywords_files/keywords_Quratulain.robot 
-Variables      ${EXECDIR}/variables.py
+Documentation  Total price should be display for all bookings in cart
+Resource       keywords_Quratulain.robot
+Variables      variables_q.py
 Test Setup      Prepare Browser     ${URL}   ${Browser}  ${title}  ${username}  ${password} 
->>>>>>> 06588eedd6cc8222d5107ac12d2738986bd54ef2
-
 
 *** Variables ***
+
 ${URL}    file://${EXECDIR}/website/jurap.html
 ${Browser}  Chrome
 
-
-
-
 *** Test Cases ***
-Proceed To Checkout
-<<<<<<< HEAD
-    [Documentation]    Tests that the selected booked tickets and total price are displayed before checkout.
-    [Tags]    Quratulain
-    
-    Användaren har bokat sina biljetter och safari-tur online
-    Användaren går till kassan för att betala
-    Visa information om alla bokningar och totalpris före utcheckning
 
-    #...     Acceptance criteria:
-    #...                 - The User should be able to review his selected tickets at the end.
-    #...                - The User should be able to review the total price according to his selected booking.
-    #...                 - The total price should calculated accurately.
-    #...                 - After the checkout information, the user should be able to proceed to checkout
+Total Price Display
+    [Tags]    Quratulain
+    [Documentation]   Scenario: In the shopping cart, the total price for all entrance and safari booking tickets will be displayed and the total amount should be calculated correctly.
+
+    ...               Gherkin syntax:  Given that the user booked tickets for the entrance and safari trip and added all tickets into the cart.
+    ...                                When the user opens the cart,
+    ...                                Then the user will able to see the total amount of tickets displayed in the cart,
+    ...                                And the amount should be calculated correctly according to his booking and requirements.
+
+    ...                Acceptance Criteria: The user should successfully log in to the Jurasstina -Kally Park.
+    ...                                     The user should successfully buy tickets from the website.
+    ...                                     The user should successfully add all his booked tickets into the cart.
+    ...                                     The User should be able to review his selected tickets at the end .
+    ...                                     The User should be able to review the total price according to his selected booking.
+    ...                                     The total price should calculated accurately.
     
     Prepare Browser       ${URL}  ${Browser}  ${title}  ${username}  ${password}
-    Sleep  5s
-    #Message Should Be Visible    ${verify_message_element_test}   ${verify_message_test}   ${timeout}
-    
-    # Reload Page #
-    #Sleep     2s
-=======
-    
-Scenario: Successful proceed to checkout after booking tickets
-    [Documentation]    Display the selected booked tickets and the total price amount before checkout.
-    [Tags]    Quratulain
-    Given User Open The Browser For Register And Login
-    Then Kim is on the ticket purchase page
-    And Kim selects 2 VIP tickets for adults   2   ${Adult}
-    And 2 VIP tickets for children  2
-    Then open the cart for rewivew tickets 
-    And proceeds to checkout and confirms the purchase
-    Then Kim should receive a confirmation message
-
-
-
->>>>>>> origin/feature
-
+    Sleep     60s
     Click Element       //*[@id="tickets-nav"]
 
     # Select ticket type #
@@ -94,7 +67,7 @@ Scenario: Successful proceed to checkout after booking tickets
     # Select ticket quantity #
     Input Text   ${Ticket_Quantity}  2  # Set the ticket quantity to 2
     
-    # we can verify the value after setting #
+    # Optionally, we can verify the value after setting #
     ${quantity} =  Get Value  ${Ticket_Quantity}
     Should Be Equal As Strings  ${quantity}  2
 
@@ -136,20 +109,11 @@ Scenario: Successful proceed to checkout after booking tickets
     #Trim any leading or trailing spaces (if any)
     ${total_text}=  Strip String  ${total_text}
     
-    # Verify that the total text matches the expected total (e.g., "$500")
+    # Verify that the total amount matches the expected total( $500)
     Should Be Equal As Strings  ${total_text}  ${Expected_Total_Amount}
-    
-    Click Button       checkout-button
-
-    Alert Should Be Present     ${Expected_ALert_Text_2}   ACCEPT  ${timeout_1}
-
-    #To Logout
-    Click Element   logout-nav
-    #Click Button     logout-link
-    Alert Should Be Present     ${Expected_ALert_Text_3}   ACCEPT  ${timeout_1}
-
-
     [Teardown]  Close Browser
+
+
 
 
 
