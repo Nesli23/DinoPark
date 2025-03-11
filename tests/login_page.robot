@@ -2,7 +2,7 @@
 Documentation    Grupp 9(Nesli,Tuba, Quratulain)
 Library    SeleniumLibrary
 Variables    C:/Users/nesli/Documents/GitHub/ContinuousTesting/DinoPark/variables.py
-Resource    keywords.robot
+Resource    ../resources/keywords_files/keywords.robot
 Test Setup    Open Browser To Page    ${url_test}    ${browser_test}    ${title_test}
 
 Test Teardown    Close Browser
