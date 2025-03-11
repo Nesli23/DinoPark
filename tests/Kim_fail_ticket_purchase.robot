@@ -11,7 +11,7 @@ Test Teardown    Close Browser
 Scenario: Unauthorized Ticket Purchase Attempt
     [Documentation]    Scenario: Kim Try to Buy Ticket Without Login (Negative)
     [Tags]      Tuba
-   Kim är på biljettsidan men inte inloggad
+    Kim är på biljettsidan men inte inloggad
     Öppna biljettsidan
     Välj VIP-biljetter    2    ${Adult}
     Gå till kassan
