@@ -8,13 +8,14 @@ Test Setup    Open Browser To Ticket Page    ${url_test}    ${browser_test}    $
 Test Teardown    Close Browser
 
 *** Test Cases ***
-Scenario: Successful VIP Ticket Purchase
-   [Documentation]    Scenario: Successful Purchase for Adults and Children Separately.
+Lyckat köp av VIP-biljetter
+   [Documentation]    Testar att en användare kan köpa VIP-biljetter för vuxna och barn separat.
    [Tags]      Tuba
-    Given Kim is registered as user
-    When Kim is logged in
-    Then Kim is on the ticket purchase page
-    And Kim selects 2 VIP tickets for adults   2    ${Adult}
-    And proceeds to checkout and confirms the purchase
-    Then Kim should receive a confirmation message
+    Registrera användaren Kim
+    Logga in användaren Kim
+    Verifiera biljettsidan
+    Välj VIP-biljetter    2    ${Adult}
+    Gå till kassan
+    Bekräfta köpet
+    Verifiera bekräftelsemeddelandet
 
