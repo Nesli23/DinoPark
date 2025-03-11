@@ -30,8 +30,8 @@ When Kim is logged in
     Element should Contain     ${verify_message_element_test}   ${verify_message_test} 
     Sleep   4s
 Then Kim is on the ticket purchase page
-    Wait Until Element Is Visible    ${tickets_nav}    10s
-    Click Element    ${tickets_nav}
+    Wait Until Element Is Visible    ${buy_tickets_button}    10s
+    Click Element    ${buy_tickets_button}
 And Kim selects 2 VIP tickets for adults
     [Arguments]    ${quantity}    ${type}
     Wait Until Element Is Visible    ${ticket_type}    10s
