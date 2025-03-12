@@ -13,7 +13,11 @@ steps:
 # Install dependencies (Robot Framework, Selenium Library)
 - script: |
     pip install --upgrade robotframework-seleniumlibrary
-  displayName:  'Install Robot Framework and dependencies' 
+  displayName:  'Install Robot Framework and dependencies'
+
+    # Lägg till ett debug-steg för att se om testfilen finns
+- script: ls -R tests/
+  displayName: 'Check test folder contents' 
 
 - script: |
       robot --include new-feature 
