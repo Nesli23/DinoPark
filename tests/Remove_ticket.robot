@@ -22,12 +22,12 @@ Scenario: The user should be able to cancel or remove the ticket from the cart a
     Given Kim is registered as user
     When Kim is logged in
     Then Kim is on the ticket purchase page
-    And Kim selects VIP tickets for adults  3  ${Adult}
+    And Kim selects VIP tickets for adults  
     Then Kim receives a confirmation message 
-    And Kim selects VIP tickets for adults  4    ${Adult}
+    And kim selects more tickets by mistake
     Then Kim receives a confirmation message 
     Then entre items into the cart
-    And Kim removes 4 tickets from the cart
+    And Kim wants to removes mistakenly selected tickets from the cart
     Then conformation message of remove tickets display 
     
 
@@ -46,7 +46,7 @@ Scenario: The user should be able to cancel or remove the ticket from the cart a
     #Select From List By Value  ${Ticket_Type}  ${Adult_Option}  
     #Select From List By Value  ${Ticket_Category}  ${VIP_option}  
 
-    # Select ticket quantity #
+    #
     #Input Text   ${Ticket_Quantity}  3  # Set the ticket quantity to 3
 
     # Add items to cart # 
@@ -61,7 +61,7 @@ Scenario: The user should be able to cancel or remove the ticket from the cart a
     #Select From List By Value  ${Ticket_Category}  ${VIP_option}  
 
     # Select ticket quantity #
-    #Input Text   ${Ticket_Quantity}  4  # Set the ticket quantity to 3
+    #Input Text   ${Ticket_Quantity}  4  # Set the ticket quantity to 4
 
     # Add items to cart # 
     #Click Button    //*[@id="ticket-form"]/button
