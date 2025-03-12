@@ -39,11 +39,16 @@ Then Kim is on the ticket purchase page
 
 
 And Kim selects VIP tickets for adults
-    [Arguments]    ${quantity}    ${type}
-    Wait Until Element Is Visible    ${ticket_type_dropdown}    10s
-    Select From List By Value    ${ticket_type_dropdown}    ${type}
-    Select From List By Value    ${ticket_category_dropdown}    ${VIP}
-    Input Text    ${ticket_quantity_input}    ${quantity}
+    Wait Until Element Is Visible  ${ticket_type_dropdown}  ${timeout}
+    Select From List By Value  ${ticket_type_dropdown}  ${Adult_Option}  
+    Select From List By Value  ${ticket_category_dropdown}  ${VIP_option}  
+    Input Text   ${ticket_quantity_input}  3  # Set the ticket quantity to  3
+
+And kim selects more tickets by mistake 
+    Wait Until Element Is Visible  ${ticket_type_dropdown}  ${timeout}
+    Select From List By Value  ${ticket_type_dropdown}  ${Adult_Option}  
+    Select From List By Value  ${ticket_category_dropdown}  ${VIP_option}  
+    Input Text   ${ticket_quantity_input}  4  # Set the ticket quantity to  4
 
 Then Kim receives a confirmation message 
     Click Button    //*[@id="ticket-form"]/button
@@ -101,7 +106,7 @@ And logout from page
     Alert Should Be Present     ${Expected_ALert_Text_3}   ACCEPT  ${timeout_1}
     [Teardown]  Close Browser
 
-And Kim removes 4 tickets from the cart
+And Kim wants to removes mistakenly selected tickets from the cart
     Click Element   cart-nav
     Page Should Contain Element    cart-section
     Page Should Contain Element    cart-details 
@@ -109,7 +114,9 @@ And Kim removes 4 tickets from the cart
     sleep  2s
 Then conformation message of remove tickets display   
     Click Button       checkout-button                        # to proceed to checkout
-    Alert Should Be Present     ${Expected_ALert_Text_4}   ACCEPT  ${timeout_1}
+    Alert Should Be Present     ${Expected_ALert_Text_4}   ACCEPT   ${timeout_1}
+
+
 
 
 
@@ -124,7 +131,7 @@ Prepare Browser
     [Arguments]    ${url_test}    ${browser_test}    ${title_test}   ${username}  ${password} 
     Open Browser    ${url_test}    ${browser_test} 
     Maximize Browser Window  
-    Click Element       locator=//*[@id="register-nav"]
+    Click Button    "xpath=//*[@id='register-nav']"
     Input Text   id = reg-username    ${username}
     Input Text  id = reg-password  ${password}   
     Click Button  //*[@id="register-form"]/button
