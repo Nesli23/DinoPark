@@ -20,13 +20,15 @@ ${Browser}  Chrome
 Scenario: Display the selected booked tickets and the total price amount before checkout.
     [Documentation]
     [Tags]      Quratulain
-    
-    Given Kim is registered as user
-    When Kim is logged in
+
+    #Given Kim is registered as user
+    #When Kim is logged in
+    Prepare Browser    ${url_test}    ${browser_test}    ${title_test}   ${username}  ${password}
     Then Kim is on the ticket purchase page
     And Kim selects 2 VIP tickets for adults    2    ${Adult}
+    Then Kim should receive a confirmation message for adult booking
     And Kim selects 2 VIP tickets for children  2    ${Child}
-    Then Kim should receive a confirmation message
+    Then Kim should receive a confirmation message for children booking
     And Kim selects a weekend safari tour
     And enter a date and type for safari 
     Then entre items into the cart

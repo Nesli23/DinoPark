@@ -143,8 +143,8 @@ timeout_1 = "15s"
 
 #Ticket type
 #Ticket_Type = "id: ticket-type"
-Adult_Option  =  "Adult"   #xpath=//*[@id="ticket-type"]/option[1]
-Child_Option =    "Child"
+#Adult_Option  =  "Adult"   #xpath=//*[@id="ticket-type"]/option[1]
+#Child_Option =    "Child"
 
 # Tickets category
 #Ticket_Category =  "id: ticket-category"
