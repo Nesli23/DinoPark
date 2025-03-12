@@ -20,13 +20,19 @@ ${Browser}  Chrome
 Scenario: Display the selected booked tickets and the total price amount before checkout.
     [Documentation]
     [Tags]      Quratulain
+    
     Given Kim is registered as user
     When Kim is logged in
     Then Kim is on the ticket purchase page
     And Kim selects 2 VIP tickets for adults    2    ${Adult}
     And Kim selects 2 VIP tickets for children  2    ${Child}
-    And proceeds to checkout and confirms the purchase
     Then Kim should receive a confirmation message
+    And Kim selects a weekend safari tour
+    And enter a date and type for safari 
+    Then entre items into the cart
+    And proceed to checkout
+    Then verify the total amount
+    And logout from page   
 
 
 
@@ -36,102 +42,102 @@ Scenario: Display the selected booked tickets and the total price amount before 
     #...                 - The total price should calculated accurately.
     #...                 - After the checkout information, the user should be able to proceed to checkout
     
-    Prepare Browser       ${URL}  ${Browser}  ${title}  ${username}  ${password}
-    Sleep  5s
+    #Prepare Browser       ${URL}  ${Browser}  ${title}  ${username}  ${password}
+    #Sleep  5s
     #Message Should Be Visible    ${verify_message_element_test}   ${verify_message_test}   ${timeout}
     
     # Reload Page #
     #Sleep     2s
 
-    Click Element       //*[@id="tickets-nav"]
+    #Click Element       //*[@id="tickets-nav"]
 
     # Select ticket type #
-    Wait Until Element Is Visible  ${Ticket_Type}  ${timeout}
-    Select From List By Value  ${Ticket_Type}  ${Adult_Option}  
+    #Wait Until Element Is Visible  ${Ticket_Type}  ${timeout}
+    #Select From List By Value  ${Ticket_Type}  ${Adult_Option}  
 
     # Select ticket category #
-    Select From List By Value  ${Ticket_Category}  ${VIP_option}  
+    #Select From List By Value  ${Ticket_Category}  ${VIP_option}  
 
     # Select ticket quantity #
-    Input Text   ${Ticket_Quantity}  2  # Set the ticket quantity to 2
+    #Input Text   ${Ticket_Quantity}  2  # Set the ticket quantity to 2
     
     # Optionally, we can verify the value after setting #
-    ${quantity} =  Get Value  ${Ticket_Quantity}
-    Should Be Equal As Strings  ${quantity}  2
+    #${quantity} =  Get Value  ${Ticket_Quantity}
+    #Should Be Equal As Strings  ${quantity}  2
 
     # Add items to cart # 
-    Click Button    //*[@id="ticket-form"]/button
+    #Click Button    //*[@id="ticket-form"]/button
     # WAIT and verify the alert is present #
-    Alert Should Be Present     ${Expected_ALert_Text}   ACCEPT  ${timeout}
+    #Alert Should Be Present     ${Expected_ALert_Text}   ACCEPT  ${timeout}
 
     #Reload Page
-    Sleep     2s
+    #Sleep     2s
 
-    Wait Until Element Is Visible  ${Ticket_Type}  ${timeout}
-    Select From List By Value  ${Ticket_Type}  ${Child_Option}  
+    #Wait Until Element Is Visible  ${Ticket_Type}  ${timeout}
+    #Select From List By Value  ${Ticket_Type}  ${Child_Option}  
 
     # Select ticket category #
-    Select From List By Value  ${Ticket_Category}  ${VIP_option}  
+    #Select From List By Value  ${Ticket_Category}  ${VIP_option}  
 
     # Select ticket quantity #
-    Input Text   ${Ticket_Quantity}  2  # Set the ticket quantity to 2
+    #Input Text   ${Ticket_Quantity}  2  # Set the ticket quantity to 2
     
     # we can verify the value after setting #
-    ${quantity} =  Get Value  ${Ticket_Quantity}
-    Should Be Equal As Strings  ${quantity}  2
+    #${quantity} =  Get Value  ${Ticket_Quantity}
+    #Should Be Equal As Strings  ${quantity}  2
 
     # Add items to cart # 
-    Click Button    //*[@id="ticket-form"]/button
+    #Click Button    //*[@id="ticket-form"]/button
     # WAIT and verify the alert is present #
-    Alert Should Be Present     ${Expected_ALert_Text}   ACCEPT  ${timeout}
+    #Alert Should Be Present     ${Expected_ALert_Text}   ACCEPT  ${timeout}
 
     #Reload Page
-    Sleep     2s
+    #Sleep     2s
 
 
-    Click Element    id: safari-nav       # xpath: //*[@id="safari-nav"]
+    #Click Element    id: safari-nav       # xpath: //*[@id="safari-nav"]
 
     #Select weekend Date#
-    Input Text  ${Select_Date}  ${Date}
+    #Input Text  ${Select_Date}  ${Date}
 
     # Select Safari Type #
-    Wait Until Element Is Visible  ${Safari_Type}  ${timeout}
-    Select From List By Value  ${Safari_Type}  ${Herbivore_Tour_With_Feeding} 
+    #Wait Until Element Is Visible  ${Safari_Type}  ${timeout}
+    #Select From List By Value  ${Safari_Type}  ${Herbivore_Tour_With_Feeding} 
     # Add to cart #
-    Click Button     //*[@id="safari-form"]/button
+    #Click Button     //*[@id="safari-form"]/button
     # WAIT and verify the alert is present #
-    Alert Should Be Present     ${Expected_ALert_Text}   ACCEPT  ${timeout}
+    #Alert Should Be Present     ${Expected_ALert_Text}   ACCEPT  ${timeout}
 
-    Sleep   2s
+    #Sleep   2s
 
 
     # Open  and review Cart Items #
-    Click Element   cart-nav
-    Page Should Contain Element    cart-section
-    Page Should Contain Element    cart-details 
-    Page Should Contain Element    cart-total
+    #Click Element   cart-nav
+    #Page Should Contain Element    cart-section
+    #Page Should Contain Element    cart-details 
+    #Page Should Contain Element    cart-total
 
-    Wait Until Element Is Visible  ${Total_amount}   timeout=10
+    #Wait Until Element Is Visible  ${Total_amount}   timeout=10
     
     # Get the text of the element that shows the total amount
-    ${total_text}=  Get Text  ${Total_amount}
+    #${total_text}=  Get Text  ${Total_amount}
     #Trim any leading or trailing spaces (if any)
-    ${total_text}=  Strip String  ${total_text}
+    #${total_text}=  Strip String  ${total_text}
     
     # Verify that the total text matches the expected total (e.g., "$500")
-    Should Be Equal As Strings  ${total_text}  ${Expected_Total_Amount}
+    #Should Be Equal As Strings  ${total_text}  ${Expected_Total_Amount}
     
-    Click Button       checkout-button
+    #Click Button       checkout-button
 
-    Alert Should Be Present     ${Expected_ALert_Text_2}   ACCEPT  ${timeout_1}
+    #Alert Should Be Present     ${Expected_ALert_Text_2}   ACCEPT  ${timeout_1}
 
     #To Logout
-    Click Element   logout-nav
+    #Click Element   logout-nav
     #Click Button     logout-link
-    Alert Should Be Present     ${Expected_ALert_Text_3}   ACCEPT  ${timeout_1}
+    #Alert Should Be Present     ${Expected_ALert_Text_3}   ACCEPT  ${timeout_1}
 
 
-    [Teardown]  Close Browser
+    #[Teardown]  Close Browser
 
 
 
