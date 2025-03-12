@@ -1,5 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <robot generator="Robot 7.2 (Python 3.13.1 on win32)" generated="2025-03-12T14:42:00.030313" rpa="false" schemaversion="5">
+=======
+<<<<<<< HEAD
+<robot generator="Robot 7.2 (Python 3.13.1 on win32)" generated="2025-03-12T14:33:00.014594" rpa="false" schemaversion="5">
+<suite id="s1" name="DinoPark" source="C:\Users\QuratulainQureshi\Documents\GitHub\DinoPark">
+<suite id="s1-s1" name="Tests" source="C:\Users\QuratulainQureshi\Documents\GitHub\DinoPark\tests">
+<suite id="s1-s1-s1" name="Remove ticket" source="C:\Users\QuratulainQureshi\Documents\GitHub\DinoPark\tests\Remove_ticket.robot">
+<test id="s1-s1-s1-t1" name="Scenario: The user should be able to cancel or remove the ticket from the cart after booking it." line="18">
+<kw name="Open Browser To Ticket Page" owner="keywords_Quratulain" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-03-12T14:33:01.688783" level="INFO">Opening browser 'headlesschrome' to base url 'file:///C:/Users/QuratulainQureshi/Documents/GitHub/DinoPark/webpages/jurap.html'.</msg>
+<msg time="2025-03-12T14:33:04.396175" level="WARN">The chromedriver version (132.0.6834.110) detected in PATH at C:\Users\WebDriver\chromedriver-win64\chromedriver.exe might not be compatible with the detected chrome version (133.0.6943.142); currently, chromedriver 133.0.6943.141 is recommended for chrome 133.*, so it is advised to delete the driver in PATH and retry</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-12T14:33:01.685830" elapsed="5.021240"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-03-12T14:33:06.708076" elapsed="0.061724"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>${title}</arg>
+<arg>${standard_timeout}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-12T14:33:06.770457" elapsed="0.035005"/>
+=======
+<robot generator="Robot 7.2 (Python 3.13.1 on win32)" generated="2025-03-12T14:37:41.075614" rpa="false" schemaversion="5">
+>>>>>>> efc5a9e5463e75777c4bf289cc032e4a8ab1911e
 <suite id="s1" name="DinoPark" source="C:\Users\nesli\Documents\GitHub\ContinuousTesting\DinoPark">
 <suite id="s1-s1" name="Tests" source="C:\Users\nesli\Documents\GitHub\ContinuousTesting\DinoPark\tests">
 <suite id="s1-s1-s1" name="Login Page" source="C:\Users\nesli\Documents\GitHub\ContinuousTesting\DinoPark\tests\login_page.robot">
@@ -16,12 +45,342 @@
 <msg time="2025-03-12T14:42:03.177911" level="INFO">Page title is 'Jura-Stina-Kalle Park'.</msg>
 <arg>${title}</arg>
 <doc>Verifies that the current page title equals ``title``.</doc>
+<<<<<<< HEAD
 <status status="PASS" start="2025-03-12T14:42:03.161017" elapsed="0.017729"/>
+=======
+<status status="PASS" start="2025-03-12T14:37:43.446803" elapsed="0.009967"/>
+>>>>>>> 51bc13b6a49e6088832c07f9dd01886178181c02
+>>>>>>> efc5a9e5463e75777c4bf289cc032e4a8ab1911e
 </kw>
 <arg>${url_test}</arg>
 <arg>${browser_test}</arg>
 <arg>${title_test}</arg>
+<<<<<<< HEAD
 <status status="PASS" start="2025-03-12T14:42:00.805175" elapsed="2.373945"/>
+=======
+<<<<<<< HEAD
+<status status="PASS" start="2025-03-12T14:33:01.674638" elapsed="5.131374"/>
+</kw>
+<kw name="Given Kim is registered as user" owner="keywords_Quratulain">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-12T14:33:06.811357" level="INFO">Clicking element 'xpath=//*[@id='register-nav']'.</msg>
+<arg>${register_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-12T14:33:06.810415" elapsed="0.158497"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-12T14:33:06.970167" level="INFO">Typing text 'Kim' into text field 'xpath=//*[@id='reg-username']'.</msg>
+<arg>${username_input_registration}</arg>
+<arg>${valid_username_ticket}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-12T14:33:06.969383" elapsed="0.282539"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-12T14:33:07.253500" level="INFO">Typing text '123456789' into text field 'xpath=//*[@id='reg-password']'.</msg>
+<arg>${password_input_registration}</arg>
+<arg>${valid_password_ticket}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-12T14:33:07.252558" elapsed="0.216475"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-12T14:33:07.470475" level="INFO">Clicking element 'xpath=//*[@id='register-form']/button'.</msg>
+<arg>${register_submit_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-12T14:33:07.469527" elapsed="0.187124"/>
+</kw>
+<status status="PASS" start="2025-03-12T14:33:06.808294" elapsed="0.848781"/>
+</kw>
+<kw name="When Kim is logged in" owner="keywords_Quratulain">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-12T14:33:07.660187" level="INFO">Clicking element 'xpath=//*[@id='login-nav']/a'.</msg>
+<arg>${login_button_test}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-12T14:33:07.659230" elapsed="0.177218"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${username_input_id_test}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-12T14:33:07.836893" elapsed="0.183485"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-12T14:33:08.023543" level="INFO">Typing text 'Kim' into text field 'id=login-username'.</msg>
+<arg>${username_input_id_test}</arg>
+<arg>${valid_username_ticket}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-12T14:33:08.020954" elapsed="0.240634"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${password_input_id_test}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-12T14:33:08.262226" elapsed="0.067491"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-12T14:33:08.331529" level="INFO">Typing text '123456789' into text field 'id=login-password'.</msg>
+<arg>${password_input_id_test}</arg>
+<arg>${valid_password_ticket}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-12T14:33:08.330357" elapsed="0.270415"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${submit__button_test}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-12T14:33:08.601418" elapsed="0.063796"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-12T14:33:08.667210" level="INFO">Clicking element 'xpath=//*[@id='login-form']/button'.</msg>
+<arg>${submit__button_test}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-12T14:33:08.665882" elapsed="0.226302"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${verify_message_element_test}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-12T14:33:08.892854" elapsed="0.065461"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<msg time="2025-03-12T14:33:09.033129" level="INFO">Element 'xpath=//*[@id='login-message']' contains text 'Verifying credentials...'.</msg>
+<arg>${verify_message_element_test}</arg>
+<arg>${verify_message_test}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="PASS" start="2025-03-12T14:33:08.959007" elapsed="0.074577"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-12T14:33:13.035828" level="INFO">Slept 4 seconds.</msg>
+<arg>4s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-12T14:33:09.034127" elapsed="4.004582"/>
+</kw>
+<status status="PASS" start="2025-03-12T14:33:07.658074" elapsed="5.381666"/>
+</kw>
+<kw name="Then Kim is on the ticket purchase page" owner="keywords_Quratulain">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${buy_tickets_button}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-12T14:33:13.044299" elapsed="0.097363"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-12T14:33:13.144129" level="INFO">Clicking element 'xpath=//*[@id='tickets-nav']/a'.</msg>
+<arg>${buy_tickets_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-12T14:33:13.142585" elapsed="0.325204"/>
+</kw>
+<status status="PASS" start="2025-03-12T14:33:13.041746" elapsed="0.426947"/>
+</kw>
+<kw name="And Kim selects VIP tickets for adults" owner="keywords_Quratulain">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ticket_type_dropdown}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-12T14:33:13.480281" elapsed="0.121561"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2025-03-12T14:33:13.609001" level="INFO">Selecting options from selection list 'id=ticket-type' by value Adult.</msg>
+<arg>${ticket_type_dropdown}</arg>
+<arg>${type}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2025-03-12T14:33:13.604666" elapsed="0.276697"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2025-03-12T14:33:13.884303" level="INFO">Selecting options from selection list 'id=ticket-category' by value VIP.</msg>
+<arg>${ticket_category_dropdown}</arg>
+<arg>${VIP}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2025-03-12T14:33:13.882565" elapsed="0.393048"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-12T14:33:14.279564" level="INFO">Typing text '3' into text field 'id=ticket-quantity'.</msg>
+<arg>${ticket_quantity_input}</arg>
+<arg>${quantity}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-12T14:33:14.277008" elapsed="0.225949"/>
+</kw>
+<arg>3</arg>
+<arg>${Adult}</arg>
+<status status="PASS" start="2025-03-12T14:33:13.477588" elapsed="1.025900"/>
+</kw>
+<kw name="Then Kim receives a confirmation message" owner="keywords_Quratulain">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-03-12T14:33:14.505644" level="INFO">Clicking button '//*[@id="ticket-form"]/button'.</msg>
+<arg>//*[@id="ticket-form"]/button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-12T14:33:14.505150" elapsed="0.271858"/>
+</kw>
+<kw name="Alert Should Be Present" owner="SeleniumLibrary">
+<msg time="2025-03-12T14:33:14.779801" level="INFO">HANDLE::&lt;class 'datetime.timedelta'&gt;::0:00:10</msg>
+<arg>${Expected_ALert_Text}</arg>
+<arg>ACCEPT</arg>
+<arg>${timeout}</arg>
+<doc>Verifies that an alert is present and by default, accepts it.</doc>
+<status status="PASS" start="2025-03-12T14:33:14.777969" elapsed="0.030110"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-12T14:33:16.811935" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-12T14:33:14.809493" elapsed="2.004953"/>
+</kw>
+<status status="PASS" start="2025-03-12T14:33:14.504384" elapsed="2.310862"/>
+</kw>
+<kw name="And Kim selects VIP tickets for adults" owner="keywords_Quratulain">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ticket_type_dropdown}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-12T14:33:16.823063" elapsed="0.076421"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2025-03-12T14:33:16.900868" level="INFO">Selecting options from selection list 'id=ticket-type' by value Adult.</msg>
+<arg>${ticket_type_dropdown}</arg>
+<arg>${type}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2025-03-12T14:33:16.899939" elapsed="0.098168"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2025-03-12T14:33:16.999764" level="INFO">Selecting options from selection list 'id=ticket-category' by value VIP.</msg>
+<arg>${ticket_category_dropdown}</arg>
+<arg>${VIP}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2025-03-12T14:33:16.998752" elapsed="0.113574"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-12T14:33:17.114555" level="INFO">Typing text '4' into text field 'id=ticket-quantity'.</msg>
+<arg>${ticket_quantity_input}</arg>
+<arg>${quantity}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-12T14:33:17.113239" elapsed="0.162927"/>
+</kw>
+<arg>4</arg>
+<arg>${Adult}</arg>
+<status status="PASS" start="2025-03-12T14:33:16.818119" elapsed="0.458357"/>
+</kw>
+<kw name="Then Kim receives a confirmation message" owner="keywords_Quratulain">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-03-12T14:33:17.278873" level="INFO">Clicking button '//*[@id="ticket-form"]/button'.</msg>
+<arg>//*[@id="ticket-form"]/button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-12T14:33:17.278261" elapsed="0.211229"/>
+</kw>
+<kw name="Alert Should Be Present" owner="SeleniumLibrary">
+<msg time="2025-03-12T14:33:17.491389" level="INFO">HANDLE::&lt;class 'datetime.timedelta'&gt;::0:00:10</msg>
+<arg>${Expected_ALert_Text}</arg>
+<arg>ACCEPT</arg>
+<arg>${timeout}</arg>
+<doc>Verifies that an alert is present and by default, accepts it.</doc>
+<status status="PASS" start="2025-03-12T14:33:17.490156" elapsed="0.019180"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-12T14:33:19.511739" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-12T14:33:17.510019" elapsed="2.002229"/>
+</kw>
+<status status="PASS" start="2025-03-12T14:33:17.277404" elapsed="2.235154"/>
+</kw>
+<kw name="Then entre items into the cart" owner="keywords_Quratulain">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-03-12T14:33:19.516272" level="INFO">Clicking button '//*[@id="safari-form"]/button'.</msg>
+<msg time="2025-03-12T14:33:20.182994" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-189.png"&gt;&lt;img src="selenium-screenshot-189.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-03-12T14:33:20.184386" level="FAIL">ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=133.0.6943.142)
+Stacktrace:
+	GetHandleVerifier [0x00007FF7A535CC05+28741]
+	(No symbol) [0x00007FF7A52BFED0]
+	(No symbol) [0x00007FF7A5154DE9]
+	(No symbol) [0x00007FF7A51AA664]
+	(No symbol) [0x00007FF7A519C514]
+	(No symbol) [0x00007FF7A51CFE2A]
+	(No symbol) [0x00007FF7A519BDE6]
+	(No symbol) [0x00007FF7A51D0040]
+	(No symbol) [0x00007FF7A51EFFE1]
+	(No symbol) [0x00007FF7A51CFBD3]
+	(No symbol) [0x00007FF7A5199F43]
+	(No symbol) [0x00007FF7A519B2D1]
+	GetHandleVerifier [0x00007FF7A568DE3D+3375741]
+	GetHandleVerifier [0x00007FF7A56A096A+3452330]
+	GetHandleVerifier [0x00007FF7A569671D+3410781]
+	GetHandleVerifier [0x00007FF7A542653B+854395]
+	(No symbol) [0x00007FF7A52CBE0F]
+	(No symbol) [0x00007FF7A52C7714]
+	(No symbol) [0x00007FF7A52C78AD]
+	(No symbol) [0x00007FF7A52B6189]
+	BaseThreadInitThunk [0x00007FFAD7DBE8D7+23]
+	RtlUserThreadStart [0x00007FFAD865BF2C+44]
+</msg>
+<arg>//*[@id="safari-form"]/button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="FAIL" start="2025-03-12T14:33:19.515181" elapsed="1.098934">ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=133.0.6943.142)
+Stacktrace:
+	GetHandleVerifier [0x00007FF7A535CC05+28741]
+	(No symbol) [0x00007FF7A52BFED0]
+	(No symbol) [0x00007FF7A5154DE9]
+	(No symbol) [0x00007FF7A51AA664]
+	(No symbol) [0x00007FF7A519C514]
+	(No symbol) [0x00007FF7A51CFE2A]
+	(No symbol) [0x00007FF7A519BDE6]
+	(No symbol) [0x00007FF7A51D0040]
+	(No symbol) [0x00007FF7A51EFFE1]
+	(No symbol) [0x00007FF7A51CFBD3]
+	(No symbol) [0x00007FF7A5199F43]
+	(No symbol) [0x00007FF7A519B2D1]
+	GetHandleVerifier [0x00007FF7A568DE3D+3375741]
+	GetHandleVerifier [0x00007FF7A56A096A+3452330]
+	GetHandleVerifier [0x00007FF7A569671D+3410781]
+	GetHandleVerifier [0x00007FF7A542653B+854395]
+	(No symbol) [0x00007FF7A52CBE0F]
+	(No symbol) [0x00007FF7A52C7714]
+	(No symbol) [0x00007FF7A52C78AD]
+	(No symbol) [0x00007FF7A52B6189]
+	BaseThreadInitThunk [0x00007FFAD7DBE8D7+23]
+	RtlUserThreadStart [0x00007FFAD865BF2C+44]
+</status>
+</kw>
+<kw name="Alert Should Be Present" owner="SeleniumLibrary">
+<arg>${Expected_ALert_Text}</arg>
+<arg>ACCEPT</arg>
+<arg>${timeout}</arg>
+<doc>Verifies that an alert is present and by default, accepts it.</doc>
+<status status="NOT RUN" start="2025-03-12T14:33:20.615198" elapsed="0.000732"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-03-12T14:33:20.616926" elapsed="0.000991"/>
+</kw>
+<status status="FAIL" start="2025-03-12T14:33:19.513578" elapsed="1.105682">ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=133.0.6943.142)
+Stacktrace:
+	GetHandleVerifier [0x00007FF7A535CC05+28741]
+	(No symbol) [0x00007FF7A52BFED0]
+	(No symbol) [0x00007FF7A5154DE9]
+	(No symbol) [0x00007FF7A51AA664]
+	(No symbol) [0x00007FF7A519C514]
+	(No symbol) [0x00007FF7A51CFE2A]
+	(No symbol) [0x00007FF7A519BDE6]
+	(No symbol) [0x00007FF7A51D0040]
+	(No symbol) [0x00007FF7A51EFFE1]
+	(No symbol) [0x00007FF7A51CFBD3]
+	(No symbol) [0x00007FF7A5199F43]
+	(No symbol) [0x00007FF7A519B2D1]
+	GetHandleVerifier [0x00007FF7A568DE3D+3375741]
+	GetHandleVerifier [0x00007FF7A56A096A+3452330]
+	GetHandleVerifier [0x00007FF7A569671D+3410781]
+	GetHandleVerifier [0x00007FF7A542653B+854395]
+	(No symbol) [0x00007FF7A52CBE0F]
+	(No symbol) [0x00007FF7A52C7714]
+	(No symbol) [0x00007FF7A52C78AD]
+	(No symbol) [0x00007FF7A52B6189]
+	BaseThreadInitThunk [0x00007FFAD7DBE8D7+23]
+	RtlUserThreadStart [0x00007FFAD865BF2C+44]
+</status>
+=======
+<status status="PASS" start="2025-03-12T14:37:41.573718" elapsed="1.883402"/>
+>>>>>>> efc5a9e5463e75777c4bf289cc032e4a8ab1911e
 </kw>
 <kw name="GIVEN that I'm on the login page" owner="keywords">
 <kw name="Click Element" owner="SeleniumLibrary">
@@ -195,11 +554,80 @@
 <doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
 <status status="PASS" start="2025-03-12T14:42:11.664107" elapsed="0.036693"/>
 </kw>
+<<<<<<< HEAD
 <status status="PASS" start="2025-03-12T14:42:11.632746" elapsed="0.068329"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
 <status status="PASS" start="2025-03-12T14:42:11.708366" elapsed="2.199483"/>
+=======
+<status status="PASS" start="2025-03-12T14:37:51.397527" elapsed="0.082721"/>
+>>>>>>> 51bc13b6a49e6088832c07f9dd01886178181c02
+</kw>
+<kw name="And Kim removes 4 tickets from the cart" owner="keywords_Quratulain">
+<status status="NOT RUN" start="2025-03-12T14:33:20.622450" elapsed="0.000555"/>
+</kw>
+<kw name="Then conformation message of remove tickets display" owner="keywords_Quratulain">
+<status status="NOT RUN" start="2025-03-12T14:33:20.623920" elapsed="0.000444"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<<<<<<< HEAD
+<status status="PASS" start="2025-03-12T14:33:20.625394" elapsed="2.944853"/>
+</kw>
+<tag>Quratulain</tag>
+<status status="FAIL" start="2025-03-12T14:33:01.667700" elapsed="21.903882">ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=133.0.6943.142)
+Stacktrace:
+	GetHandleVerifier [0x00007FF7A535CC05+28741]
+	(No symbol) [0x00007FF7A52BFED0]
+	(No symbol) [0x00007FF7A5154DE9]
+	(No symbol) [0x00007FF7A51AA664]
+	(No symbol) [0x00007FF7A519C514]
+	(No symbol) [0x00007FF7A51CFE2A]
+	(No symbol) [0x00007FF7A519BDE6]
+	(No symbol) [0x00007FF7A51D0040]
+	(No symbol) [0x00007FF7A51EFFE1]
+	(No symbol) [0x00007FF7A51CFBD3]
+	(No symbol) [0x00007FF7A5199F43]
+	(No symbol) [0x00007FF7A519B2D1]
+	GetHandleVerifier [0x00007FF7A568DE3D+3375741]
+	GetHandleVerifier [0x00007FF7A56A096A+3452330]
+	GetHandleVerifier [0x00007FF7A569671D+3410781]
+	GetHandleVerifier [0x00007FF7A542653B+854395]
+	(No symbol) [0x00007FF7A52CBE0F]
+	(No symbol) [0x00007FF7A52C7714]
+	(No symbol) [0x00007FF7A52C78AD]
+	(No symbol) [0x00007FF7A52B6189]
+	BaseThreadInitThunk [0x00007FFAD7DBE8D7+23]
+	RtlUserThreadStart [0x00007FFAD865BF2C+44]
+</status>
+</test>
+<doc>Testing Jurasstina-Kalle Park page</doc>
+<status status="FAIL" start="2025-03-12T14:33:00.106382" elapsed="23.473857"/>
+</suite>
+<status status="FAIL" start="2025-03-12T14:33:00.099124" elapsed="23.491056"/>
+</suite>
+<status status="FAIL" start="2025-03-12T14:33:00.027041" elapsed="23.571592"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">Quratulain</stat>
+</tag>
+<suite>
+<stat name="DinoPark" id="s1" pass="0" fail="1" skip="0">DinoPark</stat>
+<stat name="Tests" id="s1-s1" pass="0" fail="1" skip="0">DinoPark.Tests</stat>
+<stat name="Remove ticket" id="s1-s1-s1" pass="0" fail="1" skip="0">DinoPark.Tests.Remove ticket</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-03-12T14:33:04.396175" level="WARN">The chromedriver version (132.0.6834.110) detected in PATH at C:\Users\WebDriver\chromedriver-win64\chromedriver.exe might not be compatible with the detected chrome version (133.0.6943.142); currently, chromedriver 133.0.6943.141 is recommended for chrome 133.*, so it is advised to delete the driver in PATH and retry</msg>
+=======
+<status status="PASS" start="2025-03-12T14:37:51.482226" elapsed="2.192804"/>
+>>>>>>> efc5a9e5463e75777c4bf289cc032e4a8ab1911e
 </kw>
 <doc>Scenario: Valid login, I should be logged in succesfully and be redirected to the home page when I enter my valid credentials.</doc>
 <status status="PASS" start="2025-03-12T14:42:08.415627" elapsed="5.493119"/>
@@ -225,5 +653,6 @@
 </suite>
 </statistics>
 <errors>
+>>>>>>> 51bc13b6a49e6088832c07f9dd01886178181c02
 </errors>
 </robot>
