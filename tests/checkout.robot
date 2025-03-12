@@ -5,8 +5,10 @@ Library        Collections
 Documentation    Testing Jurasstina-Kalle Park page 
 Resource    ${EXECDIR}/resources/keywords_files/keywords_Quratulain.robot
 Variables    ${EXECDIR}/variables.py
-Test Setup     Prepare Browser        ${url_test}    ${browser_test}    ${title_test}   ${username}  ${password}
-Test Teardown   Close Browser 
+#Test Setup     Prepare Browser        ${url_test}    ${browser_test}    ${title_test}   ${username}  ${password}
+#Test Teardown   Close Browser
+Test Setup    Open Browser To Ticket Page    ${url_test}    ${browser_test}    ${title_test}
+Test Teardown    Close Browser 
 
 
 *** Variables ***
@@ -21,9 +23,9 @@ Scenario: Display the selected booked tickets and the total price amount before 
     [Documentation]
     [Tags]      Quratulain
 
-    #Given Kim is registered as user
-    #When Kim is logged in
-    Prepare Browser    ${url_test}    ${browser_test}    ${title_test}   ${username}  ${password}
+    Given Kim is registered as user
+    When Kim is logged in
+    #Prepare Browser    ${url_test}    ${browser_test}    ${title_test}   ${username}  ${password}
     Then Kim is on the ticket purchase page
     And Kim selects 2 VIP tickets for adults    2    ${Adult}
     Then Kim should receive a confirmation message for adult booking
