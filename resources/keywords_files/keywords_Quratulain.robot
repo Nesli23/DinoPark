@@ -3,11 +3,6 @@ Library    SeleniumLibrary
 Variables    ${EXECDIR}/variables.py
 
 ***keywords***
-Open Browser To Ticket Page
-    [Arguments]    ${url}    ${browser}    ${title}
-    Open Browser    ${url}    ${browser}
-    Maximize Browser Window
-    Wait Until Page Contains    ${title}    ${standard_timeout}
 
 Open Browser To Registration Page
     [Arguments]    ${url}    ${browser}    ${title}
@@ -15,117 +10,103 @@ Open Browser To Registration Page
     Maximize Browser Window
     Wait Until Page Contains    ${title}    ${standard_timeout}
 
-Given Kim is registered as user
+I registered as a user
     Click Element   ${register_button}
-    Input Text  ${username_input_registration}  ${valid_username_ticket}
-    Input Text  ${password_input_registration}  ${valid_password_ticket}
+    Input Text  ${username_input_registration}  ${valid_username}
+    Input Text  ${password_input_registration}  ${valid_password}
     Click Element   ${register_submit_button}
 
-When Kim is logged in
+I logged in
     Click Element    ${login_button_test}
     Wait Until Element Is Visible    ${username_input_id_test}   10s
-    Input Text    ${username_input_id_test}    ${valid_username_ticket}
+    Input Text    ${username_input_id_test}    ${valid_username}
     Wait Until Element Is Visible   ${password_input_id_test}   10s
-    Input Text    ${password_input_id_test}    ${valid_password_ticket}
+    Input Text    ${password_input_id_test}    ${valid_password}
     Wait Until Element Is Visible   ${submit__button_test}  10s
     Click Element    ${submit__button_test}
     Wait Until Element Is Visible   ${verify_message_element_test}  10s
     Element should Contain     ${verify_message_element_test}   ${verify_message_test} 
     Sleep   4s
 
-Then Kim is on the ticket purchase page
+I am on ticket purchase page
     Wait Until Element Is Visible    ${buy_tickets_button}    10s
     Click Element    ${buy_tickets_button}
 
-
-And Kim selects VIP tickets for adults
+I select VIP tickets for adults
     Wait Until Element Is Visible  ${ticket_type_dropdown}  ${timeout}
     Select From List By Value  ${ticket_type_dropdown}  ${Adult_Option}  
     Select From List By Value  ${ticket_category_dropdown}  ${VIP_option}  
-    Input Text   ${ticket_quantity_input}  3  # Set the ticket quantity to  3
+    Input Text   ${ticket_quantity_input}  2  # Set the ticket quantity to  2
 
-And kim selects more tickets by mistake 
+I select more tickets 
     Wait Until Element Is Visible  ${ticket_type_dropdown}  ${timeout}
     Select From List By Value  ${ticket_type_dropdown}  ${Adult_Option}  
     Select From List By Value  ${ticket_category_dropdown}  ${VIP_option}  
     Input Text   ${ticket_quantity_input}  4  # Set the ticket quantity to  4
 
-Then Kim receives a confirmation message 
+I receive a confirmation message 
     Click Button    //*[@id="ticket-form"]/button
     Alert Should Be Present     ${Expected_ALert_Text}   ACCEPT  ${timeout}
     Sleep  2s
 
-And Kim selects VIP tickets for children
-    [Arguments]    ${quantity}    ${type}
-    Wait Until Element Is Visible    ${ticket_type_dropdown}    10s
-    Select From List By Value    ${ticket_type_dropdown}    ${type}
-    Select From List By Value    ${ticket_category_dropdown}    ${VIP}
-    Input Text    ${ticket_quantity_input}    ${quantity}
+I select VIP tickets for children
+    Wait Until Element Is Visible  ${ticket_type_dropdown}  ${timeout}
+    Select From List By Value  ${ticket_type_dropdown}  ${Child_Option}  
+    Select From List By Value  ${ticket_category_dropdown}  ${VIP_option}  
+    Input Text   ${ticket_quantity_input}  2  # Set the ticket quantity to  2
 
-And Kim selects a weekend safari tour
+
+I select a weekend safari tour
     Wait Until Element Is Visible    ${book_safari_button}    10s
     Click Element   ${book_safari_button}
 
-And Enter a date and type for safari 
+I enter a date and type for safari 
     #Input Text  ${safari_date_input}  ${safari_date}
     Input Text  ${Select_Date}  ${Date}
     Select From List By Value  ${Safari_Type}  ${Herbivore_Tour_With_Feeding} 
 
-Then entre items into the cart
+I entre items into the cart
     # Add to cart #
     Click Button      //*[@id="ticket-form"]/button
     Alert Should Be Present     ${Expected_ALert_Text}   ACCEPT  ${timeout}
     Sleep   2s
 
-Then enter items into cart after safari booking
+I enter items into cart after safari booking
     Click Button      //*[@id="safari-form"]/button
     Alert Should Be Present     ${Expected_ALert_Text}   ACCEPT  ${timeout}
     Sleep   2s
 
-And proceed to checkout
+I proceed to checkout
     Click Element   cart-nav
     Page Should Contain Element    cart-section
     Page Should Contain Element    cart-details 
     Page Should Contain Element    cart-total
     Wait Until Element Is Visible  ${Total_amount}   timeout=10
-    # Get the text of the element that shows the total amount
-    #${total_text}=  Get Text  ${Total_amount}
-    #Trim any leading or trailing spaces (if any)
-    #${total_text}=  Strip String  ${total_text}
-Then verify the total amount   
+
+I verify the total amount   
     # Verify that the total text matches the expected total (e.g., "$500")
     Element Should Contain    ${Total_amount}    ${Expected_Total_Amount}
     #Should Be Equal As Strings  ${total_text}  ${Expected_Total_Amount}
     Click Button       checkout-button
     Alert Should Be Present     ${Expected_ALert_Text_2}   ACCEPT  ${timeout_1}
 
-And logout from page   
+I logout from page   
     #To Logout
     Click Element   logout-nav
     #Click Button     logout-link
     Alert Should Be Present     ${Expected_ALert_Text_3}   ACCEPT  ${timeout_1}
     [Teardown]  Close Browser
 
-And Kim wants to removes mistakenly selected tickets from the cart
+I remove unwanted tickets from the cart
     Click Element   cart-nav
     Page Should Contain Element    cart-section
     Page Should Contain Element    cart-details 
     Click Button    //*[@id="cart-details"]/ul/li[2]/button  # To remove  the second index item from the cart
     sleep  2s
-Then conformation message of remove tickets display   
+
+I receive conformation message of remove tickets display   
     Click Button       checkout-button                        # to proceed to checkout
     Alert Should Be Present     ${Expected_ALert_Text_4}   ACCEPT   ${timeout_1}
-
-
-
-
-
-
-
-
-
-    
-
 
 Prepare Browser
     [Arguments]    ${url_test}    ${browser_test}    ${title_test}   ${username}  ${password} 
