@@ -45,6 +45,11 @@ And Kim selects 2 VIP tickets for adults
     Select From List By Value    ${ticket_category_dropdown}    ${VIP}
     Input Text    ${ticket_quantity_input}    ${quantity}
 
+Then Kim should receive a confirmation message for adult booking
+    Click Button    //*[@id="ticket-form"]/button
+    Alert Should Be Present     ${Expected_ALert_Text}   ACCEPT  ${timeout}
+    Sleep  2s
+
 And Kim selects 2 VIP tickets for children
     [Arguments]    ${quantity}    ${type}
     Wait Until Element Is Visible    ${ticket_type_dropdown}    10s
@@ -52,23 +57,26 @@ And Kim selects 2 VIP tickets for children
     Select From List By Value    ${ticket_category_dropdown}    ${VIP}
     Input Text    ${ticket_quantity_input}    ${quantity}
 
-Then Kim should receive a confirmation message
-    #Handle Alert    accept
-    ${alert_text}  Handle Alert
-    Should Be Equal  ${alert_text}  ${alert_text_Confirmation_VIP}
+Then Kim should receive a confirmation message for children booking
+    Click Button    //*[@id="ticket-form"]/button
+    Alert Should Be Present     ${Expected_ALert_Text}   ACCEPT  ${timeout}
+    Sleep  2s
 
-And The user selects a weekend safari tour
+And Kim selects a weekend safari tour
     Wait Until Element Is Visible    ${book_safari_button}    10s
     Click Element   ${book_safari_button}
+
 And Enter a date and type for safari 
     Input Text  ${safari_date_input}  ${safari_date}
     Select From List By Value  ${Safari_Type}  ${Herbivore_Tour_With_Feeding} 
-And entre items into the cart
+
+Then entre items into the cart
     # Add to cart #
     Click Button     //*[@id="safari-form"]/button
     Alert Should Be Present     ${Expected_ALert_Text}   ACCEPT  ${timeout}
     Sleep   2s
-Then proceed to checkout
+
+And proceed to checkout
     Click Element   cart-nav
     Page Should Contain Element    cart-section
     Page Should Contain Element    cart-details 
@@ -78,14 +86,14 @@ Then proceed to checkout
     #${total_text}=  Get Text  ${Total_amount}
     #Trim any leading or trailing spaces (if any)
     #${total_text}=  Strip String  ${total_text}
-And verify the total amount   
+Then verify the total amount   
     # Verify that the total text matches the expected total (e.g., "$500")
     Element Should Contain    ${Total_amount}    ${Expected_Total_Amount}
     #Should Be Equal As Strings  ${total_text}  ${Expected_Total_Amount}
     Click Button       checkout-button
     Alert Should Be Present     ${Expected_ALert_Text_2}   ACCEPT  ${timeout_1}
 
-Then logout from page   
+And logout from page   
     #To Logout
     Click Element   logout-nav
     #Click Button     logout-link
