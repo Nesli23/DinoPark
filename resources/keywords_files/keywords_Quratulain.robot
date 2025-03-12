@@ -68,7 +68,12 @@ And Enter a date and type for safari
 
 Then entre items into the cart
     # Add to cart #
-    Click Button     //*[@id="safari-form"]/button
+    Click Button      //*[@id="ticket-form"]/button
+    Alert Should Be Present     ${Expected_ALert_Text}   ACCEPT  ${timeout}
+    Sleep   2s
+
+Then enter items into cart after safari booking
+    Click Button      //*[@id="safari-form"]/button
     Alert Should Be Present     ${Expected_ALert_Text}   ACCEPT  ${timeout}
     Sleep   2s
 
