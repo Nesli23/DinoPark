@@ -20,12 +20,6 @@ Invalid Login
     THEN Message Should Be Visible
 
 
-    # Acceptance Criteria:
-    #...    I should not be logged in when I enter invalid credentials.
-    #...    Error message informing about invalid credentials should appear. 
-    #../resources/keywords_files/keywords.robot
-    #C:/Users/nesli/Documents/GitHub/ContinuousTesting/DinoPark/variables.py
-
 
 *** Test Cases ***
 Valid Login
