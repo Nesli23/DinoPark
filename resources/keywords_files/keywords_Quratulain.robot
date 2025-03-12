@@ -38,29 +38,24 @@ Then Kim is on the ticket purchase page
     Click Element    ${buy_tickets_button}
 
 
-And Kim selects 2 VIP tickets for adults
+And Kim selects VIP tickets for adults
     [Arguments]    ${quantity}    ${type}
     Wait Until Element Is Visible    ${ticket_type_dropdown}    10s
     Select From List By Value    ${ticket_type_dropdown}    ${type}
     Select From List By Value    ${ticket_category_dropdown}    ${VIP}
     Input Text    ${ticket_quantity_input}    ${quantity}
 
-Then Kim should receive a confirmation message for adult booking
+Then Kim receives a confirmation message 
     Click Button    //*[@id="ticket-form"]/button
     Alert Should Be Present     ${Expected_ALert_Text}   ACCEPT  ${timeout}
     Sleep  2s
 
-And Kim selects 2 VIP tickets for children
+And Kim selects VIP tickets for children
     [Arguments]    ${quantity}    ${type}
     Wait Until Element Is Visible    ${ticket_type_dropdown}    10s
     Select From List By Value    ${ticket_type_dropdown}    ${type}
     Select From List By Value    ${ticket_category_dropdown}    ${VIP}
     Input Text    ${ticket_quantity_input}    ${quantity}
-
-Then Kim should receive a confirmation message for children booking
-    Click Button    //*[@id="ticket-form"]/button
-    Alert Should Be Present     ${Expected_ALert_Text}   ACCEPT  ${timeout}
-    Sleep  2s
 
 And Kim selects a weekend safari tour
     Wait Until Element Is Visible    ${book_safari_button}    10s
@@ -100,6 +95,24 @@ And logout from page
     #Click Button     logout-link
     Alert Should Be Present     ${Expected_ALert_Text_3}   ACCEPT  ${timeout_1}
     [Teardown]  Close Browser
+
+And Kim removes 4 tickets from the cart
+    Click Element   cart-nav
+    Page Should Contain Element    cart-section
+    Page Should Contain Element    cart-details 
+    Click Button    //*[@id="cart-details"]/ul/li[2]/button  # To remove  the second index item from the cart
+    sleep  2s
+Then conformation message of remove tickets display   
+    Click Button       checkout-button                        # to proceed to checkout
+    Alert Should Be Present     ${Expected_ALert_Text_4}   ACCEPT  ${timeout_1}
+
+
+
+
+
+
+
+    
 
 
 Prepare Browser
