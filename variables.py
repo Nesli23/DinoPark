@@ -98,7 +98,7 @@ alert_text_Confirmation_Regular = "Regular Ticket purchase confirmed!"
 
 
 # Browser and Page Configuration
-title_test = "Buy Tickets" #Can we change the name, where is it used? 
+#title_test = "Buy Tickets" #Can we change the name, where is it used? 
 
 # Unauthorized Purchase Error Message (For Negative Test Cases)
 error_message_element = "xpath=//p[contains(text(),'Login required')]"  
