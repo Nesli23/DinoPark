@@ -67,7 +67,8 @@ And Kim selects a weekend safari tour
     Click Element   ${book_safari_button}
 
 And Enter a date and type for safari 
-    Input Text  ${safari_date_input}  ${safari_date}
+    #Input Text  ${safari_date_input}  ${safari_date}
+    Input Text  ${Select_Date}  ${Date}
     Select From List By Value  ${Safari_Type}  ${Herbivore_Tour_With_Feeding} 
 
 Then entre items into the cart
