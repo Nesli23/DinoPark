@@ -32,7 +32,7 @@ Scenario: Display the selected booked tickets and the total price amount before 
     Then Kim receives a confirmation message 
     And Kim selects a weekend safari tour
     And enter a date and type for safari 
-    Then entre items into the cart
+    Then enter items into cart after safari booking
     And proceed to checkout
     Then verify the total amount
     And logout from page   
