@@ -1,6 +1,6 @@
 *** Settings ***
 Library    SeleniumLibrary
-Variables    C:/Users/nesli/Documents/GitHub/ContinuousTesting/DinoPark/variables.py
+Variables    ${EXECDIR}/variables.py
 
 
 *** Keywords ***
@@ -21,37 +21,36 @@ When I fill in the username and password
 
   
 
-
-GIVEN that I'm on the login page
+That I'm on the login page
     Click Element    ${login_button_test}
 
-WHEN I enter invalid username
+I enter invalid username
     Wait Until Element Is Visible    ${username_input_id_test}    timeout=10s  #Får felmeddelande ElementNotInteractableException. Att lägga till detta är lösning enligt AI
     Input Text    ${username_input_id_test}    ${invalid_username}
 
-AND invalid password
+Invalid password
     Wait Until Element Is Visible    ${password_input_id_test}    timeout=10s
     Input Text    ${password_input_id_test}    ${invalid_password}
 
  
-THEN press the submit button
+Press the submit button
     Wait Until Element Is Visible    ${submit_button_test}    timeout=4s
     Click Element    ${submit_button_test}   
 
-THEN Message Should Be Visible
+Message Should Be Visible
     Wait Until Element Contains   ${error_message_element_test}    ${error_message_test}    ${standard_timeout}
     Element Text Should Be    ${error_message_element_test}    ${error_message_test}
 
 
-WHEN I enter valid username
+I enter valid username
     Wait Until Element Is Visible    ${username_input_id_test}    timeout=10s  #Får felmeddelande ElementNotInteractableException. Att lägga till detta är lösning enligt AI
     Input Text    ${username_input_id_test}    ${valid_username}
 
-AND valid password   
+Valid password   
     Wait Until Element Is Visible    ${password_input_id_test}    timeout=10s
     Input Text    ${password_input_id_test}    ${valid_password}
 
-THEN successful message should be visible
+Successful message should be visible
     Wait Until Element Contains    ${verify_message_element_test}    ${verify_message_test}    ${standard_timeout}
     Element Text Should Be    ${verify_message_element_test}    ${verify_message_test}
 
