@@ -11,10 +11,10 @@ Open Browser To Page
     Open Browser    ${url}    ${browser}
     Title Should Be    ${title}
 
-Given I press on the Register button
+I press on the Register button
     Click Element    ${register_button}    
 
-When I fill in the username and password     
+I fill in the username and password     
     Input Text    ${username_input_registration}    ${valid_username}
     Input Text    ${password_input_registration}    ${valid_password}
     Click Element    ${register_submit_button}
