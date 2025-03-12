@@ -3,9 +3,9 @@ Library        SeleniumLibrary
 Library        String
 Library        Collections
 Documentation    Testing Jurasstina-Kalle Park page 
-Resource    ${EXECDIR}/resources/keywords_files/keywords_ticket_tuba.robot
+Resource    ${EXECDIR}/resources/keywords_files/keywords_Quratulain.robot
 Variables    ${EXECDIR}/variables.py
-Test Setup     Prepare Browser      ${username}  ${password} ${url_test}    ${browser_test}    ${title_test}   ${username}  ${password}
+Test Setup     Prepare Browser        ${url_test}    ${browser_test}    ${title_test}   ${username}  ${password}
 Test Teardown   Close Browser 
 
 
@@ -17,14 +17,18 @@ ${Browser}  Chrome
 
 
 *** Test Cases ***
-Proceed To Checkout
+Scenario: Display the selected booked tickets and the total price amount before checkout.
     [Documentation]
-...       Scenario: Display the selected booked tickets and the total price amount before checkout.
+    [Tags]      Quratulain
+    Given Kim is registered as user
+    When Kim is logged in
+    Then Kim is on the ticket purchase page
+    And Kim selects 2 VIP tickets for adults    2    ${Adult}
+    And Kim selects 2 VIP tickets for children  2    ${Child}
+    And proceeds to checkout and confirms the purchase
+    Then Kim should receive a confirmation message
 
-...      Gherkin syntax :
-    ...                  Given that the user booked his tickets and safari tour online according to his requirements.
-    ...                  When the user booked all tickets and proceeded to pay,
-    ...                  Then the information about all his bookings  and total amount of price should be displayed before checkout
+
 
     #...     Acceptance criteria:
     #...                 - The User should be able to review his selected tickets at the end.
