@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <robot generator="Robot 7.2 (Python 3.13.1 on win32)" generated="2025-03-12T14:33:00.014594" rpa="false" schemaversion="5">
 <suite id="s1" name="DinoPark" source="C:\Users\QuratulainQureshi\Documents\GitHub\DinoPark">
 <suite id="s1-s1" name="Tests" source="C:\Users\QuratulainQureshi\Documents\GitHub\DinoPark\tests">
@@ -22,10 +23,31 @@
 <arg>${standard_timeout}</arg>
 <doc>Waits until ``text`` appears on the current page.</doc>
 <status status="PASS" start="2025-03-12T14:33:06.770457" elapsed="0.035005"/>
+=======
+<robot generator="Robot 7.2 (Python 3.13.1 on win32)" generated="2025-03-12T14:37:41.075614" rpa="false" schemaversion="5">
+<suite id="s1" name="DinoPark" source="C:\Users\nesli\Documents\GitHub\ContinuousTesting\DinoPark">
+<suite id="s1-s1" name="Tests" source="C:\Users\nesli\Documents\GitHub\ContinuousTesting\DinoPark\tests">
+<suite id="s1-s1-s1" name="Login Page" source="C:\Users\nesli\Documents\GitHub\ContinuousTesting\DinoPark\tests\login_page.robot">
+<test id="s1-s1-s1-t1" name="Invalid Login" line="12">
+<kw name="Open Browser To Page" owner="keywords" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-03-12T14:37:41.575741" level="INFO">Opening browser 'headlesschrome' to base url 'file:///C:/Users/nesli/Documents/GitHub/ContinuousTesting/DinoPark/webpages/jurap.html'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-12T14:37:41.575350" elapsed="1.871071"/>
+</kw>
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2025-03-12T14:37:43.456279" level="INFO">Page title is 'Jura-Stina-Kalle Park'.</msg>
+<arg>${title}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2025-03-12T14:37:43.446803" elapsed="0.009967"/>
+>>>>>>> 51bc13b6a49e6088832c07f9dd01886178181c02
 </kw>
 <arg>${url_test}</arg>
 <arg>${browser_test}</arg>
 <arg>${title_test}</arg>
+<<<<<<< HEAD
 <status status="PASS" start="2025-03-12T14:33:01.674638" elapsed="5.131374"/>
 </kw>
 <kw name="Given Kim is registered as user" owner="keywords_Quratulain">
@@ -345,6 +367,183 @@ Stacktrace:
 	BaseThreadInitThunk [0x00007FFAD7DBE8D7+23]
 	RtlUserThreadStart [0x00007FFAD865BF2C+44]
 </status>
+=======
+<status status="PASS" start="2025-03-12T14:37:41.573718" elapsed="1.883402"/>
+</kw>
+<kw name="GIVEN that I'm on the login page" owner="keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-12T14:37:43.463485" level="INFO">Clicking element 'xpath=//*[@id='login-nav']/a'.</msg>
+<arg>${login_button_test}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-12T14:37:43.462551" elapsed="0.123482"/>
+</kw>
+<status status="PASS" start="2025-03-12T14:37:43.458278" elapsed="0.128387"/>
+</kw>
+<kw name="WHEN I enter invalid username" owner="keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${username_input_id_test}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-12T14:37:43.595681" elapsed="0.162045"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-12T14:37:43.758618" level="INFO">Typing text 'incorrectusername' into text field 'id=login-username'.</msg>
+<arg>${username_input_id_test}</arg>
+<arg>${invalid_username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-12T14:37:43.758058" elapsed="0.272024"/>
+</kw>
+<status status="PASS" start="2025-03-12T14:37:43.591592" elapsed="0.438848"/>
+</kw>
+<kw name="AND invalid password" owner="keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${password_input_id_test}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-12T14:37:44.039169" elapsed="0.034957"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-12T14:37:44.075141" level="INFO">Typing text 'invalidpassword' into text field 'id=login-password'.</msg>
+<arg>${password_input_id_test}</arg>
+<arg>${invalid_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-12T14:37:44.074527" elapsed="0.140880"/>
+</kw>
+<status status="PASS" start="2025-03-12T14:37:44.033880" elapsed="0.181834"/>
+</kw>
+<kw name="THEN press the submit button" owner="keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${submit_button_test}</arg>
+<arg>timeout=4s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-12T14:37:44.226138" elapsed="0.035760"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-12T14:37:44.262973" level="INFO">Clicking element 'xpath=//*[@id='login-form']/button'.</msg>
+<arg>${submit_button_test}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-12T14:37:44.262348" elapsed="0.130101"/>
+</kw>
+<status status="PASS" start="2025-03-12T14:37:44.218135" elapsed="0.174736"/>
+</kw>
+<kw name="THEN Message Should Be Visible" owner="keywords">
+<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
+<arg>${error_message_element_test}</arg>
+<arg>${error_message_test}</arg>
+<arg>${standard_timeout}</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" start="2025-03-12T14:37:44.400406" elapsed="2.031289"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-03-12T14:37:46.432765" level="INFO">Verifying element 'xpath=//*[@id='login-message']' contains exact text 'Invalid username or password.'.</msg>
+<arg>${error_message_element_test}</arg>
+<arg>${error_message_test}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-03-12T14:37:46.432123" elapsed="0.019362"/>
+</kw>
+<status status="PASS" start="2025-03-12T14:37:44.397220" elapsed="2.054671"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-03-12T14:37:46.456825" elapsed="2.203611"/>
+</kw>
+<doc>Scenario: Invalid login, we should receive an error message when we are trying to log in with invalid credentials.</doc>
+<tag>Nesli</tag>
+<status status="PASS" start="2025-03-12T14:37:41.571892" elapsed="7.089022"/>
+</test>
+<test id="s1-s1-s1-t2" name="Valid Login" line="25">
+<kw name="Open Browser To Page" owner="keywords" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-03-12T14:37:48.665999" level="INFO">Opening browser 'headlesschrome' to base url 'file:///C:/Users/nesli/Documents/GitHub/ContinuousTesting/DinoPark/webpages/jurap.html'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-12T14:37:48.665081" elapsed="2.044616"/>
+</kw>
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2025-03-12T14:37:50.726215" level="INFO">Page title is 'Jura-Stina-Kalle Park'.</msg>
+<arg>${title}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2025-03-12T14:37:50.710231" elapsed="0.016373"/>
+</kw>
+<arg>${url_test}</arg>
+<arg>${browser_test}</arg>
+<arg>${title_test}</arg>
+<status status="PASS" start="2025-03-12T14:37:48.663933" elapsed="2.063020"/>
+</kw>
+<kw name="GIVEN that I'm on the login page" owner="keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-12T14:37:50.732027" level="INFO">Clicking element 'xpath=//*[@id='login-nav']/a'.</msg>
+<arg>${login_button_test}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-12T14:37:50.731476" elapsed="0.127834"/>
+</kw>
+<status status="PASS" start="2025-03-12T14:37:50.727768" elapsed="0.131816"/>
+</kw>
+<kw name="WHEN I enter valid username" owner="keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${username_input_id_test}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-12T14:37:50.868233" elapsed="0.061137"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-12T14:37:50.930346" level="INFO">Typing text 'NK' into text field 'id=login-username'.</msg>
+<arg>${username_input_id_test}</arg>
+<arg>${valid_username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-12T14:37:50.929687" elapsed="0.161751"/>
+</kw>
+<status status="PASS" start="2025-03-12T14:37:50.864476" elapsed="0.227315"/>
+</kw>
+<kw name="AND valid password" owner="keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${password_input_id_test}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-12T14:37:51.099360" elapsed="0.036203"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-12T14:37:51.138476" level="INFO">Typing text 'Password' into text field 'id=login-password'.</msg>
+<arg>${password_input_id_test}</arg>
+<arg>${valid_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-12T14:37:51.136670" elapsed="0.142679"/>
+</kw>
+<status status="PASS" start="2025-03-12T14:37:51.095728" elapsed="0.184259"/>
+</kw>
+<kw name="THEN press the submit button" owner="keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${submit_button_test}</arg>
+<arg>timeout=4s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-12T14:37:51.288483" elapsed="0.029111"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-12T14:37:51.318501" level="INFO">Clicking element 'xpath=//*[@id='login-form']/button'.</msg>
+<arg>${submit_button_test}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-12T14:37:51.317821" elapsed="0.075583"/>
+</kw>
+<status status="PASS" start="2025-03-12T14:37:51.283120" elapsed="0.111676"/>
+</kw>
+<kw name="THEN successful message should be visible" owner="keywords">
+<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
+<arg>${verify_message_element_test}</arg>
+<arg>${verify_message_test}</arg>
+<arg>${standard_timeout}</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" start="2025-03-12T14:37:51.399409" elapsed="0.035382"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-03-12T14:37:51.436990" level="INFO">Verifying element 'xpath=//*[@id='login-message']' contains exact text 'Verifying credentials...'.</msg>
+<arg>${verify_message_element_test}</arg>
+<arg>${verify_message_test}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-03-12T14:37:51.435322" elapsed="0.044748"/>
+</kw>
+<status status="PASS" start="2025-03-12T14:37:51.397527" elapsed="0.082721"/>
+>>>>>>> 51bc13b6a49e6088832c07f9dd01886178181c02
 </kw>
 <kw name="And Kim removes 4 tickets from the cart" owner="keywords_Quratulain">
 <status status="NOT RUN" start="2025-03-12T14:33:20.622450" elapsed="0.000555"/>
@@ -354,6 +553,7 @@ Stacktrace:
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
+<<<<<<< HEAD
 <status status="PASS" start="2025-03-12T14:33:20.625394" elapsed="2.944853"/>
 </kw>
 <tag>Quratulain</tag>
@@ -406,5 +606,33 @@ Stacktrace:
 </statistics>
 <errors>
 <msg time="2025-03-12T14:33:04.396175" level="WARN">The chromedriver version (132.0.6834.110) detected in PATH at C:\Users\WebDriver\chromedriver-win64\chromedriver.exe might not be compatible with the detected chrome version (133.0.6943.142); currently, chromedriver 133.0.6943.141 is recommended for chrome 133.*, so it is advised to delete the driver in PATH and retry</msg>
+=======
+<status status="PASS" start="2025-03-12T14:37:51.482226" elapsed="2.192804"/>
+</kw>
+<doc>Scenario: Valid login, I should be logged in succesfully and be redirected to the home page when I enter my valid credentials.</doc>
+<status status="PASS" start="2025-03-12T14:37:48.662575" elapsed="5.012815"/>
+</test>
+<doc>Grupp 9(Nesli,Tuba, Quratulain)</doc>
+<status status="PASS" start="2025-03-12T14:37:41.120683" elapsed="12.556565"/>
+</suite>
+<status status="PASS" start="2025-03-12T14:37:41.116396" elapsed="12.563011"/>
+</suite>
+<status status="PASS" start="2025-03-12T14:37:41.083322" elapsed="12.597561"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">Nesli</stat>
+</tag>
+<suite>
+<stat name="DinoPark" id="s1" pass="2" fail="0" skip="0">DinoPark</stat>
+<stat name="Tests" id="s1-s1" pass="2" fail="0" skip="0">DinoPark.Tests</stat>
+<stat name="Login Page" id="s1-s1-s1" pass="2" fail="0" skip="0">DinoPark.Tests.Login Page</stat>
+</suite>
+</statistics>
+<errors>
+>>>>>>> 51bc13b6a49e6088832c07f9dd01886178181c02
 </errors>
 </robot>
