@@ -16,7 +16,7 @@ valid_password = "Password"
 standard_timeout = "10s"
 
 # Demo specific
-browser_test = "chrome" 
+browser_test = "headlesschrome" 
 url_test = f"file:///{current_directory}/webpages/jurap.html"
 title_test = "Jura-Stina-Kalle Park"
 
@@ -137,14 +137,14 @@ timeout_1 = "15s"
 
 # Messages and their locators that appear in the test
 
-
-#verify_error_message_element_test =  "id = login-message"     Can we change this one, where is it used
-#verify_error_message_test = "Invalid username or password." Can we change this one, where is it used
+ 
+verify_error_message_element_test =  "id = login-message"   
+verify_error_message_test = "Invalid username or password." 
 
 #Ticket type
 #Ticket_Type = "id: ticket-type"
-#Adult_Option  =  "Adult"   #xpath=//*[@id="ticket-type"]/option[1]
-#Child_Option =    "Child"
+Adult_Option  =  "Adult"   #xpath=//*[@id="ticket-type"]/option[1]
+Child_Option =    "Child"
 
 # Tickets category
 #Ticket_Category =  "id: ticket-category"
