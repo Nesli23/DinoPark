@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <robot generator="Robot 7.2 (Python 3.13.1 on win32)" generated="2025-03-12T14:50:27.203092" rpa="false" schemaversion="5">
 <suite id="s1" name="DinoPark" source="C:\Users\QuratulainQureshi\Documents\GitHub\DinoPark">
 <suite id="s1-s1" name="Tests" source="C:\Users\QuratulainQureshi\Documents\GitHub\DinoPark\tests">
@@ -22,20 +23,55 @@
 <arg>${standard_timeout}</arg>
 <doc>Waits until ``text`` appears on the current page.</doc>
 <status status="PASS" start="2025-03-12T14:50:32.559481" elapsed="0.025796"/>
+=======
+<robot generator="Robot 7.2 (Python 3.13.1 on win32)" generated="2025-03-12T15:15:49.795262" rpa="false" schemaversion="5">
+<suite id="s1" name="DinoPark" source="C:\Users\nesli\Documents\GitHub\ContinuousTesting\DinoPark">
+<suite id="s1-s1" name="Tests" source="C:\Users\nesli\Documents\GitHub\ContinuousTesting\DinoPark\tests">
+<suite id="s1-s1-s1" name="Register User" source="C:\Users\nesli\Documents\GitHub\ContinuousTesting\DinoPark\tests\register_user.robot">
+<test id="s1-s1-s1-t1" name="Register User" line="12">
+<kw name="Open Browser To Page" owner="keywords" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-03-12T15:15:50.372578" level="INFO">Opening browser 'headlesschrome' to base url 'file:///C:/Users/nesli/Documents/GitHub/ContinuousTesting/DinoPark/webpages/jurap.html'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-12T15:15:50.371582" elapsed="2.094708"/>
+</kw>
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2025-03-12T15:15:52.557735" level="INFO">Page title is 'Jura-Stina-Kalle Park'.</msg>
+<arg>${title}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2025-03-12T15:15:52.466937" elapsed="0.091420"/>
+>>>>>>> e9640f5555190d0fce4ff2518b075a04d9386be9
 </kw>
 <arg>${url_test}</arg>
 <arg>${browser_test}</arg>
 <arg>${title_test}</arg>
+<<<<<<< HEAD
 <status status="PASS" start="2025-03-12T14:50:28.572529" elapsed="4.013064"/>
+=======
+<status status="PASS" start="2025-03-12T15:15:50.370224" elapsed="2.189455"/>
+>>>>>>> e9640f5555190d0fce4ff2518b075a04d9386be9
 </kw>
-<kw name="Given Kim is registered as user" owner="keywords_Quratulain">
+<kw name="Given I press on the Register button" owner="keywords">
 <kw name="Click Element" owner="SeleniumLibrary">
+<<<<<<< HEAD
 <msg time="2025-03-12T14:50:32.590015" level="INFO">Clicking element 'xpath=//*[@id='register-nav']'.</msg>
 <arg>${register_button}</arg>
 <doc>Click the element identified by ``locator``.</doc>
 <status status="PASS" start="2025-03-12T14:50:32.587834" elapsed="0.147682"/>
+=======
+<msg time="2025-03-12T15:15:52.565865" level="INFO">Clicking element 'xpath=//*[@id='register-nav']'.</msg>
+<arg>${register_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-12T15:15:52.565074" elapsed="0.110298"/>
+>>>>>>> e9640f5555190d0fce4ff2518b075a04d9386be9
 </kw>
+<status status="PASS" start="2025-03-12T15:15:52.560777" elapsed="0.114927"/>
+</kw>
+<kw name="When I fill in the username and password" owner="keywords">
 <kw name="Input Text" owner="SeleniumLibrary">
+<<<<<<< HEAD
 <msg time="2025-03-12T14:50:32.736713" level="INFO">Typing text 'Kim' into text field 'xpath=//*[@id='reg-username']'.</msg>
 <arg>${username_input_registration}</arg>
 <arg>${valid_username_ticket}</arg>
@@ -336,21 +372,76 @@
 <status status="FAIL" start="2025-03-12T14:50:27.267554" elapsed="27.829449"/>
 </suite>
 <status status="FAIL" start="2025-03-12T14:50:27.210844" elapsed="27.893351"/>
+=======
+<msg time="2025-03-12T15:15:52.682275" level="INFO">Typing text 'NK' into text field 'xpath=//*[@id='reg-username']'.</msg>
+<arg>${username_input_registration}</arg>
+<arg>${valid_username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-12T15:15:52.681908" elapsed="0.115786"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-12T15:15:52.798754" level="INFO">Typing text 'Password' into text field 'xpath=//*[@id='reg-password']'.</msg>
+<arg>${password_input_registration}</arg>
+<arg>${valid_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-12T15:15:52.798038" elapsed="0.112473"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-12T15:15:52.911482" level="INFO">Clicking element 'xpath=//*[@id='register-form']/button'.</msg>
+<arg>${register_submit_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-12T15:15:52.911080" elapsed="0.066498"/>
+</kw>
+<status status="PASS" start="2025-03-12T15:15:52.679725" elapsed="0.298035"/>
+</kw>
+<kw name="Then press the submit button" owner="keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${submit_button_test}</arg>
+<arg>timeout=4s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-12T15:15:52.982459" elapsed="2.244115"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-12T15:15:55.227414" level="INFO">Clicking element 'xpath=//*[@id='login-form']/button'.</msg>
+<arg>${submit_button_test}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-12T15:15:55.226932" elapsed="0.102458"/>
+</kw>
+<status status="PASS" start="2025-03-12T15:15:52.979636" elapsed="2.350082"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-03-12T15:15:55.334282" elapsed="2.217474"/>
+</kw>
+<doc>Scenario: User should be able to register with username and password</doc>
+<tag>new-feature</tag>
+<status status="PASS" start="2025-03-12T15:15:50.368991" elapsed="7.183202"/>
+</test>
+<doc>Testing the register page, user should be able to register with username and password</doc>
+<status status="PASS" start="2025-03-12T15:15:49.836059" elapsed="7.720135"/>
+</suite>
+<status status="PASS" start="2025-03-12T15:15:49.831814" elapsed="7.727165"/>
+</suite>
+<status status="PASS" start="2025-03-12T15:15:49.802290" elapsed="7.758235"/>
+>>>>>>> e9640f5555190d0fce4ff2518b075a04d9386be9
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="0" fail="1" skip="0">Quratulain</stat>
+<stat pass="1" fail="0" skip="0">new-feature</stat>
 </tag>
 <suite>
-<stat name="DinoPark" id="s1" pass="0" fail="1" skip="0">DinoPark</stat>
-<stat name="Tests" id="s1-s1" pass="0" fail="1" skip="0">DinoPark.Tests</stat>
-<stat name="Remove ticket" id="s1-s1-s1" pass="0" fail="1" skip="0">DinoPark.Tests.Remove ticket</stat>
+<stat name="DinoPark" id="s1" pass="1" fail="0" skip="0">DinoPark</stat>
+<stat name="Tests" id="s1-s1" pass="1" fail="0" skip="0">DinoPark.Tests</stat>
+<stat name="Register User" id="s1-s1-s1" pass="1" fail="0" skip="0">DinoPark.Tests.Register User</stat>
 </suite>
 </statistics>
 <errors>
+<<<<<<< HEAD
 <msg time="2025-03-12T14:50:30.187511" level="WARN">The chromedriver version (132.0.6834.110) detected in PATH at C:\Users\WebDriver\chromedriver-win64\chromedriver.exe might not be compatible with the detected chrome version (133.0.6943.142); currently, chromedriver 133.0.6943.141 is recommended for chrome 133.*, so it is advised to delete the driver in PATH and retry</msg>
+=======
+>>>>>>> e9640f5555190d0fce4ff2518b075a04d9386be9
 </errors>
 </robot>

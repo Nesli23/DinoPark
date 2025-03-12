@@ -11,10 +11,10 @@ Open Browser To Page
     Open Browser    ${url}    ${browser}
     Title Should Be    ${title}
 
-Given I press on the Register button
+I press on the Register button
     Click Element    ${register_button}    
 
-When I fill in the username and password     
+I fill in the username and password     
     Input Text    ${username_input_registration}    ${valid_username}
     Input Text    ${password_input_registration}    ${valid_password}
     Click Element    ${register_submit_button}
@@ -84,7 +84,7 @@ AND add them to the cart
     Handle Alert    accept
 
 
-GIVEN that Stina-Palle has booked her tickets
+That Stina-Palle has booked her tickets
     Click Element    ${register_button}
     Input Text    ${username_input_registration}    ${valid_username}
     Input Text    ${password_input_registration}    ${valid_password}
@@ -106,14 +106,14 @@ GIVEN that Stina-Palle has booked her tickets
     Handle Alert    accept 
 
 
-WHEN she goes to the Safari tour page 
+She goes to the Safari tour page 
     Click Element    ${book_safari_button} 
 
-THEN she should be able to choose Safari date and type   
+She should be able to choose Safari date and type   
     Input Text    ${safari_date_input}    ${date}
     Select From List By Value    ${select_safari_type}    ${select_safari_value_herbivore}  
 
-AND add to cart   
+Add to cart   
     Click Element    ${add_to_cart_button}
     Handle Alert    accept
 
