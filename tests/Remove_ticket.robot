@@ -28,7 +28,7 @@ Scenario: The user should be able to cancel or remove the ticket from the cart a
     Then Kim receives a confirmation message 
     Then entre items into the cart
     And Kim wants to removes mistakenly selected tickets from the cart
-    Then conformation message of remove tickets display 
+
     
 
 
