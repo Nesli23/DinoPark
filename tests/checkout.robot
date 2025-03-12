@@ -25,12 +25,11 @@ Scenario: Display the selected booked tickets and the total price amount before 
 
     Given Kim is registered as user
     When Kim is logged in
-    #Prepare Browser    ${url_test}    ${browser_test}    ${title_test}   ${username}  ${password}
     Then Kim is on the ticket purchase page
-    And Kim selects 2 VIP tickets for adults    2    ${Adult}
-    Then Kim should receive a confirmation message for adult booking
-    And Kim selects 2 VIP tickets for children  2    ${Child}
-    Then Kim should receive a confirmation message for children booking
+    And Kim selects VIP tickets for adults    2    ${Adult}
+    Then Kim receives a confirmation message 
+    And Kim selects VIP tickets for children  2    ${Child}
+    Then Kim receives a confirmation message 
     And Kim selects a weekend safari tour
     And enter a date and type for safari 
     Then entre items into the cart
@@ -40,18 +39,6 @@ Scenario: Display the selected booked tickets and the total price amount before 
 
 
 
-    #...     Acceptance criteria:
-    #...                 - The User should be able to review his selected tickets at the end.
-    #...                - The User should be able to review the total price according to his selected booking.
-    #...                 - The total price should calculated accurately.
-    #...                 - After the checkout information, the user should be able to proceed to checkout
-    
-    #Prepare Browser       ${URL}  ${Browser}  ${title}  ${username}  ${password}
-    #Sleep  5s
-    #Message Should Be Visible    ${verify_message_element_test}   ${verify_message_test}   ${timeout}
-    
-    # Reload Page #
-    #Sleep     2s
 
     #Click Element       //*[@id="tickets-nav"]
 
