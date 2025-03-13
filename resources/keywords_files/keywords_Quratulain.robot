@@ -10,44 +10,69 @@ Open Browser To Registration Page
     Maximize Browser Window
     Wait Until Page Contains    ${title}    ${standard_timeout}
 
-I registered as a user
+I registered as a user and i login
     Click Element   ${register_button}
-    Input Text  ${username_input_registration}  ${valid_username}
-    Input Text  ${password_input_registration}  ${valid_password}
+    Input Text  ${username_input_registration}  ${username}
+    Input Text  ${password_input_registration}  ${password}
     Click Element   ${register_submit_button}
-
-I logged in
+    #log in
     Click Element    ${login_button_test}
     Wait Until Element Is Visible    ${username_input_id_test}   10s
-    Input Text    ${username_input_id_test}    ${valid_username}
+    Input Text    ${username_input_id_test}    ${username}
     Wait Until Element Is Visible   ${password_input_id_test}   10s
-    Input Text    ${password_input_id_test}    ${valid_password}
+    Input Text    ${password_input_id_test}    ${password}
     Wait Until Element Is Visible   ${submit__button_test}  10s
     Click Element    ${submit__button_test}
     Wait Until Element Is Visible   ${verify_message_element_test}  10s
     Element should Contain     ${verify_message_element_test}   ${verify_message_test} 
     Sleep   4s
 
-I am on ticket purchase page
+I select VIP tickets for children and adults
     Wait Until Element Is Visible    ${buy_tickets_button}    10s
     Click Element    ${buy_tickets_button}
-
-I select VIP tickets for adults
     Wait Until Element Is Visible  ${ticket_type_dropdown}  ${timeout}
     Select From List By Value  ${ticket_type_dropdown}  ${Adult_Option}  
     Select From List By Value  ${ticket_category_dropdown}  ${VIP_option}  
     Input Text   ${ticket_quantity_input}  2  # Set the ticket quantity to  2
-
-I select more tickets 
-    Wait Until Element Is Visible  ${ticket_type_dropdown}  ${timeout}
-    Select From List By Value  ${ticket_type_dropdown}  ${Adult_Option}  
-    Select From List By Value  ${ticket_category_dropdown}  ${VIP_option}  
-    Input Text   ${ticket_quantity_input}  4  # Set the ticket quantity to  4
-
-I receive a confirmation message 
+    # receive conformation message 
     Click Button    //*[@id="ticket-form"]/button
     Alert Should Be Present     ${Expected_ALert_Text}   ACCEPT  ${timeout}
     Sleep  2s
+    #select VIP tickets for adults
+    Wait Until Element Is Visible  ${ticket_type_dropdown}  ${timeout}
+    Select From List By Value  ${ticket_type_dropdown}  ${Child_Option}  
+    Select From List By Value  ${ticket_category_dropdown}  ${VIP_option}  
+    Input Text   ${ticket_quantity_input}  2  # Set the ticket quantity to  2
+    #receive conformation message
+    Click Button    //*[@id="ticket-form"]/button
+    Alert Should Be Present     ${Expected_ALert_Text}   ACCEPT  ${timeout}
+    Sleep  2s
+
+
+I select tickets for booking
+    Wait Until Element Is Visible    ${buy_tickets_button}    10s
+    Click Element    ${buy_tickets_button}
+    Wait Until Element Is Visible  ${ticket_type_dropdown}  ${timeout}
+    Select From List By Value  ${ticket_type_dropdown}  ${Adult_Option}  
+    Select From List By Value  ${ticket_category_dropdown}  ${VIP_option}  
+    Input Text   ${ticket_quantity_input}  3  # Set the ticket quantity to  3
+    # receive conformation message 
+    Click Button    //*[@id="ticket-form"]/button
+    Alert Should Be Present     ${Expected_ALert_Text}   ACCEPT  ${timeout}
+    Sleep  2s
+
+I select wrong tickets 
+    #select VIP tickets for adults
+    Wait Until Element Is Visible  ${ticket_type_dropdown}  ${timeout}
+    Select From List By Value  ${ticket_type_dropdown}  ${Adult_Option}  
+    Select From List By Value  ${ticket_category_dropdown}  ${VIP_option}  
+    Input Text   ${ticket_quantity_input}  4    # Set the ticket quantity to  4
+
+I enter items into the cart
+    # Add to cart #
+    Click Button      //*[@id="ticket-form"]/button
+    Alert Should Be Present     ${Expected_ALert_Text}   ACCEPT  ${timeout}
+    Sleep   2s
 
 I select VIP tickets for children
     Wait Until Element Is Visible  ${ticket_type_dropdown}  ${timeout}
@@ -59,43 +84,33 @@ I select VIP tickets for children
 I select a weekend safari tour
     Wait Until Element Is Visible    ${book_safari_button}    10s
     Click Element   ${book_safari_button}
+    #Input Text  ${safari_date_input}  ${safari_date}
+    Input Text  ${Select_Date}  ${Date}
+    Select From List By Value  ${Safari_Type}  ${Herbivore_Tour_With_Feeding}
+    #enter items into the cart after safari booking
+    # Add to cart #
+    Click Button      //*[@id="safari-form"]/button
+    Alert Should Be Present     ${Expected_ALert_Text}   ACCEPT  ${timeout}
+    Sleep   2s
 
 I enter a date and type for safari 
     #Input Text  ${safari_date_input}  ${safari_date}
     Input Text  ${Select_Date}  ${Date}
     Select From List By Value  ${Safari_Type}  ${Herbivore_Tour_With_Feeding} 
 
-I entre items into the cart
-    # Add to cart #
-    Click Button      //*[@id="ticket-form"]/button
-    Alert Should Be Present     ${Expected_ALert_Text}   ACCEPT  ${timeout}
-    Sleep   2s
-
 I enter items into cart after safari booking
     Click Button      //*[@id="safari-form"]/button
     Alert Should Be Present     ${Expected_ALert_Text}   ACCEPT  ${timeout}
     Sleep   2s
 
-I proceed to checkout
+I verify the total amount 
     Click Element   cart-nav
     Page Should Contain Element    cart-section
     Page Should Contain Element    cart-details 
     Page Should Contain Element    cart-total
     Wait Until Element Is Visible  ${Total_amount}   timeout=10
-
-I verify the total amount   
     # Verify that the total text matches the expected total (e.g., "$500")
     Element Should Contain    ${Total_amount}    ${Expected_Total_Amount}
-    #Should Be Equal As Strings  ${total_text}  ${Expected_Total_Amount}
-    Click Button       checkout-button
-    Alert Should Be Present     ${Expected_ALert_Text_2}   ACCEPT  ${timeout_1}
-
-I logout from page   
-    #To Logout
-    Click Element   logout-nav
-    #Click Button     logout-link
-    Alert Should Be Present     ${Expected_ALert_Text_3}   ACCEPT  ${timeout_1}
-    [Teardown]  Close Browser
 
 I remove unwanted tickets from the cart
     Click Element   cart-nav
@@ -104,9 +119,19 @@ I remove unwanted tickets from the cart
     Click Button    //*[@id="cart-details"]/ul/li[2]/button  # To remove  the second index item from the cart
     sleep  2s
 
-I receive conformation message of remove tickets display   
+I receive a conformation message upon ticket removal
     Click Button       checkout-button                        # to proceed to checkout
     Alert Should Be Present     ${Expected_ALert_Text_4}   ACCEPT   ${timeout_1}
+
+I proceed to checkout
+    Click Button       checkout-button
+    Alert Should Be Present     ${Expected_ALert_Text_2}   ACCEPT  ${timeout_1}
+    
+I Logout
+    Click Element   logout-nav
+    #Click Button     logout-link
+    Alert Should Be Present     ${Expected_ALert_Text_3}   ACCEPT  ${timeout_1}
+    [Teardown]  Close Browser
 
 Prepare Browser
     [Arguments]    ${url_test}    ${browser_test}    ${title_test}   ${username}  ${password} 
