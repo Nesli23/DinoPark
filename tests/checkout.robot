@@ -19,7 +19,7 @@ ${Browser}  Chrome
 *** Test Cases ***
 Scenario: Display the selected booked tickets and the total price amount before checkout.
     [Documentation]
-    [Tags]      Quratulain
+    [Tags]      new-feature
 
     Given I registered as a user
     When I logged in
