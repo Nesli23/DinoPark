@@ -61,7 +61,7 @@ select_safari_type = "id=safari-type"
 select_safari_value_herbivore = "Herbivore Tour"
 add_to_cart_button = "xpath=//*[@id='safari-form']/button"
 select_safari_value_trex = "T-Rex Rumble"
-date = "002025-03-04"   
+date = "002025-03-27"   
 
 successfull_register_message = "id=register-message"
 #"xpath=//*[@id='login-message']"
@@ -122,7 +122,7 @@ Senior = "Senior"
 # Book safari
 #book_safari_button = "xpath = //*[@id='safari-nav']/a"
 #safari_date_input = "xpath=//*[@id='safari-date']" Can we change this one
-safari_date = "2025020222"
+safari_date = "202500222"
 safari_proceed_checkout_button = "xpath=//*[@id='safari-form']/button" #row 62
 confirm_safari_button = "xpath=//*[@id='confirm-safari']"
 safari_booking_confirm_text = "Item added to cart!"
