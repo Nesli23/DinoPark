@@ -17,7 +17,7 @@ ${URL}    file://${EXECDIR}/website/jurap.html
 *** Test Cases ***
 Scenario: I as a user should be able to cancel or remove ticket(s) from the cart after booking it.
     [Documentation]
-    [Tags]      Quratulain
+    [Tags]      new-feature
 
     Given I registered as a user
     When I logged in
