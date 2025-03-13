@@ -55,7 +55,7 @@ Successful message should be visible
     Element Text Should Be    ${verify_message_element_test}    ${verify_message_test}
 
 
-GIVEN that Stina-Palle is logged in
+That Stina-Palle is logged in
     Click Element    ${register_button}
     Input Text    ${username_input_registration}    ${valid_username}
     Input Text    ${password_input_registration}    ${valid_password}
@@ -70,16 +70,16 @@ GIVEN that Stina-Palle is logged in
     Sleep    3s
 
 
-WHEN she goes to the booking page
+She goes to the booking page
     Click Element    ${buy_tickets_button}
 
-THEN she should be able to choose tickets for the weekday   
+She should be able to choose tickets for the weekday   
     Wait Until Element Is Visible    ${ticket_type_dropdown}    timeout=10s
     Select From List By Value    ${ticket_type_dropdown}    ${adult_ticket_value}      
     Select From List By Value    ${ticket_category_dropdown}    ${regular_ticket_value}       
     Input Text    ${ticket_quantity_input}    ${ticket_quantity_value}   
 
-AND add them to the cart
+Add them to the cart
     Click Element    ${proceed_button}
     Handle Alert    accept
 
