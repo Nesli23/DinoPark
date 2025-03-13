@@ -5,11 +5,7 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-<<<<<<< HEAD
-  - template: templates/install-dependencies.yaml
-=======
   - template: install-dependencies.yaml
->>>>>>> b21dfc86e77682fc982f8872f375ba794e085c46
 
   # Scripts for running all tests in a file and to run tests based on test case name (integration testing)
   - script: |
