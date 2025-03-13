@@ -1,6 +1,10 @@
 *** Settings ***
 Library    SeleniumLibrary
+Library    ${EXECDIR}/utils/utils.py
 Variables    ${EXECDIR}/variables.py
+Library    OperatingSystem
+Library    DateTime
+
 
 
 *** Keywords ***
@@ -110,6 +114,7 @@ She goes to the Safari tour page
     Click Element    ${book_safari_button} 
 
 She should be able to choose Safari date and type   
+    ${date}     Get Next Weekday    ${DATE}    5    #5 står för fredag
     Input Text    ${safari_date_input}    ${date}
     Select From List By Value    ${select_safari_type}    ${select_safari_value_herbivore}  
 
