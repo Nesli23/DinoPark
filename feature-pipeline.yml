@@ -15,7 +15,7 @@ steps:
     pip install --upgrade robotframework-seleniumlibrary
   displayName:  'Install Robot Framework and dependencies'
 
-# (Integration test) Sceipts for running all tests in a file and based on test name
+# (Enhetstest) Sceipts for running all tests in a file and based on test name
 - script: |
    robot --output results/logs/output_login_page_test.xml --log results/logs/login_page.html
    --report results/logs/report_login_page.html tests/login_page.robot
