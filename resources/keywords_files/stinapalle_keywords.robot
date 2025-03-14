@@ -1,6 +1,6 @@
 *** Settings ***
 Library    SeleniumLibrary
-Library    ${EXECDIR}/utils/DateUtility.py
+Library    ${EXECDIR}/resources/utils/DateUtility.py
 Variables    ${EXECDIR}/variables.py
 Library    OperatingSystem
 Library    DateTime
