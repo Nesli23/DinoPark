@@ -9,7 +9,7 @@ Test Teardown    Close Browser
  
 *** Test Cases ***
 Scenario: Stina-Palle Purchases a Regular Adult Ticket
-    [Tags]      Tuba
+    [Tags]      new-feature
     Given Stina-Palle registers with valid credentials and logs into the website
     When Stina-Palle navigates to "Buy Tickets" and selects a "Regular Ticket" for 1 Adult
     Then adds the ticket to the cart and proceeds to checkout
