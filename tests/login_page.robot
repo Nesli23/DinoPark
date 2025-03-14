@@ -11,7 +11,7 @@ Test Teardown    Close Browser
 
 *** Test Cases ***
 Invalid Login
-    [Tags]    new-feature
+    [Tags]    #new-feature
     [Documentation]    Scenario: Invalid login, we should receive an error message when we are trying to log in with invalid credentials.
 
     GIVEN that I'm on the login page
