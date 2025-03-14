@@ -10,7 +10,7 @@ Test Teardown    Close Browser
  
 *** Test Cases ***
 Scenario: Successful VIP Ticket Purchase
-   [Tags]      new-feature
+   [Tags]      #new-feature
    
     Given that Kim is logged in
     When Kim navigates to the ticket purchase page
