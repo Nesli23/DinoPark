@@ -31,7 +31,7 @@ Invalid password    #Kim
 
  
 Press the submit button    #Kim
-    Wait Until Element Is Visible    ${submit_button_test}    timeout=4s
+    Wait Until Element Is Visible    ${submit_button_test}    timeout=10s
     Click Element    ${submit_button_test}   
 
 Message Should Be Visible    #Kim
@@ -155,4 +155,6 @@ And add to cart
     Handle Alert    accept
 
 
- 
+Then press the register button
+     Click Element    ${register_submit_button}
+
