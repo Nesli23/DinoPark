@@ -9,7 +9,7 @@ Test Teardown    Close Browser
  
 *** Test Cases ***
 Scenario: Kim books a weekend safari tour for the whole family
-    [Tags]      Tuba
+    [Tags]      new-feature
  
    Given ticket is booked
    When Kim navigates to the Safari tour page
