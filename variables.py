@@ -173,3 +173,5 @@ Expected_ALert_Text_4 = 'Checkout Summary: 3 VIP Adult Ticket(s) - $300 Total: $
 
 Browser = "Chrome"
 title = "Jura-Stina-Kalle Park"
+
+tickets_nav = "xpath=//*[@id='tickets-nav']/a"
