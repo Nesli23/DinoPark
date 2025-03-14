@@ -96,16 +96,7 @@ Proceed to checkout
     Then I verify the total amount 
     And I proceed to checkout
 
-Remove ticket(s) from the cart
-    [Documentation]  Scenario: I as a user should be able to cancel or remove ticket(s) from the cart after booking it.
-    [Tags]     #new-feature
 
-    Given I registered as a user and I login
-    When I select tickets for booking
-    And I select wrong tickets
-    And I enter items into the cart 
-    Then I remove unwanted tickets from the cart
-    And I receive a conformation message upon ticket removal
     
     
     
