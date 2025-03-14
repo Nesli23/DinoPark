@@ -51,7 +51,7 @@ valid_username_stina = "Stina-Palle"
 valid_password_stina = "stinaSecurePass"
  
 # Ticket Purchase Locators
-tickets_nav = "xpath=//*[@id='tickets-nav']/a"
+#tickets_nav = "xpath=//*[@id='tickets-nav']/a"
 ticket_type = "id=ticket-type"
 ticket_category = "id=ticket-category"
 ticket_quantity = "id=ticket-quantity"
@@ -119,3 +119,7 @@ date = "002025-03-27"
 Herbivore_Tour_With_Feeding = "Herbivore Tour with Feeding"
 VIP_ticket_value = "VIP"
 safari_add_to_cart_button = "xpath=//*[@id='safari-form']/button"
+
+
+
+ticket_category
