@@ -19,7 +19,7 @@ ${Browser}  Chrome
 *** Test Cases ***
 Proceed to checkout
     [Documentation]  Scenario: Display the selected booked tickets and the total price amount before checkout.
-    [Tags]     #new-feature
+    [Tags]     new-feature
 
     Given I registered as a user and I login
     When I select VIP tickets for children and adults
