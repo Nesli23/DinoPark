@@ -17,7 +17,7 @@ ${URL}    file://${EXECDIR}/website/jurap.html
 *** Test Cases ***
 Remove ticket(s) from the cart
     [Documentation]  Scenario: I as a user should be able to cancel or remove ticket(s) from the cart after booking it.
-    [Tags]      new-feature
+    [Tags]     new-feature
 
     Given I registered as a user and I login
     When I select tickets for booking
