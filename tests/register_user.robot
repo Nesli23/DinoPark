@@ -2,7 +2,8 @@
 Documentation    Testing the register page, user should be able to register with username and password
 Library    SeleniumLibrary
 Variables    ${EXECDIR}/variables.py
-Resource    ${EXECDIR}/resources/keywords_files/keywords.robot
+Resource    ${EXECDIR}/resources/keywords_files/kim_keywords.robot
+Resource    ${EXECDIR}/resources/keywords_files/shared_keywords.robot
 
 Test Setup    Open Browser To Page    ${url_test}    ${browser_test}    ${title_test}
 Test Teardown    Close Browser

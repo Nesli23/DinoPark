@@ -2,9 +2,10 @@
 Metadata    Author    Tuba      Grupp9(Nesli, Tuba, Quratulain)
 Documentation    Testing successful VIP ticket purchase for adults and children.
 Library    SeleniumLibrary
-Resource    ${EXECDIR}/resources/keywords_files/keywords_ticket_tuba.robot
+Resource    ${EXECDIR}/resources/keywords_files/kim_keywords.robot
+Resource    ${EXECDIR}/resources/keywords_files/shared_keywords.robot
 Variables    ${EXECDIR}/variables.py
-Test Setup    Open Browser To Ticket Page    ${url_test}    ${browser_test}    ${title_test}
+Test Setup    Open Browser To Page    ${url_test}    ${browser_test}    ${title_test}
 Test Teardown    Close Browser
  
 *** Test Cases ***

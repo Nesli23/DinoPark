@@ -93,4 +93,30 @@ When I select 2 VIP tickets for adults
 And I try to proceed to checkout
     Wait Until Element Is Visible   ${proceed_button}   10s
     Click Element    ${proceed_button}
+
+Then I should receive an error message indicating login is required
+    Sleep   5s
+    ${alert_text}=  Handle Alert
+    Should Be Equal  ${alert_text}  ${error_message_text}
+
+Given Kim press on the Register button
+    #Wait Until Element Is Visible    ${register_submit_button}    timeout=10s
+    Click Element    ${register_button}
+
+When Kim fill in the username and password
+    Input Text    ${username_input_registration}    ${valid_username_ticket}
+    Input Text    ${username_input_registration}    ${valid_password_ticket}
+    Click Element    ${register_button}
+
+Given that Kim press the login button    #kim
+    Click Element    ${login_button_test}
+
+When login in with valid credentials    #Kim
+    Wait Until Element Is Visible    ${username_input_id_test}   10s
+    Input Text    ${username_input_id_test}    ${valid_username_ticket}
+    Wait Until Element Is Visible   ${password_input_id_test}   10s
+    Input Text    ${password_input_id_test}    ${valid_password_ticket}
+
+Then kim should be redirected to the home page    #kim
+    Click Element    ${login_button_test}
  
