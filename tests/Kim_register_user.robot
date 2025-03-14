@@ -11,7 +11,7 @@ Test Teardown    Close Browser
 *** Test Cases ***
 Kim registers successfully
     [Documentation]
-    [Tags]  new-feature
+    [Tags]  #new-feature
     Given Kim press on the Register button
     When Kim fill in the username and password
     Then press the submit button
