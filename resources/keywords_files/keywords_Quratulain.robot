@@ -159,7 +159,7 @@ Type In Password
     [Arguments]   ${password}
     Input Text  id = login-password  ${password}
 
-Message Should Be Visible
+A message Should Be Visible
     [Arguments]    ${verify_message_element_test}     ${verify_message_test}  ${timeout}
     Wait Until Element Contains   ${verify_message_element_test}    ${verify_message_test}  ${timeout}
     Element Text Should Be   ${verify_message_element_test}    ${verify_message_test}
