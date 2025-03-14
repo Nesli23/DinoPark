@@ -9,7 +9,7 @@ Test Teardown    Close Browser
 *** Test Cases ***
 Ticket Purchase Weekday
     [Documentation]    Scenario: Stina-Palle want to buy tickets for the weekday
-    [Tags]    new-feature
+    [Tags]    #new-feature
     GIVEN that Stina-Palle is logged in 
     WHEN she goes to the booking page
     THEN she should be able to choose tickets for the weekday
