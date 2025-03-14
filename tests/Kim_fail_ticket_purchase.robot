@@ -11,7 +11,7 @@ Test Teardown    Close Browser
 * Test Cases *
 Scenario: Unauthorized Ticket Purchase Attempt
     [Documentation]    Testing ticket purchase restriction for unauthorized users
-    [Tags]    Tuba
+    [Tags]    new-feature
     Given I am on the ticket purchase page
     When I select 2 VIP tickets for adults    2    ${Adult}
     And I try to proceed to checkout
