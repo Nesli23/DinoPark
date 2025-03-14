@@ -31,8 +31,8 @@ Invalid password    #Kim
 
  
 Press the submit button    #Kim
-    Wait Until Element Is Visible    ${submit_button_test}    timeout=4s
-    Click Element    ${submit_button_test}   
+    Wait Until Element Is Visible    ${register_submit_button}    timeout=4s
+    Click Element    ${register_submit_button}   
 
 Message Should Be Visible    #Kim
     Wait Until Element Contains   ${error_message_element_test}    ${error_message_test}    ${standard_timeout}
