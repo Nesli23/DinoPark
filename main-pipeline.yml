@@ -1,10 +1,15 @@
 trigger:
+<<<<<<< HEAD
   branches:
     include:
       - develop
     exclude:
       - feature/*
       - main
+=======
+  - main
+
+>>>>>>> feature
 pool:
   vmImage: 'ubuntu-latest'
 

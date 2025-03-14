@@ -1,8 +1,9 @@
 *** Settings ***
 Documentation    Grupp 9(Nesli,Tuba, Quratulain)
 Library    SeleniumLibrary
-Variables    C:/Users/nesli/Documents/GitHub/ContinuousTesting/DinoPark/variables.py
-Resource    keywords.robot
+Variables    ${EXECDIR}/variables.py
+Resource    ${EXECDIR}/resources/keywords_files/kim_keywords.robot
+Resource    ${EXECDIR}/resources/keywords_files/shared_keywords.robot
 Test Setup    Open Browser To Page    ${url_test}    ${browser_test}    ${title_test}
 
 Test Teardown    Close Browser
@@ -10,7 +11,7 @@ Test Teardown    Close Browser
 
 *** Test Cases ***
 Invalid Login
-    [Tags]    Nesli
+    [Tags]    #new-feature
     [Documentation]    Scenario: Invalid login, we should receive an error message when we are trying to log in with invalid credentials.
 
     GIVEN that I'm on the login page
@@ -19,10 +20,6 @@ Invalid Login
     THEN press the submit button
     THEN Message Should Be Visible
 
-
-    # Acceptance Criteria:
-    #...    I should not be logged in when I enter invalid credentials.
-    #...    Error message informing about invalid credentials should appear. 
 
 
 *** Test Cases ***
@@ -33,7 +30,6 @@ Valid Login
     AND valid password
     THEN press the submit button
     THEN successful message should be visible
-
 
 
     

@@ -1,42 +1,39 @@
-*** Settings ***
+*** Settings *** 
+
+Metadata    Author    Quratulain    
 Library        SeleniumLibrary
 Library        String
 Library        Collections
-Documentation    Testing Jurasstina-Kalle Park page 
-Resource       keywords_Quratulain.robot 
+Documentation  Total price should be display for all bookings in cart
+Resource       keywords_Quratulain.robot
 Variables      variables_q.py
 Test Setup      Prepare Browser     ${URL}   ${Browser}  ${title}  ${username}  ${password} 
 
-
 *** Variables ***
+
 ${URL}    file://${EXECDIR}/website/jurap.html
+${Browser}  Chrome
 
 *** Test Cases ***
 
+Total Price Display
+    [Tags]    Quratulain
+    [Documentation]   Scenario: In the shopping cart, the total price for all entrance and safari booking tickets will be displayed and the total amount should be calculated correctly.
 
+    ...               Gherkin syntax:  Given that the user booked tickets for the entrance and safari trip and added all tickets into the cart.
+    ...                                When the user opens the cart,
+    ...                                Then the user will able to see the total amount of tickets displayed in the cart,
+    ...                                And the amount should be calculated correctly according to his booking and requirements.
 
-
-Proceed To Checkout
-    [Documentation]
-...       Scenario: Display the selected booked tickets and the total price amount before checkout.
-
-...      Gherkin syntax :
-    ...                  Given that the user booked his tickets and safari tour online according to his requirements.
-    ...                  When the user booked all tickets and proceeded to pay,
-    ...                  Then the information about all his bookings  and total amount of price should be displayed before checkout.
-    ...     Acceptance criteria:
-    ...                 - The User should be able to review his selected tickets at the end.
-    ...                 - The User should be able to review the total price according to his selected booking.
-    ...                 - The total price should calculated accurately.
-    ...                 - After the checkout information, the user should be able to proceed to checkout
+    ...                Acceptance Criteria: The user should successfully log in to the Jurasstina -Kally Park.
+    ...                                     The user should successfully buy tickets from the website.
+    ...                                     The user should successfully add all his booked tickets into the cart.
+    ...                                     The User should be able to review his selected tickets at the end .
+    ...                                     The User should be able to review the total price according to his selected booking.
+    ...                                     The total price should calculated accurately.
     
     Prepare Browser       ${URL}  ${Browser}  ${title}  ${username}  ${password}
-    Sleep  5s
-    #Message Should Be Visible    ${verify_message_element_test}   ${verify_message_test}   ${timeout}
-    
-    # Reload Page #
-    #Sleep     2s
-
+    Sleep     60s
     Click Element       //*[@id="tickets-nav"]
 
     # Select ticket type #
@@ -70,7 +67,7 @@ Proceed To Checkout
     # Select ticket quantity #
     Input Text   ${Ticket_Quantity}  2  # Set the ticket quantity to 2
     
-    # we can verify the value after setting #
+    # Optionally, we can verify the value after setting #
     ${quantity} =  Get Value  ${Ticket_Quantity}
     Should Be Equal As Strings  ${quantity}  2
 
@@ -112,20 +109,11 @@ Proceed To Checkout
     #Trim any leading or trailing spaces (if any)
     ${total_text}=  Strip String  ${total_text}
     
-    # Verify that the total text matches the expected total (e.g., "$500")
+    # Verify that the total amount matches the expected total( $500)
     Should Be Equal As Strings  ${total_text}  ${Expected_Total_Amount}
-    
-    Click Button       checkout-button
-
-    Alert Should Be Present     ${Expected_ALert_Text_2}   ACCEPT  ${timeout_1}
-
-    #To Logout
-    Click Element   logout-nav
-    #Click Button     logout-link
-    Alert Should Be Present     ${Expected_ALert_Text_3}   ACCEPT  ${timeout_1}
-
-
     [Teardown]  Close Browser
+
+
 
 
 
