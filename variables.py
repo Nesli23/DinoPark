@@ -25,7 +25,7 @@ password_input_id_test = "id=login-password"
 login_button_test = "xpath=//*[@id='login-nav']/a"
 submit_button_test = "xpath=//*[@id='login-form']/button" #logga in sidan
 
-
+#//*[@id="ticket-form"]/button
 #//*[@id="register-form"]/button = registerar sidan 
 
 #//*[@id="login-form"]/button
@@ -44,6 +44,8 @@ username_input_registration="xpath=//*[@id='reg-username']"
 password_input_registration="xpath=//*[@id='reg-password']"
 
 register_submit_button="xpath=//*[@id='register-form']/button"
+
+
 
 # Buy ticket
 buy_tickets_button = "xpath=//*[@id='tickets-nav']/a" 
