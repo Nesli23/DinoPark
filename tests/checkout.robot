@@ -17,22 +17,18 @@ ${Browser}  Chrome
 
 
 *** Test Cases ***
-Scenario: Display the selected booked tickets and the total price amount before checkout.
-    [Documentation]
-    [Tags]      new-feature
+Proceed to checkout
+    [Documentation]  Scenario: Display the selected booked tickets and the total price amount before checkout.
+    [Tags]     new-feature
 
-    Given I registered as a user
-    When I logged in
-    And I am on ticket purchase page
-    Then I select VIP tickets for adults    
-    And I receive a confirmation message 
-    Then I select VIP tickets for children  
-    And I receive a confirmation message 
-    Then I select a weekend safari tour
-    And I enter a date and type for safari 
-    Then I enter items into cart after safari booking
+    Given I registered as a user and I login
+    When I select VIP tickets for children and adults
+    And I select a weekend safari tour
+    Then I verify the total amount 
     And I proceed to checkout
-    Then I verify the total amount
-    And I logout from page   
+
+    
+    
+
 
 
