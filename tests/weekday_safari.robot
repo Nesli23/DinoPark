@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation    Grupp 9 (Nesli,Tuba, Quratulain)
 Library    SeleniumLibrary
-Library    ${EXECDIR}/utils/utils.py
+Library    ${EXECDIR}/utils/DateUtility.py
 Variables    ${EXECDIR}/variables.py
 Resource    ${EXECDIR}/resources/keywords_files/keywords.robot
 Test Setup    Open Browser To Page    ${url_test}    ${browser_test}    ${title_test}
