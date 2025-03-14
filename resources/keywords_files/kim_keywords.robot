@@ -31,8 +31,8 @@ Invalid password    #Kim
 
  
 Press the submit button    #Kim
-    Wait Until Element Is Visible    ${register_submit_button}    timeout=4s
-    Click Element    ${register_submit_button}   
+    Wait Until Element Is Visible    ${submit_button_test}    timeout=4s
+    Click Element    ${submit_button_test}   
 
 Message Should Be Visible    #Kim
     Wait Until Element Contains   ${error_message_element_test}    ${error_message_test}    ${standard_timeout}
@@ -77,7 +77,7 @@ Then Kim should be able to choose 2 Adult VIP ticket
 
 
 And adds the ticket to the cart
-    Click Button    ${add_to_cart_button}
+    Click Button    ${proceed_button}
 
 Given I am on the ticket purchase page
     Wait Until Element Is Visible    ${buy_tickets_button}    10s
@@ -119,4 +119,38 @@ When login in with valid credentials    #Kim
 
 Then kim should be redirected to the home page    #kim
     Click Element    ${login_button_test}
+ 
+ Given ticket is booked  
+    Click Element    ${register_button}
+    Input Text    ${username_input_registration}    ${valid_username}
+    Input Text    ${password_input_registration}    ${valid_password}
+    Click Element    ${register_submit_button}  
+    Click Element    ${login_button_test}
+    Wait Until Element Is Visible    ${username_input_id_test}    timeout=10s  
+    Input Text    ${username_input_id_test}    ${valid_username}
+    Wait Until Element Is Visible    ${password_input_id_test}    timeout=10s
+    Input Text    ${password_input_id_test}    ${valid_password}
+    Wait Until Element Is Visible    ${submit_button_test}    timeout=4s
+    Click Element    ${submit_button_test}
+    Sleep    3s
+    Click Element    ${buy_tickets_button}
+    Wait Until Element Is Visible    ${ticket_type_dropdown}    timeout=10s
+    Select From List By Value    ${ticket_type_dropdown}    ${adult_ticket_value}      
+    Select From List By Value    ${ticket_category_dropdown}    ${VIP_ticket_value}      
+    Input Text    ${ticket_quantity_input}    ${ticket_quantity_value}  
+    Click Element    ${proceed_button}
+    Handle Alert    accept
+
+When Kim navigates to the Safari tour page
+    Click Element    ${book_safari_button}
+
+Then Kim should be able to choose Safari tour date and type
+    Input Text    ${safari_date_input}    ${date}
+    Select From List By Value    ${select_safari_type}   ${select_safari_value_herbivore_feeding}   
+ 
+  
+
+And add to cart
+    Click Element    ${safari_proceed_checkout_button}
+    Handle Alert    accept
  
