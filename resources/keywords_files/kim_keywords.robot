@@ -1,6 +1,6 @@
 *** Settings ***
 Library    SeleniumLibrary
-Library    ${EXECDIR}/utils/utils.py
+Library    ${EXECDIR}/utils/DateUtility.py
 Variables    ${EXECDIR}/variables.py
 Library    OperatingSystem
 Library    DateTime
@@ -50,3 +50,47 @@ Valid password    #Kim
 Successful message should be visible    #Kim
     Wait Until Element Contains    ${verify_message_element_test}    ${verify_message_test}    ${standard_timeout}
     Element Text Should Be    ${verify_message_element_test}    ${verify_message_test}
+
+Given that Kim is logged in
+    Click Element    ${register_button}
+    Input Text    ${username_input_registration}    ${valid_username_ticket}
+    Input Text    ${password_input_registration}    ${valid_password_ticket}
+    Click Element    ${register_submit_button}  
+    Click Element    ${login_button_test}
+    Wait Until Element Is Visible    ${username_input_id_test}    timeout=10s
+    Input Text    ${username_input_id_test}   ${valid_username_ticket}
+    Wait Until Element Is Visible    ${password_input_id_test}    timeout=10s
+    Input Text    ${password_input_id_test}    ${valid_password_ticket}
+    Wait Until Element Is Visible    ${submit__button_test}    timeout=4s
+    Click Element    ${submit__button_test}
+    Sleep    3s
+
+When Kim navigates to the ticket purchase page
+    Wait Until Element Is Visible    ${buy_tickets_button}    10s
+    Click Element    ${buy_tickets_button}
+
+Then Kim should be able to choose 2 Adult VIP ticket
+    Wait Until Element Is Visible    ${ticket_type_dropdown}    10s
+    Select From List By Value    ${ticket_type_dropdown}    ${adult_ticket_value}
+    Select From List By Value    ${ticket_category_dropdown}    ${VIP}
+    Input Text    ${ticket_quantity_input}    ${ticket_quantity_value}
+
+
+And adds the ticket to the cart
+    Click Button    ${add_to_cart_button}
+
+Given I am on the ticket purchase page
+    Wait Until Element Is Visible    ${buy_tickets_button}    10s
+    Click Element    ${buy_tickets_button}
+
+When I select 2 VIP tickets for adults
+    [Arguments]    ${quantity}    ${type}
+    Wait Until Element Is Visible    ${ticket_type_dropdown}    10s
+    Select From List By Value    ${ticket_type_dropdown}    ${type}
+    Select From List By Value    ${ticket_category_dropdown}    ${VIP}
+    Input Text    ${ticket_quantity_input}    ${quantity}
+
+And I try to proceed to checkout
+    Wait Until Element Is Visible   ${proceed_button}   10s
+    Click Element    ${proceed_button}
+ 
