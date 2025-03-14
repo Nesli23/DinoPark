@@ -11,14 +11,13 @@ Test Teardown    Close Browser
 *** Test Cases ***
 Kim registers successfully
     [Documentation]
-    [Tags]  Tuba
+    [Tags]  new-feature
     Given Kim press on the Register button
     When Kim fill in the username and password
     Then press the submit button
     
 Kim logs in successfully
     [Documentation]
-    [Tags]  Tuba
     Given that Kim press the login button
     When login in with valid credentials
     Then kim should be redirected to the home page
