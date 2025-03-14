@@ -170,8 +170,14 @@ Expected_ALert_Text = "Item added to cart!"
 Expected_ALert_Text_2 ='Checkout Summary: 2 VIP Adult Ticket(s) - $200 2 VIP Child Ticket(s) - $120 Herbivore Tour with Feeding on 2025-03-15 - $180 Total: $500'
 Expected_ALert_Text_3 = "You have been logged out."
 Expected_ALert_Text_4 = 'Checkout Summary: 3 VIP Adult Ticket(s) - $300 Total: $300'
+VIP_ticket_value = "VIP"
+select_safari_value_herbivore_feeding = "Herbivore Tour with Feeding"
 
 Browser = "Chrome"
 title = "Jura-Stina-Kalle Park"
 
-tickets_nav = "xpath=//*[@id='tickets-nav']/a"
+
+
+safari_add_to_cart_button = "xpath=//*[@id='safari-form']/button"
+
+
