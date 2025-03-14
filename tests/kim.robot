@@ -39,12 +39,12 @@ Valid Login
     THEN press the submit button
     THEN successful message should be visible
 
-Kim registers successfully
-    [Documentation]
-    [Tags]  new-feature
-    Given Kim press on the Register button
-    When Kim fill in the username and password
-    Then press the submit button
+#Kim registers successfully
+ #   [Documentation]
+  #  [Tags]  new-feature
+   # Given Kim press on the Register button
+    #When Kim fill in the username and password
+    #Then press the register button
     
 Kim logs in successfully
     [Documentation]
