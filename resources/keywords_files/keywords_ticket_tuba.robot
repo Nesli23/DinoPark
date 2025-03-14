@@ -1,5 +1,7 @@
 * Settings *
 Library    SeleniumLibrary
+Variables    ${EXECDIR}/variables.py
+
  
 * Keywords *
 Open Browser To Ticket Page
@@ -15,18 +17,18 @@ Open Browser To Registration Page
     Wait Until Page Contains    ${title}    ${standard_timeout}
  
 # Keywords for scenario: Unauthorized Ticket Purchase Attempt
-Given I am on the ticket purchase page
-    Wait Until Element Is Visible    ${tickets_nav}    10s
-    Click Element    ${tickets_nav}
+Given I am on the ticket purchase page    #Kim
+    Wait Until Element Is Visible    ${buy_tickets_button}    10s
+    Click Element    ${buy_tickets_button}
  
-When I select 2 VIP tickets for adults
+When I select 2 VIP tickets for adults    #Kim
     [Arguments]    ${quantity}    ${type}
-    Wait Until Element Is Visible    ${ticket_type}    10s
-    Select From List By Value    ${ticket_type}    ${type}
-    Select From List By Value    ${ticket_category}    ${VIP}
-    Input Text    ${ticket_quantity}    ${quantity}
+    Wait Until Element Is Visible    ${ticket_type_dropdown}    10s
+    Select From List By Value    ${ticket_type_dropdown}    ${type}
+    Select From List By Value    ${ticket_category_dropdown}    ${VIP}
+    Input Text    ${ticket_category_dropdown}    ${quantity}
  
-And I try to proceed to checkout
+And I try to proceed to checkout    #Kim
     Wait Until Element Is Visible   ${proceed_button}   10s
     Click Element    ${proceed_button}
  
@@ -56,15 +58,15 @@ When Kim is logged in
     Element should Contain     ${verify_message_element_test}   ${verify_message_test}
     Sleep   4s
  
-When Kim navigates to the ticket purchase page
-    Wait Until Element Is Visible    ${tickets_nav}    10s
-    Click Element    ${tickets_nav}
+When Kim navigates to the ticket purchase page    #Kim
+    Wait Until Element Is Visible    ${buy_tickets_button}    10s
+    Click Element    ${buy_tickets_button}
  
-Then Kim should be able to choose 2 Adult VIP ticket
-    Wait Until Element Is Visible    ${ticket_type}    10s
-    Select From List By Value    ${ticket_type}    ${ticket_for_adult_value}
-    Select From List By Value    ${ticket_category}    ${VIP}
-    Input Text    ${ticket_quantity}    ${ticket_quantity_value}
+Then Kim should be able to choose 2 Adult VIP ticket    #Kim
+    Wait Until Element Is Visible    ${ticket_type_dropdown}    10s
+    Select From List By Value    ${ticket_type_dropdown}    ${adult_ticket_value}
+    Select From List By Value    ${ticket_category_dropdown}    ${VIP}
+    Input Text    ${ticket_quantity_input}    ${ticket_quantity_value}
  
 And proceeds to checkout and confirms the purchase
     Wait Until Element Is Visible   ${proceed_button}   10s
@@ -75,8 +77,8 @@ Then Kim should receive a confirmation message
     Should Be Equal  ${alert_text}  ${alert_text_Confirmation_VIP}
  
 Given Kim is on the ticket purchase page
-    Wait Until Element Is Visible    ${tickets_nav}    10s
-    Click Element    ${tickets_nav}
+    Wait Until Element Is Visible    ${buy_tickets_button}    10s
+    Click Element    ${buy_tickets_button}
  
 When The user selects a weekend safari tour
     Wait Until Element Is Visible    ${book_safari_button}    10s
@@ -112,23 +114,23 @@ And Stina-Palle is logged into the website
     Sleep   5s
  
 And Stina-Palle navigates to "Buy Tickets"
-    Wait Until Element Is Visible    ${tickets_nav}    10s
-    Click Element    ${tickets_nav}
+    Wait Until Element Is Visible    ${buy_tickets_button}    10s
+    Click Element    ${buy_tickets_button}
  
 When selects "Regular Ticket" for 1 Adult
-    Wait Until Element Is Visible    ${ticket_type}    10s
-    Select From List By Value    ${ticket_type}    Adult
-    Select From List By Value    ${ticket_category}    Regular
-    Input Text    ${ticket_quantity}    1
+    Wait Until Element Is Visible    ${ticket_type_dropdown}    10s
+    Select From List By Value    ${ticket_type_dropdown}    Adult
+    Select From List By Value    ${ticket_category_dropdown}    Regular
+    Input Text    ${ticket_quantity_input}    1
  
-And adds the ticket to the cart
+And adds the ticket to the cart    #Kim
     Click Button    ${add_to_cart_button}
  
 Then Stina-Palle should receive a confirmation message
     ${alert_text}=  Handle Alert
     Should Be Equal  ${alert_text}  ${safari_booking_confirm_text}
  
-Given that Kim is logged in
+Given that Kim is logged in    #Kim
     Click Element    ${register_button}
     Input Text    ${username_input_registration}    ${valid_username_ticket}
     Input Text    ${password_input_registration}    ${valid_password_ticket}
@@ -175,8 +177,8 @@ Given Kim press on the Register button
     Click Element    ${register_button}
  
 When Kim fill in the username and password
-    Input Text    ${username_registration}    ${valid_username_ticket}
-    Input Text    ${password_registration}    ${valid_password_ticket}
+    Input Text    ${username_input_registration}    ${valid_username_ticket}
+    Input Text    ${username_input_registration}    ${valid_password_ticket}
     Click Element    ${register_button}
     #Wait Until Page Contains Element    ${register_submit_button}    10s
     #Wait Until Element Is Visible       ${register_submit_button}    10s
@@ -185,8 +187,8 @@ When Kim fill in the username and password
  
 Given Kim has booked her ticket
     Click Element    ${register_button}
-    Input Text    ${username_registration}    ${valid_username_ticket}
-    Input Text    ${password_registration}    ${valid_password_ticket}
+    Input Text    ${username_input_registration}    ${valid_username_ticket}
+    Input Text    ${username_input_registration}    ${valid_password_ticket}
     Click Element    ${register_submit_button}
     Click Element    ${login_button_test}
     Wait Until Element Is Visible    ${username_input_id_test}    timeout=10s  
@@ -223,7 +225,7 @@ When Kim goes to the Safari tour page
  
    
  
-Given Stina-Palle registers with valid credentials and logs into the website  
+Given Stina-Palle registers with valid credentials and logs into the website  # Stina Palle
     Click Element    ${register_button}
     Input Text    ${username_input_registration}    ${valid_username}
     Input Text    ${password_input_registration}    ${valid_password}
@@ -238,13 +240,13 @@ Given Stina-Palle registers with valid credentials and logs into the website
     Sleep    3s  
     Click Element    ${buy_tickets_button}
  
-When Stina-Palle navigates to "Buy Tickets" and selects a "Regular Ticket" for 1 Adult     
+When Stina-Palle navigates to "Buy Tickets" and selects a "Regular Ticket" for 1 Adult     # STina Palle
     Wait Until Element Is Visible    ${ticket_type_dropdown}    timeout=10s
     Select From List By Value    ${ticket_type_dropdown}    ${adult_ticket_value}      
     Select From List By Value    ${ticket_category_dropdown}    ${regular_ticket_value}      
     Input Text    ${ticket_quantity_input}    ${ticket_quantity_value}  
  
-Then adds the ticket to the cart and proceeds to checkout
+Then adds the ticket to the cart and proceeds to checkout    #Stina Palle
     Click Element    ${proceed_button}
     Handle Alert    accept    
  
@@ -282,5 +284,5 @@ Then Kim should be able to choose Safari tour date and type
   
  
 And add to cart
-    Click Element    ${safari_add_to_cart_button}
+    Click Element    ${safari_proceed_checkout_button}
     Handle Alert    accept
