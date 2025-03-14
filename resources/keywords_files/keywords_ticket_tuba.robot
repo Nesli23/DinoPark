@@ -172,11 +172,11 @@ When I submit valid credentials
     Input Text    ${password_input_registration}    ${valid_password_ticket}
     Click Element    ${register_submit_button}
  
-Given Kim press on the Register button
+Given Kim press on the Register button    #Kim
     #Wait Until Element Is Visible    ${register_submit_button}    timeout=10s
     Click Element    ${register_button}
  
-When Kim fill in the username and password
+When Kim fill in the username and password    #Kim
     Input Text    ${username_input_registration}    ${valid_username_ticket}
     Input Text    ${username_input_registration}    ${valid_password_ticket}
     Click Element    ${register_button}
@@ -207,16 +207,16 @@ Given Kim has booked her ticket
     Handle Alert    accept
  
  
-Given that Kim press the login button
+Given that Kim press the login button    #kim
     Click Element    ${login_button_test}
  
-When login in with valid credentials
+When login in with valid credentials    #Kim
     Wait Until Element Is Visible    ${username_input_id_test}   10s
     Input Text    ${username_input_id_test}    ${valid_username_ticket}
     Wait Until Element Is Visible   ${password_input_id_test}   10s
     Input Text    ${password_input_id_test}    ${valid_password_ticket}
  
-Then kim should be redirected to the home page
+Then kim should be redirected to the home page    #kim
     Click Element    ${login_button_test}
  
 When Kim goes to the Safari tour page
