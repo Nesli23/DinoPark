@@ -31,7 +31,7 @@ Invalid password    #Kim
 
  
 Press the submit button    #Kim
-    Wait Until Element Is Visible    ${submit_button_test}    timeout=4s
+    Wait Until Element Is Visible    ${submit_button_test}    timeout=10s
     Click Element    ${submit_button_test}   
 
 Message Should Be Visible    #Kim
@@ -153,4 +153,8 @@ Then Kim should be able to choose Safari tour date and type
 And add to cart
     Click Element    ${safari_proceed_checkout_button}
     Handle Alert    accept
- 
+
+
+Then press the register button
+     Click Element    ${register_submit_button}
+

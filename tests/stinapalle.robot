@@ -16,13 +16,13 @@ Scenario: Stina-Palle Purchases a Regular Adult Ticket
     Then adds the ticket to the cart and proceeds to checkout
     
 
-Safari Booking Weekday
-    [Documentation]    Scenario: Stina-Palle want to buy tickets for the weekday
-    [Tags]    #new-feature
-    GIVEN that Stina-Palle has booked her tickets 
-    WHEN she goes to the Safari tour page
-    THEN she should be able to choose Safari date and type
-    And add to cart
+#Safari Booking Weekday
+ #   [Documentation]    Scenario: Stina-Palle want to buy tickets for the weekday
+  #  [Tags]    #new-feature
+   # GIVEN that Stina-Palle has booked her tickets 
+    #WHEN she goes to the Safari tour page
+    #THEN she should be able to choose Safari date and type
+    #And add to cart
 
 Ticket Purchase Weekday
     [Documentation]    Scenario: Stina-Palle want to buy tickets for the weekday

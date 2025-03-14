@@ -183,4 +183,3 @@ title = "Jura-Stina-Kalle Park"
 
 safari_add_to_cart_button = "xpath=//*[@id='safari-form']/button"
 
-
