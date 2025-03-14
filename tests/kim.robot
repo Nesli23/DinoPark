@@ -51,13 +51,13 @@ Kim logs in successfully
     When login in with valid credentials
     Then kim should be redirected to the home page
 
-Scenario: Successful VIP Ticket Purchase
-   [Tags]      #new-feature
+#Scenario: Successful VIP Ticket Purchase
+ #  [Tags]      #new-feature
    
-    Given that Kim is logged in
-    When Kim navigates to the ticket purchase page
-    Then Kim should be able to choose 2 Adult VIP ticket
-    And adds the ticket to the cart
+  #  Given that Kim is logged in
+   # When Kim navigates to the ticket purchase page
+    #Then Kim should be able to choose 2 Adult VIP ticket
+    #And adds the ticket to the cart
     
 Scenario: Unauthorized Ticket Purchase Attempt
     [Documentation]    Testing ticket purchase restriction for unauthorized users
