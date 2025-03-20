@@ -125,11 +125,6 @@ I receive a conformation message upon ticket removal
 
 I proceed to checkout
     Click Button       checkout-button
-<<<<<<< HEAD
-    #Alert Should Be Present     ${Expected_ALert_Text_2}   ACCEPT  ${timeout_1}
-=======
-
->>>>>>> c781789a692aefe45898a599818934e746b698e4
     
 I Logout
     Click Element   logout-nav
