@@ -17,14 +17,13 @@ Register User
     Given I press on the Register button
     When I fill in the username and password
     Then press the submit button
-   
 
 Invalid Login
     [Tags]    new-feature
     [Documentation]    Scenario: Invalid login, we should receive an error message when we are trying to log in with invalid credentials.
 
     GIVEN that I'm on the login page
-    WHEN I enter invalid username 
+    WHEN I enter invalid username
     AND invalid password
     THEN press the submit button
     THEN Message Should Be Visible
